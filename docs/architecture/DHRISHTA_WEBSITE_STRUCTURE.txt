@@ -1,0 +1,1344 @@
+PAGES: 27
+===== PAGE 1 =====
+DHRISHTA HEALTHCARE SERVICES -
+COMPLETE WEBSITE STRUCTURE
+🎯 PROJECT OVERVIEW
+Business: Home healthcare services platform Target Users: Families seeking elderly care, patient care,
+child care, and specialized medical services Core Goal: Convert visitors into service bookings with trust
+and professionalism
+📋 TECH STACK
+Frontend
+Framework: React 18
+Styling: Tailwind CSS + Custom CSS
+UI Components: Shadcn/UI
+Routing: React Router v6
+State Management: React Context API + Hooks
+Forms: React Hook Form
+Animations: Framer Motion
+Icons: Lucide React + Font Awesome
+HTTP Client: Axios
+Backend
+Framework: FastAPI (Python)
+Database: MongoDB
+Authentication: JWT tokens
+File Upload: Object Storage integration
+Email: Resend/SendGrid
+SMS: Twilio
+WhatsApp: Twilio WhatsApp API
+AI Chatbot: Claude Sonnet 4.6 / GPT-5.2
+Payment: Stripe (with UPI support)
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+
+===== PAGE 2 =====
+Deployment & DevOps
+Container: Docker
+Process Manager: Supervisor
+Environment: Kubernetes cluster
+Hot Reload: Enabled for both frontend & backend
+🌐 WEBSITE STRUCTURE (Pages & Sections)
+1️⃣ HOME PAGE ( / )
+Sections:
+Navigation Bar (Sticky)
+Logo (left)
+Menu: Home | About | Services | Packages | Gallery | Contact
+CTA Buttons: Call Now, WhatsApp, Book Consultation
+Mobile hamburger menu
+Hero Section
+Main Headline: "Your Family... Our Care and Responsibility"
+Subheading: Professional healthcare services at home
+Hero Image: Nurse with elderly patient
+Primary CTA: Book Consultation
+Secondary CTA: Call +91 9959388374
+WhatsApp floating button
+Trust badges carousel
+Quick Stats Section
+500+ Happy Families
+50+ Healthcare Professionals
+24/7 Support
+10+ Years Experience
+Services Overview (Cards)
+Personal Care
+Home Nursing Services
+• 
+• 
+• 
+• 
+1. 
+◦ 
+◦ 
+◦ 
+◦ 
+2. 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+3. 
+◦ 
+◦ 
+◦ 
+◦ 
+4. 
+◦ 
+◦ 
+
+===== PAGE 3 =====
+Elder Care
+Patient Care
+Child Care Services
+Day Care Services (Each with icon, brief description, "Learn More" link)
+Why Choose Us
+Experienced Staff
+Certified Nurses
+Verified Caregivers
+24/7 Support
+Safe Environment
+Emergency Assistance
+Health Monitoring
+How It Works (Process Steps)
+Step 1: Consultation (Free assessment)
+Step 2: Care Plan (Customized plan)
+Step 3: Staff Assignment (Matched caregiver)
+Step 4: Ongoing Support (24/7 monitoring)
+Service Packages Preview
+Hourly Care
+Daily Care
+Weekly Care
+Monthly Care
+Custom Plans
+Testimonials Carousel
+Patient reviews
+Family feedback
+Star ratings
+Emergency Banner
+"Need Immediate Care? Call Now"
+Emergency hotline button
+Footer
+Company info
+Quick links
+◦ 
+◦ 
+◦ 
+◦ 
+5. 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+6. 
+◦ 
+◦ 
+◦ 
+◦ 
+7. 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+8. 
+◦ 
+◦ 
+◦ 
+9. 
+◦ 
+◦ 
+10. 
+◦ 
+◦ 
+
+===== PAGE 4 =====
+Services list
+Contact details
+Social media
+Address with map link
+2️⃣ ABOUT US PAGE ( /about )
+Sections:
+Page Hero
+"About Dhrishta Health Care Services"
+Breadcrumb navigation
+Company Story
+Our journey
+Mission statement
+Vision statement
+Core values
+Why Us (Detailed)
+Quality assurance
+Certifications
+Safety protocols
+Insurance coverage
+Our Team Section
+Leadership
+Medical professionals
+Support staff
+Licenses & Certifications
+Medical licenses
+Healthcare certifications
+Awards & recognition
+◦ 
+◦ 
+◦ 
+◦ 
+1. 
+◦ 
+◦ 
+2. 
+◦ 
+◦ 
+◦ 
+◦ 
+3. 
+◦ 
+◦ 
+◦ 
+◦ 
+4. 
+◦ 
+◦ 
+◦ 
+5. 
+◦ 
+◦ 
+◦ 
+
+===== PAGE 5 =====
+3️⃣ SERVICES PAGE ( /services )
+Main Categories:
+A. Personal Care Services ( /services/personal-care ) - Bathing assistance - Grooming - Mobility
+support - Meal assistance - Medication reminders
+B. Home Nursing Services ( /services/home-nursing ) - Wound care - Injection administration - IV
+therapy - Vital signs monitoring - Post-operative care
+C. Elder Care ( /services/elder-care ) - Companionship - Daily living assistance - Dementia care -
+Alzheimer's support - Stroke recovery
+D. Patient Care ( /services/patient-care ) - Bedridden patient care - Chronic illness management -
+Palliative care - Rehabilitation support
+E. Child Care Services ( /services/child-care ) - Infant care - Special needs children - Post-surgery
+care - Nutritious meals - Development activities - Medicine reminders
+F. Day Care Services ( /services/day-care ) - Full day care (24 hours) - Rest & health monitoring -
+Timely meals - Health supervision - Activity programs
+Each service page includes: - Detailed description - What's included - Pricing starting from - Booking CTA
+- Related services
+4️⃣ SPECIALTIES PAGE ( /specialties )
+Special Care Services: 1. Post Surgery Care 2. Bedridden Patient Care 3. Dementia Care 4. Stroke
+Recovery Care 5. Palliative Care 6. Alzheimer's Support
+Each specialty includes: - Condition overview - Our approach - Care plan details - Success stories -
+Expert team info
+5️⃣ WHO WE SERVE ( /who-we-serve )
+Target audiences: - Senior Citizens - Patients recovering from surgery - Children with special needs -
+Disabled Individuals - Chronic Illness Patients - Families Seeking Home Care
+
+===== PAGE 6 =====
+6️⃣ PACKAGES PAGE ( /packages )
+Package Cards: 1. Hourly Care - Minimum 4 hours - Flexible scheduling - ₹XXX per hour
+Daily Care
+8-12 hours coverage
+Day/night shifts
+₹XXX per day
+Weekly Care
+7-day support
+Weekly health reports
+₹XXX per week
+Monthly Care
+Complete home healthcare
+Dedicated staff
+₹XXX per month
+Custom Plans
+Tailored to needs
+Consultation required
+Get quote
+Each package shows: - What's included - Staff assignment - Support hours - Compare packages feature -
+"Book Now" CTA
+7️⃣ GALLERY PAGE ( /gallery )
+Categories: 1. Facilities - Care environment photos - Equipment
+Daily Activities
+Patient care moments
+Exercise sessions
+Meal times
+Care Programs
+Therapy sessions
+Special care
+1. 
+◦ 
+◦ 
+◦ 
+2. 
+◦ 
+◦ 
+◦ 
+3. 
+◦ 
+◦ 
+◦ 
+4. 
+◦ 
+◦ 
+◦ 
+1. 
+◦ 
+◦ 
+◦ 
+2. 
+◦ 
+◦ 
+
+===== PAGE 7 =====
+Events
+Celebrations
+Health camps
+Our Team
+Staff photos
+Team in action
+Day Care Environment
+Day care facilities
+Activity areas
+Gallery features: - Masonry grid layout - Lightbox view - Category filters - Load more pagination
+8️⃣ TEAM PAGE ( /team )
+Team Members: 1. Doctors - Profile cards with specialization
+Nurses
+Qualifications
+Experience
+Caregivers
+Certifications
+Languages spoken
+Physiotherapists
+Specializations
+Support Staff
+Roles
+Each profile shows: - Photo - Name - Designation - Qualifications - Experience - Languages
+3. 
+◦ 
+◦ 
+4. 
+◦ 
+◦ 
+5. 
+◦ 
+◦ 
+1. 
+◦ 
+◦ 
+2. 
+◦ 
+◦ 
+3. 
+◦ 
+4. 
+◦ 
+
+===== PAGE 8 =====
+9️⃣ STORIES/TESTIMONIALS PAGE ( /stories )
+Content: 1. Success Stories - Patient recovery journeys - Before/after care impact
+Family Reviews
+Written testimonials
+Star ratings
+Service used
+Patient Experience
+Video testimonials (optional)
+Photo testimonials
+Features: - Filter by service type - Verified reviews badge - Share stories
+🔟 CONTACT PAGE ( /contact )
+Sections: 1. Contact Form - Name, Email, Phone - Service interested in - Message - Preferred contact
+time
+Contact Information
+Phone: +91 9959388374
+WhatsApp: Click to chat
+Email: info@dhrishta.com
+Address: Near Reliance Smart Point, Bypass Road, Murakambattu, Chittoor - 517127
+(AP)
+Google Maps Embed
+Office location
+Service Areas
+Cities/areas covered
+Pincode checker
+Business Hours
+24/7 availability
+Office hours
+Quick Actions
+Request callback
+1. 
+◦ 
+◦ 
+◦ 
+2. 
+◦ 
+◦ 
+1. 
+◦ 
+◦ 
+◦ 
+◦ 
+2. 
+◦ 
+3. 
+◦ 
+◦ 
+4. 
+◦ 
+◦ 
+5. 
+◦ 
+
+===== PAGE 9 =====
+Book emergency service
+Download brochure
+1️⃣1️⃣ BOOKING/CONSULTATION PAGE ( /book-consultation )
+Multi-step Form:
+Step 1: Service Selection - Select service type - Select package (hourly/daily/weekly/monthly) - Choose
+specialty if needed
+Step 2: Patient Details - Patient name - Age - Gender - Medical condition - Special requirements
+Step 3: Contact Information - Your name - Relationship to patient - Phone number - Email - Address -
+Pincode (service area check)
+Step 4: Schedule - Preferred start date - Time slot - Duration - Urgency level (normal/urgent)
+Step 5: Staff Preference (Optional) - Gender preference - Language preference - Experience level
+Step 6: Review & Confirm - Summary of selection - Estimated cost - Terms acceptance
+Step 7: Payment (Optional - or pay later) - Advance booking amount - Payment methods: Card/UPI/Net
+Banking - "Book Now" confirmation
+Booking Confirmation: - Booking ID - Confirmation email/SMS - WhatsApp confirmation - Next steps -
+Contact person details
+1️⃣2️⃣ ADDITIONAL PAGES
+/faq
+Common questions
+Service FAQs
+Booking FAQs
+Payment FAQs
+Cancellation policy
+/careers
+Job openings
+Join our team
+Application form
+Benefits of working
+◦ 
+◦ 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+
+===== PAGE 10 =====
+/blog (Optional)
+Healthcare tips
+Elder care articles
+Patient care guides
+Company updates
+/privacy-policy
+Data collection
+Privacy practices
+Cookie policy
+/terms-conditions
+Service terms
+Booking terms
+Cancellation policy
+Refund policy
+/emergency
+Emergency request form
+Quick contact
+Immediate assistance
+🎨 DESIGN SYSTEM
+Color Palette (From Poster)
+Primary (Navy Blue): #1a3a6b
+Secondary (Teal): #2d8b8b
+Accent (Red): #d32f2f
+Success (Green): #2e7d32
+Warning (Orange): #f57c00
+Pink (Child Care): #c2185b
+Purple (Day Care): #7b1fa2
+Neutrals:
+- Background: #ffffff
+- Light Gray: #f5f5f5
+- Dark Text: #212121
+- Light Text: #757575
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+
+===== PAGE 11 =====
+Typography
+Primary Font: Manrope (Headings) Secondary Font: Inter (Body text) Accent Font: Crimson Text
+(Taglines - optional)
+Component Styles
+Buttons: Pill-shaped with hover effects
+Cards: Soft shadows, rounded corners
+Forms: Clean, accessible inputs
+Icons: Lucide React + Font Awesome
+Animations: Smooth transitions, fade-in effects
+🗂️ FRONTEND FILE STRUCTURE
+/app/frontend/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── images/
+│       ├── logo.png
+│       ├── hero-banner.jpg
+│       └── team/
+├── src/
+│   ├── index.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.css
+│   │
+│   ├── components/
+│   │   ├── ui/                    # Shadcn components
+│   │   │   ├── button.jsx
+│   │   │   ├── card.jsx
+│   │   │   ├── input.jsx
+│   │   │   ├── select.jsx
+│   │   │   ├── dialog.jsx
+│   │   │   ├── accordion.jsx
+│   │   │   ├── carousel.jsx
+│   │   │   └── ...
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── MobileMenu.jsx
+│   │   │   └── PageHeader.jsx
+│   │   │
+│   │   ├── home/
+│   │   │   ├── HeroSection.jsx
+│   │   │   ├── StatsSection.jsx
+• 
+• 
+• 
+• 
+• 
+
+===== PAGE 12 =====
+│   │   │   ├── ServicesOverview.jsx
+│   │   │   ├── WhyChooseUs.jsx
+│   │   │   ├── HowItWorks.jsx
+│   │   │   ├── PackagesPreview.jsx
+│   │   │   ├── Testimonials.jsx
+│   │   │   └── EmergencyBanner.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   ├── ServiceCard.jsx
+│   │   │   ├── ServiceDetail.jsx
+│   │   │   └── ServiceCategories.jsx
+│   │   │
+│   │   ├── booking/
+│   │   │   ├── BookingForm.jsx
+│   │   │   ├── StepIndicator.jsx
+│   │   │   ├── ServiceSelection.jsx
+│   │   │   ├── PatientDetails.jsx
+│   │   │   ├── ContactInfo.jsx
+│   │   │   ├── Schedule.jsx
+│   │   │   ├── StaffPreference.jsx
+│   │   │   ├── ReviewConfirm.jsx
+│   │   │   ├── Payment.jsx
+│   │   │   └── BookingSuccess.jsx
+│   │   │
+│   │   ├── packages/
+│   │   │   ├── PackageCard.jsx
+│   │   │   └── PackageComparison.jsx
+│   │   │
+│   │   ├── gallery/
+│   │   │   ├── GalleryGrid.jsx
+│   │   │   ├── ImageCard.jsx
+│   │   │   ├── Lightbox.jsx
+│   │   │   └── CategoryFilter.jsx
+│   │   │
+│   │   ├── team/
+│   │   │   ├── TeamGrid.jsx
+│   │   │   └── TeamMemberCard.jsx
+│   │   │
+│   │   ├── contact/
+│   │   │   ├── ContactForm.jsx
+│   │   │   ├── ContactInfo.jsx
+│   │   │   ├── MapEmbed.jsx
+│   │   │   └── ServiceAreaChecker.jsx
+│   │   │
+│   │   ├── chatbot/
+│   │   │   ├── ChatWidget.jsx
+│   │   │   ├── ChatWindow.jsx
+│   │   │   └── ChatMessage.jsx
+│   │   │
+│   │   └── common/
+│   │       ├── FloatingWhatsApp.jsx
+│   │       ├── CallButton.jsx
+│   │       ├── LoadingSpinner.jsx
+│   │       ├── ErrorBoundary.jsx
+│   │       └── ScrollToTop.jsx
+│   │
+│   ├── pages/
+
+===== PAGE 13 =====
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Services.jsx
+│   │   ├── ServiceDetail.jsx
+│   │   ├── Specialties.jsx
+│   │   ├── WhoWeServe.jsx
+│   │   ├── Packages.jsx
+│   │   ├── Gallery.jsx
+│   │   ├── Team.jsx
+│   │   ├── Stories.jsx
+│   │   ├── Contact.jsx
+│   │   ├── BookConsultation.jsx
+│   │   ├── FAQ.jsx
+│   │   ├── Careers.jsx
+│   │   ├── Blog.jsx
+│   │   ├── Emergency.jsx
+│   │   ├── PrivacyPolicy.jsx
+│   │   ├── TermsConditions.jsx
+│   │   └── NotFound.jsx
+│   │
+│   ├── admin/                     # Admin portal
+│   │   ├── pages/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Bookings.jsx
+│   │   │   ├── Staff.jsx
+│   │   │   ├── Patients.jsx
+│   │   │   ├── Analytics.jsx
+│   │   │   ├── Gallery.jsx
+│   │   │   └── Settings.jsx
+│   │   ├── components/
+│   │   │   ├── AdminSidebar.jsx
+│   │   │   ├── BookingTable.jsx
+│   │   │   ├── StaffTable.jsx
+│   │   │   └── StatCards.jsx
+│   │   └── AdminLayout.jsx
+│   │
+│   ├── context/
+│   │   ├── AuthContext.jsx
+│   │   ├── BookingContext.jsx
+│   │   └── ChatContext.jsx
+│   │
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   ├── useBooking.js
+│   │   ├── useToast.js
+│   │   └── useWhatsApp.js
+│   │
+│   ├── services/
+│   │   ├── api.js                # Axios instance
+│   │   ├── authService.js
+│   │   ├── bookingService.js
+│   │   ├── serviceService.js
+│   │   ├── chatService.js
+│   │   └── paymentService.js
+│   │
+│   ├── utils/
+│   │   ├── constants.js
+
+===== PAGE 14 =====
+│   │   ├── helpers.js
+│   │   ├── validation.js
+│   │   └── formatters.js
+│   │
+│   └── assets/
+│       ├── images/
+│       └── icons/
+🔧 BACKEND FILE STRUCTURE
+/app/backend/
+├── server.py                      # Main FastAPI app
+├── requirements.txt
+├── .env
+│
+├── models/
+│   ├── user.py
+│   ├── booking.py
+│   ├── service.py
+│   ├── package.py
+│   ├── staff.py
+│   ├── patient.py
+│   ├── testimonial.py
+│   ├── gallery.py
+│   ├── contact.py
+│   └── chat.py
+│
+├── routes/
+│   ├── auth.py                    # Login, register, JWT
+│   ├── bookings.py                # Booking CRUD
+│   ├── services.py                # Services endpoints
+│   ├── packages.py                # Package endpoints
+│   ├── staff.py                   # Staff management
+│   ├── patients.py                # Patient records
+│   ├── testimonials.py            # Reviews
+│   ├── gallery.py                 # Gallery images
+│   ├── contact.py                 # Contact form
+│   ├── chat.py                    # AI chatbot
+│   ├── payments.py                # Stripe integration
+│   ├── whatsapp.py                # WhatsApp API
+│   ├── sms.py                     # Twilio SMS
+│   ├── email.py                   # Email service
+│   └── admin.py                   # Admin analytics
+│
+├── utils/
+│   ├── database.py                # MongoDB connection
+│   ├── auth_utils.py              # JWT helpers
+│   ├── validators.py              # Input validation
+│   ├── helpers.py                 # Common functions
+│   └── constants.py
+│
+├── services/
+
+===== PAGE 15 =====
+│   ├── ai_service.py              # AI chatbot logic
+│   ├── payment_service.py         # Stripe handlers
+│   ├── notification_service.py    # Email/SMS/WhatsApp
+│   ├── booking_service.py         # Booking logic
+│   └── storage_service.py         # Object storage
+│
+└── middleware/
+    ├── auth_middleware.py
+    ├── cors_middleware.py
+    └── error_handler.py
+🗄️ DATABASE SCHEMA (MongoDB Collections)
+1. users (Admin/Staff login)
+{
+"_id": "ObjectId",
+"email": "string",
+"password": "hashed_string",
+"role": "admin | staff | manager",
+"name": "string",
+"phone": "string",
+"created_at": "datetime",
+"last_login": "datetime",
+"is_active": "boolean"
+}
+2. bookings
+{
+"_id": "ObjectId",
+"booking_id": "BK20250115001",
+"service_type": "string",
+"package_type": "hourly | daily | weekly | monthly | custom",
+"specialty": "string",
+"patient_info": {
+"name": "string",
+"age": "number",
+"gender": "string",
+"medical_condition": "string",
+"special_requirements": "string"
+},
+"contact_info": {
+"name": "string",
+"relationship": "string",
+"phone": "string",
+"email": "string",
+"address": "string",
+
+===== PAGE 16 =====
+"pincode": "string"
+},
+"schedule": {
+"start_date": "date",
+"time_slot": "string",
+"duration": "string",
+"urgency": "normal | urgent"
+},
+"staff_preference": {
+"gender": "string",
+"language": "string",
+"experience_level": "string"
+},
+"assigned_staff_id": "ObjectId",
+"status": "pending | confirmed | in_progress | completed | cancelled",
+"payment": {
+"amount": "number",
+"advance_paid": "number",
+"payment_status": "pending | paid | partial",
+"payment_method": "string",
+"transaction_id": "string"
+},
+"created_at": "datetime",
+"updated_at": "datetime",
+"notes": "string"
+}
+3. services
+{
+"_id": "ObjectId",
+"name": "string",
+"slug": "string",
+"category": "personal_care | nursing | elder_care | patient_care | child_care | day_care",
+"description": "string",
+"features": ["array of strings"],
+"pricing_starts_from": "number",
+"icon": "string",
+"image_url": "string",
+"is_active": "boolean",
+"display_order": "number"
+}
+4. packages
+{
+"_id": "ObjectId",
+
+===== PAGE 17 =====
+"name": "string",
+"type": "hourly | daily | weekly | monthly | custom",
+"description": "string",
+"price": "number",
+"duration": "string",
+"features": ["array"],
+"what_included": ["array"],
+"staff_assignment": "string",
+"support_hours": "string",
+"popular": "boolean",
+"display_order": "number"
+}
+5. staff
+{
+"_id": "ObjectId",
+"name": "string",
+"designation": "doctor | nurse | caregiver | physiotherapist | support_staff",
+"qualifications": "string",
+"experience_years": "number",
+"languages": ["array"],
+"gender": "string",
+"phone": "string",
+"email": "string",
+"photo_url": "string",
+"specializations": ["array"],
+"certifications": ["array"],
+"availability_status": "available | assigned | on_leave",
+"rating": "number",
+"is_active": "boolean"
+}
+6. patients (Records)
+{
+"_id": "ObjectId",
+"booking_id": "ObjectId",
+"name": "string",
+"age": "number",
+"gender": "string",
+"medical_history": "string",
+"current_medications": ["array"],
+"allergies": ["array"],
+"emergency_contact": {
+"name": "string",
+"phone": "string",
+"relationship": "string"
+},
+"care_notes": ["array of notes with timestamps"],
+"created_at": "datetime"
+}
+
+===== PAGE 18 =====
+7. testimonials
+{
+"_id": "ObjectId",
+"customer_name": "string",
+"service_used": "string",
+"rating": "number (1-5)",
+"review": "string",
+"photo_url": "string",
+"is_verified": "boolean",
+"is_featured": "boolean",
+"created_at": "datetime",
+"status": "pending | approved | rejected"
+}
+8. gallery
+{
+"_id": "ObjectId",
+"title": "string",
+"image_url": "string",
+"category": "facilities | daily_activities | care_programs | events | team | day_care",
+"description": "string",
+"display_order": "number",
+"is_active": "boolean",
+"uploaded_at": "datetime"
+}
+9. contacts (Inquiries)
+{
+"_id": "ObjectId",
+"name": "string",
+"email": "string",
+"phone": "string",
+"service_interested": "string",
+"message": "string",
+"preferred_contact_time": "string",
+"status": "new | contacted | converted | closed",
+"created_at": "datetime",
+"notes": "string"
+}
+10. chat_conversations
+{
+"_id": "ObjectId",
+"session_id": "string",
+"user_phone": "string",
+"messages": [
+
+===== PAGE 19 =====
+{
+"role": "user | assistant",
+"content": "string",
+"timestamp": "datetime"
+}
+],
+"status": "active | ended",
+"created_at": "datetime",
+"updated_at": "datetime"
+}
+11. team_members
+{
+"_id": "ObjectId",
+"name": "string",
+"designation": "string",
+"role_category": "leadership | medical | support",
+"photo_url": "string",
+"bio": "string",
+"qualifications": "string",
+"experience": "string",
+"specialization": "string",
+"display_order": "number",
+"is_active": "boolean"
+}
+🔌 API ENDPOINTS STRUCTURE
+Public APIs (No Auth Required)
+Services
+GET /api/services - Get all services
+GET /api/services/:slug - Get service details
+GET /api/services/category/:category - Services by category
+Packages
+GET /api/packages - Get all packages
+GET /api/packages/:id - Package details
+Booking
+POST /api/bookings - Create new booking
+GET /api/bookings/check-availability - Check staff availability
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+
+===== PAGE 20 =====
+POST /api/bookings/check-service-area - Verify pincode coverage
+Contact
+POST /api/contact - Submit contact form
+POST /api/contact/callback - Request callback
+POST /api/emergency - Emergency request
+Gallery
+GET /api/gallery - Get all gallery images
+GET /api/gallery/:category - Images by category
+Team
+GET /api/team - Get all team members
+GET /api/team/:id - Team member details
+Testimonials
+GET /api/testimonials - Get approved testimonials
+GET /api/testimonials/featured - Featured reviews
+Chatbot
+POST /api/chat - AI chatbot conversation
+GET /api/chat/session/:session_id - Get chat history
+Payments
+POST /api/payments/create-intent - Create Stripe payment intent
+POST /api/payments/webhook - Stripe webhook
+WhatsApp
+POST /api/whatsapp/send - Send WhatsApp message
+POST /api/whatsapp/webhook - WhatsApp webhook
+Notifications
+POST /api/notifications/sms - Send SMS
+POST /api/notifications/email - Send email
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+
+===== PAGE 21 =====
+Admin APIs (Auth Required - JWT)
+Authentication
+POST /api/auth/login - Admin login
+POST /api/auth/logout - Logout
+GET /api/auth/me - Get current user
+Bookings Management
+GET /api/admin/bookings - Get all bookings
+GET /api/admin/bookings/:id - Booking details
+PUT /api/admin/bookings/:id - Update booking
+DELETE /api/admin/bookings/:id - Cancel booking
+POST /api/admin/bookings/:id/assign-staff - Assign staff
+Staff Management
+GET /api/admin/staff - Get all staff
+POST /api/admin/staff - Add new staff
+PUT /api/admin/staff/:id - Update staff
+DELETE /api/admin/staff/:id - Remove staff
+GET /api/admin/staff/available - Available staff
+Patient Records
+GET /api/admin/patients - All patients
+GET /api/admin/patients/:id - Patient details
+PUT /api/admin/patients/:id - Update patient record
+POST /api/admin/patients/:id/notes - Add care note
+Gallery Management
+POST /api/admin/gallery - Upload image
+PUT /api/admin/gallery/:id - Update image
+DELETE /api/admin/gallery/:id - Delete image
+Testimonials Management
+GET /api/admin/testimonials - All testimonials
+PUT /api/admin/testimonials/:id/approve - Approve review
+DELETE /api/admin/testimonials/:id - Delete review
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+
+===== PAGE 22 =====
+Analytics
+GET /api/admin/analytics/dashboard - Dashboard stats
+GET /api/admin/analytics/bookings - Booking trends
+GET /api/admin/analytics/revenue - Revenue reports
+GET /api/admin/analytics/services - Popular services
+Contacts Management
+GET /api/admin/contacts - All inquiries
+PUT /api/admin/contacts/:id - Update inquiry status
+🎯 KEY FEATURES IMPLEMENTATION
+1. AI Chatbot
+Location: Floating widget bottom-right
+Triggers: Auto-open after 10 seconds, or click icon
+Capabilities:
+Answer service questions
+Check availability
+Guide booking process
+Emergency escalation
+Multilingual (English/Hindi)
+2. WhatsApp Integration
+Floating button: Green WhatsApp icon
+Auto-messages: Booking confirmations, reminders
+Two-way chat: Customers can inquire via WhatsApp
+3. SMS Notifications (Twilio)
+Booking confirmation
+Staff assignment notification
+24-hour reminder
+Care schedule updates
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+
+===== PAGE 23 =====
+4. Email Automation
+Welcome email
+Booking confirmation with details
+Care plan PDF
+Feedback request after service
+5. Payment Gateway (Stripe)
+Methods: Card, UPI, Net Banking
+Flow: Optional advance payment or pay later
+Security: PCI compliant
+Invoicing: Auto-generated invoices
+6. Admin Dashboard
+Real-time booking stats
+Revenue tracking
+Staff availability
+Pending inquiries
+Recent activities
+7. Service Area Checker
+Pincode validation
+Coverage map
+"We don't serve your area" message with alternative
+8. Multi-language Support
+English (default)
+Hindi (toggle in header)
+Apply to all content
+9. Emergency Request System
+Quick form (phone + urgency)
+Immediate notification to admin
+SMS/call to emergency team
+Priority handling
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+
+===== PAGE 24 =====
+📱 RESPONSIVE DESIGN
+Breakpoints:
+Mobile: < 640px
+Tablet: 640px - 1024px
+Desktop: > 1024px
+Mobile Optimizations:
+Hamburger menu
+Click-to-call buttons
+WhatsApp quick action
+Simplified forms (multi-step)
+Touch-friendly buttons (min 44px)
+Sticky CTA buttons
+⚡ PERFORMANCE OPTIMIZATIONS
+Image Optimization:
+WebP format
+Lazy loading
+Responsive images (srcset)
+Code Splitting:
+Route-based splitting
+Lazy load admin panel
+Caching:
+Service Worker (optional PWA)
+API response caching
+Static asset caching
+SEO:
+Meta tags
+Open Graph tags
+Structured data (Schema.org)
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+1. 
+◦ 
+◦ 
+◦ 
+2. 
+◦ 
+◦ 
+3. 
+◦ 
+◦ 
+◦ 
+4. 
+◦ 
+◦ 
+◦ 
+
+===== PAGE 25 =====
+Sitemap.xml
+robots.txt
+🔒 SECURITY MEASURES
+Backend:
+JWT authentication
+Password hashing (bcrypt)
+Input validation & sanitization
+Rate limiting
+CORS configuration
+Environment variables
+Frontend:
+Secure API calls (HTTPS)
+XSS protection
+CSRF tokens
+No sensitive data in localStorage
+Database:
+MongoDB authentication
+Connection string in .env
+Data validation
+Regular backups
+🚀 DEPLOYMENT CHECKLIST
+Environment Variables:
+Frontend (.env):
+REACT_APP_BACKEND_URL=<production_url>
+REACT_APP_STRIPE_PUBLIC_KEY=<key>
+REACT_APP_WHATSAPP_NUMBER=+919959388374
+Backend (.env):
+◦ 
+◦ 
+1. 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+◦ 
+2. 
+◦ 
+◦ 
+◦ 
+◦ 
+3. 
+◦ 
+◦ 
+◦ 
+◦ 
+
+===== PAGE 26 =====
+MONGO_URL=<connection_string>
+DB_NAME=dhrishta_healthcare
+JWT_SECRET=<secret>
+STRIPE_SECRET_KEY=<key>
+TWILIO_ACCOUNT_SID=<sid>
+TWILIO_AUTH_TOKEN=<token>
+TWILIO_WHATSAPP_NUMBER=<number>
+RESEND_API_KEY=<key>
+AI_MODEL_API_KEY=<emergent_llm_key>
+OBJECT_STORAGE_KEY=<key>
+📊 ANALYTICS TRACKING
+Google Analytics: Page views, conversions
+Hotjar/Clarity: User behavior, heatmaps
+Internal Analytics:
+Booking conversion rate
+Popular services
+Drop-off points in booking flow
+Average response time
+🔄 FUTURE ENHANCEMENTS (Phase 2)
+Mobile app (React Native)
+Video consultation feature
+Live chat with staff
+Patient portal (login & track care)
+Subscription model for long-term care
+Referral program
+Blog with healthcare articles
+Multi-city expansion
+AI-powered staff matching
+Health monitoring device integration
+• 
+• 
+• 
+◦ 
+◦ 
+◦ 
+◦ 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+
+===== PAGE 27 =====
+✅ DEVELOPMENT PHASES
+Phase 1 - MVP (Current)
+Core website (all pages)
+Booking system
+Admin dashboard
+AI chatbot
+WhatsApp/SMS/Email integration
+Payment gateway
+Gallery & testimonials
+Phase 2 - Advanced Features
+Patient portal
+Video consultation
+Advanced analytics
+Mobile app
+Subscription plans
+Phase 3 - Scale
+Multi-location support
+Franchisee management
+ERP integration
+Advanced reporting
+📝 CONCLUSION
+This structure provides a complete, production-ready healthcare services platform with: - ✅
+Professional website (12+ pages) - ✅ Advanced booking system - ✅ AI-powered chatbot - ✅ Multi-
+channel notifications (WhatsApp, SMS, Email) - ✅ Payment integration - ✅ Admin management portal -
+✅ Mobile responsive - ✅ SEO optimized - ✅ Scalable architecture
+Next Steps: 1. Review this structure 2. Confirm integrations (AI model, payment, etc.) 3. Start
+implementation with design guidelines 4. Build & test 5. Deploy to production
+Ready to build this? Let me know your confirmation and preferred choices! 🚀
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+

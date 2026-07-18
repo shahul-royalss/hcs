@@ -1,0 +1,51 @@
+version: "3.9"
+
+# Dhrishta Healthcare Services — full stack
+# Usage: docker compose up --build
+services:
+  mongo:
+    image: mongo:7
+    container_name: dhrishta-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    container_name: dhrishta-backend
+    restart: unless-stopped
+    environment:
+      MONGO_URL: mongodb://mongo:27017
+      DB_NAME: dhrishta_healthcare
+      CORS_ORIGINS: http://localhost:3000,http://localhost:8080
+      # Set real secrets in a .env file or your orchestrator — never commit them
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID:-}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN:-}
+      TWILIO_WHATSAPP_NUMBER: ${TWILIO_WHATSAPP_NUMBER:-}
+      TWILIO_SMS_NUMBER: ${TWILIO_SMS_NUMBER:-}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      AI_MODEL_API_KEY: ${AI_MODEL_API_KEY:-}
+    depends_on:
+      mongo:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    container_name: dhrishta-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+
+volumes:
+  mongo_data:

@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1a3a6b;
+  --color-secondary: #2d8b8b;
+  --color-accent: #d32f2f;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-ink bg-white antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-primary;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-14 md:py-20;
+  }
+  .tagline {
+    @apply font-accent italic text-secondary;
+  }
+  /* Pill-shaped buttons are the default per the design system */
+  .btn-pill {
+    @apply rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Accessible focus outline */
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Simple scrollbar polish */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5cfdd;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
