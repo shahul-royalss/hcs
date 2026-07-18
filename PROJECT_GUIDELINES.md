@@ -85,8 +85,8 @@ hcs/
     ├── routes/                   # Public routers under /api, admin under /api/admin
     ├── services/                 # ai, payment, notification, booking, storage logic
     ├── middleware/               # auth (JWT), CORS, error handler, rate limit
-    ├── utils/                    # database (lazy Motor), auth_utils, validators,
-    │                             #  helpers, constants
+    ├── utils/                    # config (pydantic-settings), database (lazy Motor),
+    │                             #  auth_utils, validators, helpers, constants
     └── scripts/seed_data.py      # Idempotent demo-content + admin-user seeding
 ```
 
