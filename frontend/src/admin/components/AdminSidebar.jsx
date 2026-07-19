@@ -10,6 +10,7 @@ import {
   Users,
   X,
 } from 'lucide-react'
+import Logo from '@/components/common/Logo'
 import { cn } from '@/utils/cn'
 
 const NAV_ITEMS = [
@@ -26,7 +27,7 @@ function SidebarContent({ onNavigate }) {
   return (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-3 px-5 py-5">
-        <img src="/images/logo.svg" alt="Dhrishta Healthcare Services" className="h-9 w-auto" />
+        <Logo className="h-9 w-auto" />
         <span className="font-heading text-sm font-bold text-primary">Admin Portal</span>
       </div>
 

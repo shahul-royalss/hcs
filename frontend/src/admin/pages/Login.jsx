@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { LogIn, ShieldCheck } from 'lucide-react'
+import Logo from '@/components/common/Logo'
 import Seo from '@/components/common/Seo'
 import LoadingSpinner from '@/components/common/LoadingSpinner'
 import { Card } from '@/components/ui/card'
@@ -47,7 +48,7 @@ export default function Login() {
       <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary to-secondary-700 p-4">
         <Card className="w-full max-w-md p-8">
           <div className="mb-6 text-center">
-            <img src="/images/logo.svg" alt="Dhrishta Healthcare Services" className="mx-auto h-12 w-auto" />
+            <Logo className="mx-auto h-12 w-auto" />
             <h1 className="mt-4 font-heading text-2xl font-bold text-primary">Admin Portal</h1>
             <p className="mt-1 text-sm text-ink-light">Sign in to manage bookings, staff and patients</p>
           </div>

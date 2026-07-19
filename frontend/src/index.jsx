@@ -7,6 +7,7 @@ import { AuthProvider } from './context/AuthContext'
 import { BookingProvider } from './context/BookingContext'
 import { ChatProvider } from './context/ChatContext'
 import { LanguageProvider } from './context/LanguageContext'
+import { ThemeProvider } from './context/ThemeContext'
 import { ToastProvider } from './hooks/useToast'
 import { initAnalytics } from './utils/analytics'
 import './index.css'
@@ -17,8 +18,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ErrorBoundary>
       <BrowserRouter>
-        <LanguageProvider>
-          <ToastProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <ToastProvider>
             <AuthProvider>
               <BookingProvider>
                 <ChatProvider>
@@ -26,8 +28,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 </ChatProvider>
               </BookingProvider>
             </AuthProvider>
-          </ToastProvider>
-        </LanguageProvider>
+            </ToastProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </BrowserRouter>
     </ErrorBoundary>
   </React.StrictMode>

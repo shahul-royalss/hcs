@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube, Clock } from 'lucide-react'
+import Logo from '@/components/common/Logo'
 import { siteConfig } from '@/data/siteConfig'
 import { services } from '@/data/services'
 import { useLanguage } from '@/hooks/useLanguage'
@@ -26,7 +27,7 @@ export default function Footer() {
       <div className="container-site grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         {/* Company info */}
         <div>
-          <img src="/images/logo.svg" alt={siteConfig.name} className="h-11 w-auto rounded-lg bg-white p-1.5" />
+          <Logo variant="dark" className="h-11 w-auto" />
           <p className="tagline mt-4 text-white/90">{siteConfig.tagline}</p>
           <p className="mt-3 text-sm leading-relaxed text-white/70">{t('footer.blurb')}</p>
           <div className="mt-5 flex gap-3">

@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { X, Phone, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import Logo from '@/components/common/Logo'
 import { siteConfig } from '@/data/siteConfig'
 import { telLink } from '@/utils/helpers'
 import { useWhatsApp } from '@/hooks/useWhatsApp'
@@ -48,7 +49,7 @@ export default function MobileMenu({ open, onClose }) {
             aria-label="Mobile navigation"
           >
             <div className="flex items-center justify-between border-b border-slate-100 p-4">
-              <img src="/images/logo.svg" alt={siteConfig.name} className="h-9 w-auto" />
+              <Logo className="h-9 w-auto" />
               <button
                 type="button"
                 onClick={onClose}

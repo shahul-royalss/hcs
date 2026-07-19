@@ -12,6 +12,17 @@
     <meta name="keywords" content="home healthcare, home nursing, elder care, patient care, child care, day care, Chittoor, Dhrishta" />
     <meta name="theme-color" content="#1a3a6b" />
 
+    <!-- Apply the saved/system theme before first paint to avoid a flash -->
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('dhrishta_theme')
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+          if (dark) document.documentElement.classList.add('dark')
+        } catch (e) {}
+      })()
+    </script>
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dhrishta Healthcare Services" />

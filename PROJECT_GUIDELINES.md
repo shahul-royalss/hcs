@@ -147,6 +147,17 @@ hcs/
 - **Analytics:** `utils/analytics.js` injects GA4 + Microsoft Clarity only when
   `VITE_GA_ID` / `VITE_CLARITY_ID` are set (no-op in dev). Internal analytics live
   in the admin portal.
+- **Dark mode:** class-based (`dark` on `<html>`), controlled by `ThemeContext` +
+  the `ThemeToggle` (🌙/☀️) beside the language selector (public navbar and admin
+  top bar). First visit follows the system preference (and tracks live system
+  changes); an explicit toggle persists to localStorage; a pre-hydration script in
+  `index.html` applies the class before first paint. Styling comes from the
+  dark-theme remap block at the bottom of `index.css`, which restyles the
+  recurring surface utilities (`bg-white`, `bg-surface`, tints, borders, text
+  tokens) — when adding new UI, stick to those existing tokens and dark mode
+  works automatically; if you introduce a new light-only utility, add a matching
+  `.dark` override to the same block. Gradient bands and `text-white` sections
+  need no changes.
 
 ## 5. Backend Conventions
 

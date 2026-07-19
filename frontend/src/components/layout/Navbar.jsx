@@ -3,6 +3,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, Phone, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import LanguageSelector from '@/components/common/LanguageSelector'
+import Logo from '@/components/common/Logo'
+import ThemeToggle from '@/components/common/ThemeToggle'
 import MobileMenu from './MobileMenu'
 import { siteConfig } from '@/data/siteConfig'
 import { telLink } from '@/utils/helpers'
@@ -50,7 +52,7 @@ export default function Navbar() {
       <div className="container-site flex h-16 items-center justify-between gap-4 md:h-[72px]">
         {/* Logo */}
         <Link to="/" aria-label={`${siteConfig.name} — Home`} className="flex shrink-0 items-center">
-          <img src="/images/logo.svg" alt={siteConfig.name} className="h-10 w-auto md:h-11" />
+          <Logo className="h-10 w-auto md:h-11" />
         </Link>
 
         {/* Desktop menu */}
@@ -75,6 +77,7 @@ export default function Navbar() {
         {/* Desktop CTAs */}
         <div className="hidden items-center gap-2 lg:flex">
           <LanguageSelector />
+          <ThemeToggle />
           <a
             href={telLink(siteConfig.phone)}
             className="inline-flex h-10 items-center gap-1.5 rounded-full px-3 text-sm font-semibold text-accent transition-colors hover:bg-red-50"
@@ -96,9 +99,10 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile: language selector + hamburger */}
+        {/* Mobile: language selector + theme toggle + hamburger */}
         <div className="flex items-center gap-1 lg:hidden">
           <LanguageSelector compact />
+          <ThemeToggle compact />
           <button
             type="button"
             className="rounded-lg p-2 text-primary"

@@ -3,6 +3,7 @@ import { Navigate, Outlet, useNavigate } from 'react-router-dom'
 import { LogOut, Menu } from 'lucide-react'
 import { useAuth } from '@/hooks/useAuth'
 import LoadingSpinner from '@/components/common/LoadingSpinner'
+import ThemeToggle from '@/components/common/ThemeToggle'
 import AdminSidebar from '@/admin/components/AdminSidebar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -47,6 +48,7 @@ export default function AdminLayout() {
 
       <main className="min-h-screen bg-surface p-6 lg:pl-72">
         <div className="mb-6 flex flex-wrap items-center justify-end gap-3">
+          <ThemeToggle compact />
           <span className="text-sm font-medium text-ink">{user?.name || user?.email || 'Admin'}</span>
           <Badge variant="secondary">{titleCase(user?.role || 'admin')}</Badge>
           <Button variant="outline" size="sm" onClick={handleLogout}>
