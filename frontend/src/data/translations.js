@@ -1,9 +1,17 @@
 /**
- * UI translations for the header language toggle (architecture doc — Key Feature 8).
- * Phase 1 covers site chrome and high-visibility strings; long-form content
- * (service descriptions, blog articles) stays in English until translated copy
- * is approved. Keys missing from `hi` automatically fall back to `en`.
+ * UI translations for the header language selector (architecture doc — Key
+ * Feature 8, extended with Telugu for the Chittoor region). Phase 1 covers site
+ * chrome and high-visibility strings; long-form content (service descriptions,
+ * blog articles) stays in English until translated copy is approved. Keys
+ * missing from a language automatically fall back to `en`.
  */
+
+/** Languages offered by the header selector. */
+export const LANGUAGES = [
+  { code: 'en', label: 'English', short: 'EN' },
+  { code: 'hi', label: 'हिंदी', short: 'हिं' },
+  { code: 'te', label: 'తెలుగు', short: 'తె' },
+]
 
 export const translations = {
   en: {
@@ -108,5 +116,57 @@ export const translations = {
     'footer.terms': 'नियम एवं शर्तें',
     'footer.blurb':
       'पेशेवर होम हेल्थकेयर सेवाएं — प्रमाणित नर्सें, सत्यापित देखभालकर्ता और आपके प्रियजनों के लिए 24/7 सहायता।',
+  },
+
+  te: {
+    // Navigation
+    'nav.home': 'హోమ్',
+    'nav.about': 'మా గురించి',
+    'nav.services': 'సేవలు',
+    'nav.specialties': 'ప్రత్యేక సేవలు',
+    'nav.whoWeServe': 'మేము ఎవరికి సేవ చేస్తాం',
+    'nav.packages': 'ప్యాకేజీలు',
+    'nav.gallery': 'గ్యాలరీ',
+    'nav.team': 'మా బృందం',
+    'nav.stories': 'కథలు',
+    'nav.faq': 'తరచూ ప్రశ్నలు',
+    'nav.contact': 'సంప్రదించండి',
+    'nav.careers': 'కెరీర్లు',
+    // CTAs
+    'cta.callNow': 'ఇప్పుడే కాల్ చేయండి',
+    'cta.whatsapp': 'వాట్సాప్',
+    'cta.bookConsultation': 'సంప్రదింపు బుక్ చేయండి',
+    'cta.whatsappUs': 'వాట్సాప్ చేయండి',
+    'cta.learnMore': 'మరింత తెలుసుకోండి',
+    // Hero
+    'hero.badge': 'చిత్తూరులో విశ్వసనీయ హోమ్ హెల్త్‌కేర్',
+    'hero.headline1': 'మీ కుటుంబం...',
+    'hero.headline2': 'మా సంరక్షణ, మా బాధ్యత',
+    'hero.sub': 'ఇంటి వద్దే వృత్తిపరమైన ఆరోగ్య సేవలు',
+    'hero.support':
+      'మీ ఆత్మీయుల కోసం ప్రమాణీకృత నర్సులు మరియు నమ్మకమైన సంరక్షకులు — రోజంతా, మీ ఇంటి వద్దే.',
+    'hero.trust.nurses': 'ప్రమాణీకృత నర్సులు',
+    'hero.trust.caregivers': 'ధృవీకరించిన సంరక్షకులు',
+    'hero.trust.support': '24/7 సహాయం',
+    'hero.trust.assessment': 'ఉచిత అంచనా',
+    // Stats
+    'stats.families': 'సంతోషకరమైన కుటుంబాలు',
+    'stats.professionals': 'ఆరోగ్య నిపుణులు',
+    'stats.support': 'సహాయం',
+    'stats.experience': 'సంవత్సరాల అనుభవం',
+    // Emergency banner
+    'emergency.title': 'తక్షణ సంరక్షణ కావాలా?',
+    'emergency.sub': 'మా అత్యవసర బృందం 24/7 సిద్ధంగా ఉంది. ఒక్క కాల్‌తో వృత్తిపరమైన సంరక్షణ మీ ఇంటికి.',
+    'emergency.request': 'అత్యవసర అభ్యర్థన',
+    // Footer
+    'footer.quickLinks': 'త్వరిత లింకులు',
+    'footer.ourServices': 'మా సేవలు',
+    'footer.contactUs': 'సంప్రదించండి',
+    'footer.emergencyCare': 'అత్యవసర సంరక్షణ',
+    'footer.rights': 'సర్వ హక్కులు ప్రత్యేకించబడ్డాయి.',
+    'footer.privacy': 'గోప్యతా విధానం',
+    'footer.terms': 'నియమాలు & షరతులు',
+    'footer.blurb':
+      'వృత్తిపరమైన హోమ్ హెల్త్‌కేర్ సేవలు — ప్రమాణీకృత నర్సులు, ధృవీకరించిన సంరక్షకులు మరియు మీ ఆత్మీయుల కోసం 24/7 సహాయం.',
   },
 }

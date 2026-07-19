@@ -25,8 +25,9 @@ a trusted home healthcare provider in Chittoor, Andhra Pradesh, India.
 
 About Dhrishta:
 - Services: Personal Care, Home Nursing, Elder Care, Patient Care, Child Care, Day Care.
-- Packages: Hourly Care ₹249/hr (minimum 4 hours), Daily Care ₹1199/day,
-  Weekly Care ₹7499/week, Monthly Care ₹24999/month, and Custom plans (free assessment).
+- Packages: personalised Custom Care Plans — every family gets a free in-person
+  assessment and a tailored, transparent quote. Standard hourly/daily/weekly/monthly
+  packages are coming soon; do not quote fixed package prices.
 - Phone: {constants.COMPANY_PHONE} | Email: {constants.COMPANY_EMAIL}
 - Address: {constants.COMPANY_ADDRESS}
 - Service area: Chittoor and surrounding areas (Andhra Pradesh). Support hours: 24/7.
@@ -51,13 +52,12 @@ _FALLBACK_SERVICES = (
 )
 
 _FALLBACK_PRICING = (
-    "Our care packages:\n"
-    "- Hourly Care: ₹249/hour (minimum 4 hours)\n"
-    "- Daily Care: ₹1199/day (8-12 hours coverage)\n"
-    "- Weekly Care: ₹7499/week (supervisor visit included)\n"
-    "- Monthly Care: ₹24999/month (dedicated care team, best value)\n"
-    "- Custom Plans: free in-person assessment and a personalised quote\n"
-    f"To choose the right plan, call {constants.COMPANY_PHONE} — we're available 24/7."
+    "We currently offer personalised Custom Care Plans:\n"
+    "- Free in-person assessment of your loved one's needs\n"
+    "- A care plan tailored to condition, hours and staff type\n"
+    "- A transparent quote with no hidden charges\n"
+    "Standard hourly/daily/weekly/monthly packages are launching soon. "
+    f"To get your personalised quote, call {constants.COMPANY_PHONE} — we're available 24/7."
 )
 
 _FALLBACK_BOOKING = (

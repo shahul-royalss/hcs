@@ -1,11 +1,18 @@
-/** Care packages (architecture doc §6 Packages Page). */
+/**
+ * Care packages (architecture doc §6 Packages Page).
+ *
+ * Only packages with `active: true` are shown on the site. The standard plans
+ * (hourly/daily/weekly/monthly) are staged for a later launch — flip their
+ * flag to re-enable them everywhere (packages page, home preview, booking).
+ */
 
-export const packages = [
+const allPackages = [
   {
     id: 'hourly',
     type: 'hourly',
     name: 'Hourly Care',
     icon: 'Clock',
+    active: false,
     price: 249,
     priceUnit: 'per hour',
     duration: 'Minimum 4 hours',
@@ -26,6 +33,7 @@ export const packages = [
     type: 'daily',
     name: 'Daily Care',
     icon: 'SunMedium',
+    active: false,
     price: 1199,
     priceUnit: 'per day',
     duration: '8–12 hours coverage',
@@ -46,6 +54,7 @@ export const packages = [
     type: 'weekly',
     name: 'Weekly Care',
     icon: 'CalendarDays',
+    active: false,
     price: 7499,
     priceUnit: 'per week',
     duration: '7-day support',
@@ -66,6 +75,7 @@ export const packages = [
     type: 'monthly',
     name: 'Monthly Care',
     icon: 'CalendarRange',
+    active: false,
     price: 24999,
     priceUnit: 'per month',
     duration: 'Complete home healthcare',
@@ -87,6 +97,7 @@ export const packages = [
     type: 'custom',
     name: 'Custom Plans',
     icon: 'Settings2',
+    active: true,
     price: null,
     priceUnit: 'Get quote',
     duration: 'Tailored to needs',
@@ -104,4 +115,7 @@ export const packages = [
   },
 ]
 
-export const getPackageById = (id) => packages.find((p) => p.id === id)
+/** Packages currently offered on the site. */
+export const packages = allPackages.filter((p) => p.active)
+
+export const getPackageById = (id) => allPackages.find((p) => p.id === id)

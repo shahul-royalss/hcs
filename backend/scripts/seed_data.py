@@ -154,6 +154,7 @@ SERVICES = [
 PACKAGES = [
     {
         "type": "hourly",
+        "active": False,
         "name": "Hourly Care",
         "icon": "Clock",
         "price": 249,
@@ -173,6 +174,7 @@ PACKAGES = [
     },
     {
         "type": "daily",
+        "active": False,
         "name": "Daily Care",
         "icon": "SunMedium",
         "price": 1199,
@@ -192,6 +194,7 @@ PACKAGES = [
     },
     {
         "type": "weekly",
+        "active": False,
         "name": "Weekly Care",
         "icon": "CalendarDays",
         "price": 7499,
@@ -211,6 +214,7 @@ PACKAGES = [
     },
     {
         "type": "monthly",
+        "active": False,
         "name": "Monthly Care",
         "icon": "CalendarRange",
         "price": 24999,
@@ -231,6 +235,7 @@ PACKAGES = [
     },
     {
         "type": "custom",
+        "active": True,
         "name": "Custom Plans",
         "icon": "Settings2",
         "price": None,
@@ -411,13 +416,14 @@ async def seed() -> None:
         )
     print(f"Seeded {len(SERVICES)} services.")
 
-    for order, pkg in enumerate(PACKAGES):
+    active_packages = [p for p in PACKAGES if p["active"]]
+    for order, pkg in enumerate(active_packages):
         await db.packages.update_one(
             {"type": pkg["type"]},
             {"$set": {**pkg, "display_order": order}},
             upsert=True,
         )
-    print(f"Seeded {len(PACKAGES)} packages.")
+    print(f"Seeded {len(active_packages)} packages ({len(PACKAGES) - len(active_packages)} staged inactive).")
 
     for order, member in enumerate(TEAM):
         await db.team_members.update_one(

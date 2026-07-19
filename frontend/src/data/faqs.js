@@ -43,7 +43,7 @@ export const faqs = [
     id: 'f6',
     category: 'services',
     q: 'Do you provide 24-hour care?',
-    a: 'Yes. Our Daily, Weekly and Monthly packages can be configured for round-the-clock coverage, including live-in arrangements and day/night shift rotations.',
+    a: 'Yes. Your custom care plan can be configured for round-the-clock coverage, including live-in arrangements and day/night shift rotations.',
   },
   {
     id: 'f7',

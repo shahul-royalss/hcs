@@ -124,18 +124,26 @@ hcs/
   admin. Base URL `/api` (Vite dev proxy → `VITE_BACKEND_URL`).
 - **Content pages render from `src/data/`**; the backend serves the same content for
   the admin portal and future CMS use (seeded by `backend/scripts/seed_data.py`).
+- **Packages staging:** only packages flagged `active: true` in `data/packages.js`
+  are offered (currently **Custom Plans only** — the standard hourly/daily/weekly/
+  monthly plans are staged for a later launch; flip their flag to re-enable).
+  `backend/scripts/seed_data.py` and the chatbot's pricing copy in
+  `backend/services/ai_service.py` mirror this — keep all three in sync.
 - **SEO:** `Seo` component sets title/description per page; static meta, Open Graph
   and Schema.org in `index.html`; `sitemap.xml` + `robots.txt` in `public/`.
 - **Icons:** lucide-react only (Font Awesome from the spec intentionally dropped to
   avoid two icon systems — see §8). Data files store icon *names*; resolve via
   `common/ServiceIcon.jsx` (add new icons to its map).
-- **i18n (English/Hindi):** header globe toggle → `LanguageContext`
-  (persisted in localStorage, sets `<html lang>`). UI strings come from
-  `data/translations.js` via `useLanguage().t('key')`; missing Hindi keys fall back
-  to English. Phase 1 covers site chrome (nav, hero, stats, emergency band, footer,
-  CTAs); long-form content in `data/*.js` stays English until translated copy is
-  approved — add `hi` keys to `translations.js` as coverage grows. Never hard-code
-  a user-visible chrome string without a translation key.
+- **i18n (English/Hindi/Telugu):** header globe dropdown
+  (`common/LanguageSelector.jsx`) → `LanguageContext` (persisted in localStorage,
+  sets `<html lang>`). The language list lives in `LANGUAGES` in
+  `data/translations.js`; UI strings come from the same file via
+  `useLanguage().t('key')`, with missing keys falling back to English. Phase 1
+  covers site chrome (nav, hero, stats, emergency band, footer, CTAs); long-form
+  content in `data/*.js` stays English until translated copy is approved — add
+  `hi`/`te` keys as coverage grows. Never hard-code a user-visible chrome string
+  without a translation key. Fonts: Noto Sans Devanagari + Noto Sans Telugu are
+  self-hosted and in every font stack.
 - **Analytics:** `utils/analytics.js` injects GA4 + Microsoft Clarity only when
   `VITE_GA_ID` / `VITE_CLARITY_ID` are set (no-op in dev). Internal analytics live
   in the admin portal.

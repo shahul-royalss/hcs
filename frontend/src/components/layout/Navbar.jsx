@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Globe, Menu, Phone, MessageCircle } from 'lucide-react'
+import { Menu, Phone, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import LanguageSelector from '@/components/common/LanguageSelector'
 import MobileMenu from './MobileMenu'
 import { siteConfig } from '@/data/siteConfig'
 import { telLink } from '@/utils/helpers'
@@ -23,7 +24,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { openChat } = useWhatsApp()
-  const { lang, toggle, t } = useLanguage()
+  const { t } = useLanguage()
   const location = useLocation()
 
   useEffect(() => {
@@ -73,15 +74,7 @@ export default function Navbar() {
 
         {/* Desktop CTAs */}
         <div className="hidden items-center gap-2 lg:flex">
-          <button
-            type="button"
-            onClick={toggle}
-            aria-label={lang === 'en' ? 'हिंदी में देखें' : 'Switch to English'}
-            className="inline-flex h-10 items-center gap-1.5 rounded-full border border-slate-200 px-3 text-sm font-semibold text-ink transition-colors hover:border-secondary hover:text-secondary"
-          >
-            <Globe className="h-4 w-4" />
-            {lang === 'en' ? 'हिंदी' : 'EN'}
-          </button>
+          <LanguageSelector />
           <a
             href={telLink(siteConfig.phone)}
             className="inline-flex h-10 items-center gap-1.5 rounded-full px-3 text-sm font-semibold text-accent transition-colors hover:bg-red-50"
@@ -103,17 +96,9 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile: language toggle + hamburger */}
+        {/* Mobile: language selector + hamburger */}
         <div className="flex items-center gap-1 lg:hidden">
-          <button
-            type="button"
-            onClick={toggle}
-            aria-label={lang === 'en' ? 'हिंदी में देखें' : 'Switch to English'}
-            className="inline-flex h-9 items-center gap-1 rounded-full border border-slate-200 px-2.5 text-xs font-semibold text-ink"
-          >
-            <Globe className="h-3.5 w-3.5" />
-            {lang === 'en' ? 'हिंदी' : 'EN'}
-          </button>
+          <LanguageSelector compact />
           <button
             type="button"
             className="rounded-lg p-2 text-primary"

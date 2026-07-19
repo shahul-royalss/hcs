@@ -9,20 +9,20 @@ import { packages } from '@/data/packages'
 import { formatINR } from '@/utils/formatters'
 import { cn } from '@/utils/cn'
 
-/** Preview of the five care packages with pricing and top features. */
+/** Preview of the care packages currently offered (see data/packages.js). */
 export default function PackagesPreview() {
   return (
     <section className="section-padding bg-white">
       <div className="container-site">
         <SectionHeading
           tagline="Service Packages"
-          title="Flexible Plans for Every Family"
-          subtitle="Hourly to monthly — pick the level of support that fits your loved one's needs and your budget."
+          title="Care Built Around Your Family"
+          subtitle="Every family is different — we design a personalised care plan around your loved one's needs, starting with a free assessment. Standard hourly-to-monthly plans are coming soon."
         />
 
-        <div className="grid gap-6 pt-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-4">
+        <div className="flex flex-wrap justify-center gap-6 pt-3">
           {packages.map((pkg, i) => (
-            <AnimatedSection key={pkg.id} delay={i * 0.06} className="h-full">
+            <AnimatedSection key={pkg.id} delay={i * 0.06} className="h-full w-full max-w-sm">
               <article
                 className={cn(
                   'relative flex h-full flex-col rounded-card border bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover',
@@ -86,7 +86,7 @@ export default function PackagesPreview() {
 
         <AnimatedSection className="mt-10 text-center">
           <Link to="/packages" className={buttonVariants({ variant: 'ghost', size: 'lg' })}>
-            Compare all packages
+            View package details
             <ArrowRight aria-hidden="true" />
           </Link>
         </AnimatedSection>

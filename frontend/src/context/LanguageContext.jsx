@@ -1,15 +1,16 @@
 import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
-import { translations } from '@/data/translations'
+import { LANGUAGES, translations } from '@/data/translations'
 
 export const LanguageContext = createContext(null)
 
 const STORAGE_KEY = 'dhrishta_lang'
+const CODES = LANGUAGES.map((l) => l.code)
 
-/** English/Hindi UI language state (architecture doc — Key Feature 8). */
+/** English/Hindi/Telugu UI language state (architecture doc — Key Feature 8). */
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState(() => {
+  const [lang, setLangState] = useState(() => {
     const stored = localStorage.getItem(STORAGE_KEY)
-    return stored === 'hi' ? 'hi' : 'en'
+    return CODES.includes(stored) ? stored : 'en'
   })
 
   useEffect(() => {
@@ -17,7 +18,14 @@ export function LanguageProvider({ children }) {
     document.documentElement.lang = lang
   }, [lang])
 
-  const toggle = useCallback(() => setLang((l) => (l === 'en' ? 'hi' : 'en')), [])
+  const setLang = useCallback((code) => {
+    if (CODES.includes(code)) setLangState(code)
+  }, [])
+
+  /** Cycle to the next language (used as a fallback interaction). */
+  const toggle = useCallback(() => {
+    setLangState((current) => CODES[(CODES.indexOf(current) + 1) % CODES.length])
+  }, [])
 
   /** Translate a key; falls back to English, then to the key itself. */
   const t = useCallback(
@@ -25,7 +33,10 @@ export function LanguageProvider({ children }) {
     [lang]
   )
 
-  const value = useMemo(() => ({ lang, setLang, toggle, t }), [lang, toggle, t])
+  const value = useMemo(
+    () => ({ lang, languages: LANGUAGES, setLang, toggle, t }),
+    [lang, setLang, toggle, t]
+  )
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
 }

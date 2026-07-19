@@ -14,21 +14,21 @@ import { packages } from '@/data/packages'
 const PACKAGE_FAQS = [
   {
     id: 'switch',
-    title: 'Can I switch or upgrade my package later?',
+    title: 'Can I change my care plan later?',
     content:
-      'Yes. You can move between hourly, daily, weekly and monthly plans at any time with a short notice — your care coordinator adjusts the schedule and staff assignment, and billing is simply pro-rated from the switch date.',
+      'Yes. Your custom plan is reviewed with you regularly — hours, schedule and staff type can be adjusted at any time with short notice, and billing is simply pro-rated from the change date.',
   },
   {
     id: 'commitment',
     title: 'Is there a minimum commitment?',
     content:
-      'Hourly Care has a 4-hour minimum per visit; the other packages have no lock-in beyond their billing cycle. You can pause or stop at the end of any cycle, and we only ask for 24 hours notice so we can inform the assigned caregiver.',
+      'No lock-in. Custom plans run in simple billing cycles — you can pause or stop at the end of any cycle, and we only ask for 24 hours notice so we can inform the assigned caregiver.',
   },
   {
     id: 'final-price',
-    title: 'How is the final price decided?',
+    title: 'How is the price decided?',
     content:
-      'Listed prices are indicative starting points. After your free home assessment we prepare a care plan covering the patient’s condition, hours needed and staff type (caregiver vs certified nurse) — the final quote is based on that plan, with no hidden charges.',
+      'After your free home assessment we prepare a care plan covering the patient’s condition, hours needed and staff type (caregiver vs certified nurse) — your quote is based on that plan, with no hidden charges.',
   },
 ]
 
@@ -37,11 +37,11 @@ export default function Packages() {
     <>
       <Seo
         title="Service Packages"
-        description="Flexible home healthcare packages from Dhrishta — hourly, daily, weekly, monthly and fully custom care plans with transparent pricing."
+        description="Personalised home healthcare plans from Dhrishta — every family gets a free assessment and a custom care plan with transparent pricing."
       />
       <PageHeader
         title="Service Packages"
-        subtitle="Flexible plans that grow with your family's needs — from a few hours of help to complete monthly home healthcare."
+        subtitle="Care built around your family — every plan starts with a free assessment and a personalised, no-obligation quote."
         crumbs={[{ label: 'Packages' }]}
       />
 
@@ -50,39 +50,45 @@ export default function Packages() {
         <div className="container-site">
           <SectionHeading
             tagline="Plans for every family"
-            title="Choose the Care Plan That Fits"
-            subtitle="Every package is delivered by verified staff and starts with a free care assessment. Not sure which one? Start with a consultation and we'll recommend the right fit."
+            title="Your Plan, Built for Your Family"
+            subtitle="We currently offer fully personalised care plans — delivered by verified staff and starting with a free care assessment. Standard hourly, daily, weekly and monthly packages are coming soon."
           />
-          <div className="grid gap-6 gap-y-9 md:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-wrap justify-center gap-6 gap-y-9">
             {packages.map((pkg, i) => (
-              <AnimatedSection key={pkg.id} delay={Math.min(i * 0.06, 0.3)} className="h-full">
-                <PackageCard pkg={pkg} featured={pkg.popular} />
+              <AnimatedSection
+                key={pkg.id}
+                delay={Math.min(i * 0.06, 0.3)}
+                className="h-full w-full max-w-md"
+              >
+                <PackageCard pkg={pkg} featured />
               </AnimatedSection>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Comparison */}
-      <section className="section-padding bg-surface">
-        <div className="container-site">
-          <SectionHeading
-            tagline="Side by side"
-            title="Compare Packages"
-            subtitle="See exactly what each plan includes before you decide."
-          />
-          <AnimatedSection>
-            <PackageComparison />
-          </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <p className="mx-auto mt-8 flex max-w-3xl items-start gap-3 rounded-card border border-primary-100 bg-primary-50 p-4 text-sm leading-relaxed text-primary">
+            <p className="mx-auto mt-10 flex max-w-3xl items-start gap-3 rounded-card border border-primary-100 bg-primary-50 p-4 text-sm leading-relaxed text-primary">
               <Info className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
-              All packages include free assessment &amp; verified staff. Prices are indicative — you
-              receive a final quote after the care assessment.
+              Every plan includes a free assessment &amp; verified staff. You receive a transparent
+              final quote after the care assessment — no hidden charges.
             </p>
           </AnimatedSection>
         </div>
       </section>
+
+      {/* Comparison — shown only when more than one package is offered */}
+      {packages.length > 1 && (
+        <section className="section-padding bg-surface">
+          <div className="container-site">
+            <SectionHeading
+              tagline="Side by side"
+              title="Compare Packages"
+              subtitle="See exactly what each plan includes before you decide."
+            />
+            <AnimatedSection>
+              <PackageComparison />
+            </AnimatedSection>
+          </div>
+        </section>
+      )}
 
       {/* Common questions */}
       <section className="section-padding">

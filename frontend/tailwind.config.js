@@ -58,9 +58,9 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['Manrope', '"Noto Sans Devanagari"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        body: ['Inter', '"Noto Sans Devanagari"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        accent: ['"Crimson Text"', '"Noto Sans Devanagari"', 'ui-serif', 'Georgia', 'serif'],
+        heading: ['Manrope', '"Noto Sans Devanagari"', '"Noto Sans Telugu"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        body: ['Inter', '"Noto Sans Devanagari"', '"Noto Sans Telugu"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        accent: ['"Crimson Text"', '"Noto Sans Devanagari"', '"Noto Sans Telugu"', 'ui-serif', 'Georgia', 'serif'],
       },
       boxShadow: {
         card: '0 2px 12px rgba(13, 30, 56, 0.08)',
