@@ -34,7 +34,7 @@ export default function LanguageSelector({ compact = false }) {
         aria-expanded={open}
         aria-label="Change language"
         className={cn(
-          'inline-flex items-center gap-1 rounded-full border border-slate-200 font-semibold text-ink transition-colors hover:border-secondary hover:text-secondary',
+          'inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-slate-200 font-semibold text-ink transition-colors hover:border-secondary hover:text-secondary',
           compact ? 'h-9 px-2.5 text-xs' : 'h-10 px-3 text-sm'
         )}
       >

@@ -64,7 +64,7 @@ export default function Navbar() {
               end={end}
               className={({ isActive }) =>
                 cn(
-                  'rounded-full px-4 py-2 text-sm font-semibold transition-colors',
+                  'whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold transition-colors xl:px-4',
                   isActive ? 'bg-primary-50 text-primary' : 'text-ink hover:text-primary'
                 )
               }
@@ -74,28 +74,32 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop CTAs */}
-        <div className="hidden items-center gap-2 lg:flex">
+        {/* Desktop CTAs — Call Now / WhatsApp join at xl so the bar never overflows */}
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <LanguageSelector />
           <ThemeToggle />
           <a
             href={telLink(siteConfig.phone)}
-            className="inline-flex h-10 items-center gap-1.5 rounded-full px-3 text-sm font-semibold text-accent transition-colors hover:bg-red-50"
+            aria-label={t('cta.callNow')}
+            title={t('cta.callNow')}
+            className="hidden h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-3 text-sm font-semibold text-accent transition-colors hover:bg-red-50 xl:inline-flex"
           >
             <Phone className="h-4 w-4" />
-            {t('cta.callNow')}
+            <span className="hidden 2xl:inline">{t('cta.callNow')}</span>
           </a>
           <Button
             variant="whatsapp"
             size="sm"
             onClick={() => openChat()}
             aria-label="Chat on WhatsApp"
+            title={t('cta.whatsapp')}
+            className="hidden shrink-0 xl:inline-flex"
           >
             <MessageCircle className="h-4 w-4" />
-            {t('cta.whatsapp')}
+            <span className="hidden 2xl:inline">{t('cta.whatsapp')}</span>
           </Button>
-          <Link to="/book-consultation">
-            <Button size="sm">{t('cta.bookConsultation')}</Button>
+          <Link to="/book-consultation" className="shrink-0">
+            <Button size="sm" className="whitespace-nowrap">{t('cta.bookConsultation')}</Button>
           </Link>
         </div>
 
