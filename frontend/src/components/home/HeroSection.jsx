@@ -5,14 +5,15 @@ import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import CallButton from '@/components/common/CallButton'
 import StarRating from '@/components/common/StarRating'
+import { useLanguage } from '@/hooks/useLanguage'
 import { siteConfig } from '@/data/siteConfig'
 import { cn } from '@/utils/cn'
 
 const TRUST_BADGES = [
-  { icon: BadgeCheck, label: 'Certified Nurses' },
-  { icon: ShieldCheck, label: 'Verified Caregivers' },
-  { icon: Clock, label: '24/7 Support' },
-  { icon: ClipboardCheck, label: 'Free Assessment' },
+  { icon: BadgeCheck, key: 'hero.trust.nurses' },
+  { icon: ShieldCheck, key: 'hero.trust.caregivers' },
+  { icon: Clock, key: 'hero.trust.support' },
+  { icon: ClipboardCheck, key: 'hero.trust.assessment' },
 ]
 
 const container = {
@@ -27,6 +28,8 @@ const item = {
 
 /** Full-width gradient hero — headline, CTAs, trust badges and hero image. */
 export default function HeroSection() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-700 to-secondary-700 text-white">
       {/* Decorative shapes */}
@@ -40,7 +43,7 @@ export default function HeroSection() {
           <motion.div variants={item}>
             <Badge variant="white" className="px-4 py-1.5 text-sm">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-              Trusted Home Healthcare in Chittoor
+              {t('hero.badge')}
             </Badge>
           </motion.div>
 
@@ -48,15 +51,14 @@ export default function HeroSection() {
             variants={item}
             className="mt-5 text-balance font-heading text-4xl font-extrabold leading-tight text-white sm:text-5xl xl:text-6xl"
           >
-            Your Family...{' '}
+            {t('hero.headline1')}{' '}
             <span className="font-accent italic text-secondary-200">
-              Our Care and Responsibility
+              {t('hero.headline2')}
             </span>
           </motion.h1>
 
           <motion.p variants={item} className="mt-5 max-w-xl text-lg text-white/85 md:text-xl">
-            {siteConfig.subTagline}. Certified nurses and verified caregivers bring
-            hospital-quality care to your loved ones — right at home.
+            {t('hero.sub')}. {t('hero.support')}
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
@@ -67,20 +69,20 @@ export default function HeroSection() {
                 'bg-white text-primary shadow-lg hover:bg-primary-50 hover:text-primary'
               )}
             >
-              Book Free Consultation
+              {t('cta.bookConsultation')}
               <ArrowRight aria-hidden="true" />
             </Link>
             <CallButton size="lg" />
           </motion.div>
 
           <motion.ul variants={item} className="mt-8 flex flex-wrap gap-2.5" aria-label="Why families trust us">
-            {TRUST_BADGES.map(({ icon: Icon, label }) => (
+            {TRUST_BADGES.map(({ icon: Icon, key }) => (
               <li
-                key={label}
+                key={key}
                 className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-medium text-white/90 ring-1 ring-white/20"
               >
                 <Icon className="h-3.5 w-3.5 text-secondary-200" aria-hidden="true" />
-                {label}
+                {t(key)}
               </li>
             ))}
           </motion.ul>
@@ -108,7 +110,9 @@ export default function HeroSection() {
               <ShieldCheck className="h-5 w-5" aria-hidden="true" />
             </span>
             <div>
-              <p className="font-heading text-sm font-bold text-primary">500+ Happy Families</p>
+              <p className="font-heading text-sm font-bold text-primary">
+                {siteConfig.stats[0].value} {t('stats.families')}
+              </p>
               <StarRating rating={5} className="mt-0.5" />
             </div>
           </motion.div>

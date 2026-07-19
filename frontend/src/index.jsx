@@ -6,22 +6,28 @@ import ErrorBoundary from './components/common/ErrorBoundary'
 import { AuthProvider } from './context/AuthContext'
 import { BookingProvider } from './context/BookingContext'
 import { ChatProvider } from './context/ChatContext'
+import { LanguageProvider } from './context/LanguageContext'
 import { ToastProvider } from './hooks/useToast'
+import { initAnalytics } from './utils/analytics'
 import './index.css'
+
+initAnalytics()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ErrorBoundary>
       <BrowserRouter>
-        <ToastProvider>
-          <AuthProvider>
-            <BookingProvider>
-              <ChatProvider>
-                <App />
-              </ChatProvider>
-            </BookingProvider>
-          </AuthProvider>
-        </ToastProvider>
+        <LanguageProvider>
+          <ToastProvider>
+            <AuthProvider>
+              <BookingProvider>
+                <ChatProvider>
+                  <App />
+                </ChatProvider>
+              </BookingProvider>
+            </AuthProvider>
+          </ToastProvider>
+        </LanguageProvider>
       </BrowserRouter>
     </ErrorBoundary>
   </React.StrictMode>

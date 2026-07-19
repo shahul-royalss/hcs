@@ -6,25 +6,27 @@ import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/data/siteConfig'
 import { telLink } from '@/utils/helpers'
 import { useWhatsApp } from '@/hooks/useWhatsApp'
+import { useLanguage } from '@/hooks/useLanguage'
 import { cn } from '@/utils/cn'
 
 const MOBILE_LINKS = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
-  { to: '/services', label: 'Services' },
-  { to: '/specialties', label: 'Specialties' },
-  { to: '/who-we-serve', label: 'Who We Serve' },
-  { to: '/packages', label: 'Packages' },
-  { to: '/gallery', label: 'Gallery' },
-  { to: '/team', label: 'Team' },
-  { to: '/stories', label: 'Stories' },
-  { to: '/faq', label: 'FAQ' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/', key: 'nav.home', end: true },
+  { to: '/about', key: 'nav.about' },
+  { to: '/services', key: 'nav.services' },
+  { to: '/specialties', key: 'nav.specialties' },
+  { to: '/who-we-serve', key: 'nav.whoWeServe' },
+  { to: '/packages', key: 'nav.packages' },
+  { to: '/gallery', key: 'nav.gallery' },
+  { to: '/team', key: 'nav.team' },
+  { to: '/stories', key: 'nav.stories' },
+  { to: '/faq', key: 'nav.faq' },
+  { to: '/contact', key: 'nav.contact' },
 ]
 
 /** Slide-in mobile navigation drawer. */
 export default function MobileMenu({ open, onClose }) {
   const { openChat } = useWhatsApp()
+  const { t } = useLanguage()
 
   return createPortal(
     <AnimatePresence>
@@ -59,7 +61,7 @@ export default function MobileMenu({ open, onClose }) {
 
             <nav className="flex-1 overflow-y-auto p-4">
               <ul className="space-y-1">
-                {MOBILE_LINKS.map(({ to, label, end }) => (
+                {MOBILE_LINKS.map(({ to, key, end }) => (
                   <li key={to}>
                     <NavLink
                       to={to}
@@ -72,7 +74,7 @@ export default function MobileMenu({ open, onClose }) {
                         )
                       }
                     >
-                      {label}
+                      {t(key)}
                     </NavLink>
                   </li>
                 ))}
@@ -81,15 +83,15 @@ export default function MobileMenu({ open, onClose }) {
 
             <div className="space-y-2.5 border-t border-slate-100 p-4">
               <Link to="/book-consultation" onClick={onClose} className="block">
-                <Button className="w-full">Book Consultation</Button>
+                <Button className="w-full">{t('cta.bookConsultation')}</Button>
               </Link>
               <a href={telLink(siteConfig.phone)} className="block">
                 <Button variant="accent" className="w-full">
-                  <Phone className="h-4 w-4" /> Call {siteConfig.phoneDisplay}
+                  <Phone className="h-4 w-4" /> {siteConfig.phoneDisplay}
                 </Button>
               </a>
               <Button variant="whatsapp" className="w-full" onClick={() => openChat()}>
-                <MessageCircle className="h-4 w-4" /> WhatsApp Us
+                <MessageCircle className="h-4 w-4" /> {t('cta.whatsappUs')}
               </Button>
             </div>
           </motion.aside>

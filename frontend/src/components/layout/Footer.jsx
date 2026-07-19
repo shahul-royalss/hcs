@@ -2,22 +2,24 @@ import { Link } from 'react-router-dom'
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube, Clock } from 'lucide-react'
 import { siteConfig } from '@/data/siteConfig'
 import { services } from '@/data/services'
+import { useLanguage } from '@/hooks/useLanguage'
 import { telLink } from '@/utils/helpers'
 
 const QUICK_LINKS = [
-  { to: '/about', label: 'About Us' },
-  { to: '/services', label: 'Our Services' },
-  { to: '/packages', label: 'Packages' },
-  { to: '/specialties', label: 'Specialties' },
-  { to: '/team', label: 'Our Team' },
-  { to: '/stories', label: 'Stories' },
-  { to: '/careers', label: 'Careers' },
-  { to: '/faq', label: 'FAQ' },
+  { to: '/about', key: 'nav.about' },
+  { to: '/services', key: 'nav.services' },
+  { to: '/packages', key: 'nav.packages' },
+  { to: '/specialties', key: 'nav.specialties' },
+  { to: '/team', key: 'nav.team' },
+  { to: '/stories', key: 'nav.stories' },
+  { to: '/careers', key: 'nav.careers' },
+  { to: '/faq', key: 'nav.faq' },
 ]
 
 /** Site footer (architecture doc §1.10). */
 export default function Footer() {
   const year = new Date().getFullYear()
+  const { t } = useLanguage()
 
   return (
     <footer className="bg-primary-900 text-white">
@@ -26,10 +28,7 @@ export default function Footer() {
         <div>
           <img src="/images/logo.svg" alt={siteConfig.name} className="h-11 w-auto rounded-lg bg-white p-1.5" />
           <p className="tagline mt-4 text-white/90">{siteConfig.tagline}</p>
-          <p className="mt-3 text-sm leading-relaxed text-white/70">
-            Professional home healthcare services — certified nurses, verified caregivers and 24/7
-            support for the people you love most.
-          </p>
+          <p className="mt-3 text-sm leading-relaxed text-white/70">{t('footer.blurb')}</p>
           <div className="mt-5 flex gap-3">
             <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="rounded-full bg-white/10 p-2.5 transition-colors hover:bg-secondary">
               <Facebook className="h-4 w-4" />
@@ -48,12 +47,12 @@ export default function Footer() {
 
         {/* Quick links */}
         <nav aria-label="Quick links">
-          <h3 className="font-heading text-base font-bold text-white">Quick Links</h3>
+          <h3 className="font-heading text-base font-bold text-white">{t('footer.quickLinks')}</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
-            {QUICK_LINKS.map(({ to, label }) => (
+            {QUICK_LINKS.map(({ to, key }) => (
               <li key={to}>
                 <Link to={to} className="text-white/70 transition-colors hover:text-secondary-300">
-                  {label}
+                  {t(key)}
                 </Link>
               </li>
             ))}
@@ -62,7 +61,7 @@ export default function Footer() {
 
         {/* Services list */}
         <nav aria-label="Services">
-          <h3 className="font-heading text-base font-bold text-white">Our Services</h3>
+          <h3 className="font-heading text-base font-bold text-white">{t('footer.ourServices')}</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
             {services.map((service) => (
               <li key={service.slug}>
@@ -76,7 +75,7 @@ export default function Footer() {
             ))}
             <li>
               <Link to="/emergency" className="font-semibold text-red-300 transition-colors hover:text-red-200">
-                Emergency Care
+                {t('footer.emergencyCare')}
               </Link>
             </li>
           </ul>
@@ -84,7 +83,7 @@ export default function Footer() {
 
         {/* Contact details */}
         <div>
-          <h3 className="font-heading text-base font-bold text-white">Contact Us</h3>
+          <h3 className="font-heading text-base font-bold text-white">{t('footer.contactUs')}</h3>
           <ul className="mt-4 space-y-3.5 text-sm text-white/70">
             <li>
               <a href={telLink(siteConfig.phone)} className="flex items-start gap-2.5 transition-colors hover:text-secondary-300">
@@ -123,10 +122,10 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-5 text-sm text-white/60 md:flex-row">
-          <p>© {year} {siteConfig.name}. All rights reserved.</p>
+          <p>© {year} {siteConfig.name}. {t('footer.rights')}</p>
           <div className="flex gap-5">
-            <Link to="/privacy-policy" className="transition-colors hover:text-white">Privacy Policy</Link>
-            <Link to="/terms-conditions" className="transition-colors hover:text-white">Terms & Conditions</Link>
+            <Link to="/privacy-policy" className="transition-colors hover:text-white">{t('footer.privacy')}</Link>
+            <Link to="/terms-conditions" className="transition-colors hover:text-white">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>

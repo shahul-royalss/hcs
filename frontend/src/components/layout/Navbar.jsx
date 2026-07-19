@@ -1,27 +1,29 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Menu, Phone, MessageCircle } from 'lucide-react'
+import { Globe, Menu, Phone, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import MobileMenu from './MobileMenu'
 import { siteConfig } from '@/data/siteConfig'
 import { telLink } from '@/utils/helpers'
 import { useWhatsApp } from '@/hooks/useWhatsApp'
+import { useLanguage } from '@/hooks/useLanguage'
 import { cn } from '@/utils/cn'
 
 export const NAV_LINKS = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
-  { to: '/services', label: 'Services' },
-  { to: '/packages', label: 'Packages' },
-  { to: '/gallery', label: 'Gallery' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/', key: 'nav.home', end: true },
+  { to: '/about', key: 'nav.about' },
+  { to: '/services', key: 'nav.services' },
+  { to: '/packages', key: 'nav.packages' },
+  { to: '/gallery', key: 'nav.gallery' },
+  { to: '/contact', key: 'nav.contact' },
 ]
 
-/** Sticky navigation bar (architecture doc §1.1). */
+/** Sticky navigation bar (architecture doc §1.1) with EN/हिंदी toggle. */
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { openChat } = useWhatsApp()
+  const { lang, toggle, t } = useLanguage()
   const location = useLocation()
 
   useEffect(() => {
@@ -52,7 +54,7 @@ export default function Navbar() {
 
         {/* Desktop menu */}
         <nav aria-label="Main navigation" className="hidden items-center gap-1 lg:flex">
-          {NAV_LINKS.map(({ to, label, end }) => (
+          {NAV_LINKS.map(({ to, key, end }) => (
             <NavLink
               key={to}
               to={to}
@@ -64,19 +66,28 @@ export default function Navbar() {
                 )
               }
             >
-              {label}
+              {t(key)}
             </NavLink>
           ))}
         </nav>
 
         {/* Desktop CTAs */}
         <div className="hidden items-center gap-2 lg:flex">
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label={lang === 'en' ? 'हिंदी में देखें' : 'Switch to English'}
+            className="inline-flex h-10 items-center gap-1.5 rounded-full border border-slate-200 px-3 text-sm font-semibold text-ink transition-colors hover:border-secondary hover:text-secondary"
+          >
+            <Globe className="h-4 w-4" />
+            {lang === 'en' ? 'हिंदी' : 'EN'}
+          </button>
           <a
             href={telLink(siteConfig.phone)}
             className="inline-flex h-10 items-center gap-1.5 rounded-full px-3 text-sm font-semibold text-accent transition-colors hover:bg-red-50"
           >
             <Phone className="h-4 w-4" />
-            Call Now
+            {t('cta.callNow')}
           </a>
           <Button
             variant="whatsapp"
@@ -85,23 +96,34 @@ export default function Navbar() {
             aria-label="Chat on WhatsApp"
           >
             <MessageCircle className="h-4 w-4" />
-            WhatsApp
+            {t('cta.whatsapp')}
           </Button>
           <Link to="/book-consultation">
-            <Button size="sm">Book Consultation</Button>
+            <Button size="sm">{t('cta.bookConsultation')}</Button>
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          className="rounded-lg p-2 text-primary lg:hidden"
-          aria-label="Open menu"
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen(true)}
-        >
-          <Menu className="h-6 w-6" />
-        </button>
+        {/* Mobile: language toggle + hamburger */}
+        <div className="flex items-center gap-1 lg:hidden">
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label={lang === 'en' ? 'हिंदी में देखें' : 'Switch to English'}
+            className="inline-flex h-9 items-center gap-1 rounded-full border border-slate-200 px-2.5 text-xs font-semibold text-ink"
+          >
+            <Globe className="h-3.5 w-3.5" />
+            {lang === 'en' ? 'हिंदी' : 'EN'}
+          </button>
+          <button
+            type="button"
+            className="rounded-lg p-2 text-primary"
+            aria-label="Open menu"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(true)}
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+        </div>
       </div>
 
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />

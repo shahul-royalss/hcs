@@ -71,13 +71,15 @@ hcs/
 │       │   └── chatbot/          # ChatWidget, ChatWindow, ChatMessage
 │       ├── pages/                # One default-export component per public route
 │       ├── admin/                # AdminLayout + pages/ + components/ (lazy chunk)
-│       ├── context/              # AuthContext, BookingContext, ChatContext
-│       ├── hooks/                # useAuth, useBooking, useChat, useToast, useWhatsApp
+│       ├── context/              # Auth, Booking, Chat, Language providers
+│       ├── hooks/                # useAuth, useBooking, useChat, useToast,
+│       │                         #  useWhatsApp, useLanguage
 │       ├── services/             # api.js (axios) + per-domain API modules
 │       ├── data/                 # ALL site content (services, specialties, packages,
 │       │                         #  team, testimonials, gallery, faqs, whoWeServe,
-│       │                         #  careers, blog, siteConfig)
-│       └── utils/                # cn, constants, helpers, validation, formatters
+│       │                         #  careers, blog, siteConfig, translations)
+│       └── utils/                # cn, constants, helpers, validation, formatters,
+│                                 #  analytics (GA4/Clarity bootstrap)
 └── backend/                      # FastAPI + MongoDB (Motor)
     ├── server.py                 # App factory + router wiring (uvicorn server:app)
     ├── requirements.txt / .env.example / Dockerfile
@@ -124,6 +126,16 @@ hcs/
 - **Icons:** lucide-react only (Font Awesome from the spec intentionally dropped to
   avoid two icon systems — see §8). Data files store icon *names*; resolve via
   `common/ServiceIcon.jsx` (add new icons to its map).
+- **i18n (English/Hindi):** header globe toggle → `LanguageContext`
+  (persisted in localStorage, sets `<html lang>`). UI strings come from
+  `data/translations.js` via `useLanguage().t('key')`; missing Hindi keys fall back
+  to English. Phase 1 covers site chrome (nav, hero, stats, emergency band, footer,
+  CTAs); long-form content in `data/*.js` stays English until translated copy is
+  approved — add `hi` keys to `translations.js` as coverage grows. Never hard-code
+  a user-visible chrome string without a translation key.
+- **Analytics:** `utils/analytics.js` injects GA4 + Microsoft Clarity only when
+  `VITE_GA_ID` / `VITE_CLARITY_ID` are set (no-op in dev). Internal analytics live
+  in the admin portal.
 
 ## 5. Backend Conventions
 

@@ -3,11 +3,14 @@ import { Phone, Siren } from 'lucide-react'
 import AnimatedSection from '@/components/common/AnimatedSection'
 import { buttonVariants } from '@/components/ui/button'
 import { siteConfig } from '@/data/siteConfig'
+import { useLanguage } from '@/hooks/useLanguage'
 import { telLink } from '@/utils/helpers'
 import { cn } from '@/utils/cn'
 
 /** Accent-red emergency band with hotline call CTA. */
 export default function EmergencyBanner() {
+  const { t } = useLanguage()
+
   return (
     <section
       aria-label="Emergency care hotline"
@@ -25,11 +28,9 @@ export default function EmergencyBanner() {
               </span>
               <div>
                 <h2 className="font-heading text-2xl font-extrabold text-white md:text-3xl">
-                  Need Immediate Care?
+                  {t('emergency.title')}
                 </h2>
-                <p className="mt-1 max-w-xl text-white/85">
-                  Our emergency response team is available 24/7. One call and help is on the way.
-                </p>
+                <p className="mt-1 max-w-xl text-white/85">{t('emergency.sub')}</p>
               </div>
             </div>
 
@@ -48,7 +49,7 @@ export default function EmergencyBanner() {
                   'hover:text-accent'
                 )}
               >
-                Emergency Request
+                {t('emergency.request')}
               </Link>
             </div>
           </div>
