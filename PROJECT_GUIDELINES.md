@@ -2,7 +2,7 @@
 
 > Living document. **Update this file whenever the architecture or structure changes.**
 > Source-of-truth architecture: `docs/architecture/DHRISHTA_WEBSITE_STRUCTURE.pdf`
-> Last updated: 2026-07-18
+> Last updated: 2026-07-19
 
 ## 1. What This Project Is
 
@@ -44,13 +44,14 @@ hcs/
 ├── frontend/                     # React 18 + Vite + Tailwind
 │   ├── index.html                # Entry HTML (fonts, meta, schema.org)
 │   ├── package.json              # Scripts: dev / build / preview / lint
-│   ├── vite.config.js            # '@' alias → src/, /api proxy → :8000
+│   ├── vite.config.js            # '@' alias → src/, /api proxy (dev + preview) → :8000
 │   ├── tailwind.config.js        # Design tokens (colors, fonts, shadows)
 │   ├── Dockerfile + deploy/nginx.conf
 │   ├── scripts/generate-placeholders.mjs   # Regenerates public/images/*.svg
-│   ├── public/                   # favicon.svg, robots.txt, sitemap.xml, images/
+│   ├── public/                   # favicon.svg, robots.txt, sitemap.xml, images/,
+│   │                             #  fonts/ (self-hosted woff2 + fonts.css)
 │   └── src/
-│       ├── index.jsx             # Providers: Toast > Auth > Booking > Chat
+│       ├── index.jsx             # Providers: Language > Toast > Auth > Booking > Chat
 │       ├── App.jsx               # All routes (lazy-loaded), app shell
 │       ├── index.css             # Tailwind layers + container-site/section-padding/tagline
 │       ├── components/
@@ -103,7 +104,9 @@ hcs/
     · `surface` #f5f5f5 · `ink` #212121 / `ink-light` #757575. Use theme tokens, never
     raw hex in components.
   - Fonts: Manrope (`font-heading`), Inter (`font-body`), Crimson Text
-    (`font-accent` / `.tagline`).
+    (`font-accent` / `.tagline`), Noto Sans Devanagari (Hindi fallback in every
+    stack). All fonts are **self-hosted** from `public/fonts/` (`fonts.css` +
+    woff2 files) — no Google Fonts requests at runtime.
   - Buttons are pill-shaped (`ui/button.jsx` variants); cards use soft shadows
     (`shadow-card`, `rounded-card`).
   - Dynamic per-item colors must go through a static lookup map of full Tailwind
