@@ -155,7 +155,7 @@ export default function Contact() {
     <>
       <Seo
         title="Contact Us"
-        description="Contact Dhrishta Healthcare Services in Chittoor — call, WhatsApp, email or visit us. Check your service area and request a callback."
+        description="Contact Dhrishta Health Care Services in Chittoor — call, WhatsApp, email or visit us. Check your service area and request a callback."
       />
       <PageHeader
         title="Contact Us"

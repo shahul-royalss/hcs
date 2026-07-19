@@ -3,13 +3,12 @@ import {
   ArrowRight,
   Award,
   BadgeCheck,
-  Clock,
   Eye,
   FileCheck2,
   GraduationCap,
   HeartHandshake,
   HeartPulse,
-  Scale,
+  Home,
   ShieldCheck,
   Stethoscope,
   Target,
@@ -26,26 +25,27 @@ import { buttonVariants } from '@/components/ui/button'
 import { team } from '@/data/team'
 import { cn } from '@/utils/cn'
 
+/* Our Specialties — exactly as on the Dhrishta brochure */
 const CORE_VALUES = [
   {
+    icon: ShieldCheck,
+    title: 'Safe, Hygienic and Clean Environment',
+    description: 'Strict hygiene and cleanliness standards in every home and care setting we serve.',
+  },
+  {
     icon: HeartHandshake,
-    title: 'Compassion',
+    title: 'Care with Love and Compassion',
     description: 'We care for every patient the way we would care for our own parents and children.',
   },
   {
-    icon: Scale,
-    title: 'Integrity',
-    description: 'Honest advice, transparent pricing and care decisions made in your best interest.',
-  },
-  {
     icon: Award,
-    title: 'Excellence',
-    description: 'Trained professionals, clinical protocols and constant improvement in everything we do.',
+    title: 'Reliable and Trustworthy Services',
+    description: 'Dependable, verified professionals your family can trust — on time, every time.',
   },
   {
-    icon: Clock,
-    title: 'Reliability',
-    description: 'On time, every time — with guaranteed backup staff and a 24/7 helpline.',
+    icon: Home,
+    title: 'Homely Care Like Home',
+    description: 'Warm, familiar, family-style care that makes every patient feel truly at home.',
   },
 ]
 
@@ -119,7 +119,7 @@ export default function About() {
     <>
       <Seo
         title="About Us"
-        description="Learn about Dhrishta Healthcare Services — 10+ years of trusted home healthcare in Chittoor, 50+ professionals, 500+ families served. Our story, mission, values and credentials."
+        description="Learn about Dhrishta Health Care Services — 10+ years of trusted home healthcare in Chittoor, 50+ professionals, 500+ families served. Our story, mission, values and credentials."
       />
       <PageHeader
         title="About Dhrishta Health Care Services"
@@ -145,9 +145,21 @@ export default function About() {
               title="From a Small Nursing Team to Chittoor's Trusted Care Partner"
               className="mb-6"
             />
+            <ul className="mb-6 space-y-3 rounded-card border border-secondary-200 bg-secondary-50 p-5">
+              <li className="flex items-start gap-3 leading-relaxed text-ink">
+                <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-secondary" aria-hidden="true" />
+                We believe that the health, safety and happiness of your family members is our
+                responsibility and we serve with love and trust.
+              </li>
+              <li className="flex items-start gap-3 leading-relaxed text-ink">
+                <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-secondary" aria-hidden="true" />
+                For elders at home, people who are sick, and those who need special care — we
+                provide the best services through experienced doctors and nurses.
+              </li>
+            </ul>
             <div className="space-y-4 leading-relaxed text-ink-light">
               <p>
-                Dhrishta Healthcare Services began in Chittoor more than ten years ago with a
+                Dhrishta Health Care Services began in Chittoor more than ten years ago with a
                 simple belief: families should never have to choose between quality medical care
                 and the comfort of home. What started as a small team of dedicated nurses making
                 home visits has grown into one of the region&rsquo;s most trusted home-healthcare
@@ -347,7 +359,7 @@ export default function About() {
             <div className="flex flex-col items-center gap-6 text-center lg:flex-row lg:justify-between lg:text-left">
               <div>
                 <h2 className="font-heading text-2xl font-extrabold text-white md:text-3xl">
-                  Experience Care That Feels Like Family
+                  Your Family&rsquo;s Health is Our Responsibility
                 </h2>
                 <p className="mt-2 max-w-xl text-white/85">
                   Book a free consultation and our care coordinator will visit your home to build

@@ -18,7 +18,7 @@ export default function TermsConditions() {
     <>
       <Seo
         title="Terms & Conditions"
-        description="Service, booking, cancellation, refund and payment terms for Dhrishta Healthcare Services."
+        description="Service, booking, cancellation, refund and payment terms for Dhrishta Health Care Services."
       />
       <PageHeader
         title="Terms & Conditions"
@@ -31,7 +31,7 @@ export default function TermsConditions() {
           <p className="text-sm text-ink-light">Last updated: {LAST_UPDATED}</p>
 
           <p className="mt-6 leading-relaxed text-ink md:text-base">
-            These terms govern the services provided by Dhrishta Healthcare Services
+            These terms govern the services provided by Dhrishta Health Care Services
             (&ldquo;Dhrishta&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) to you and the patient you
             book care for. By making a booking — online, by phone or on WhatsApp — you accept these
             terms.

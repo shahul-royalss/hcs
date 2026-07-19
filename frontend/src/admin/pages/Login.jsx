@@ -44,7 +44,7 @@ export default function Login() {
 
   return (
     <>
-      <Seo title="Admin — Login" description="Dhrishta Healthcare Services admin portal sign-in." />
+      <Seo title="Admin — Login" description="Dhrishta Health Care Services admin portal sign-in." />
       <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary to-secondary-700 p-4">
         <Card className="w-full max-w-md p-8">
           <div className="mb-6 text-center">

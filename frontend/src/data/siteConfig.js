@@ -1,7 +1,7 @@
 /** Single source of truth for business/contact details used across the site. */
 
 export const siteConfig = {
-  name: 'Dhrishta Healthcare Services',
+  name: 'Dhrishta Health Care Services',
   shortName: 'Dhrishta',
   tagline: 'Your Family... Our Care and Responsibility',
   subTagline: 'Professional healthcare services at home',

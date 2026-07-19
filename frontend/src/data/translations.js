@@ -40,7 +40,7 @@ export const translations = {
     'hero.headline2': 'Our Care and Responsibility',
     'hero.sub': 'Professional healthcare services at home',
     'hero.support':
-      'Certified nurses and verified caregivers for your loved ones — available round the clock, right at your doorstep.',
+      'We believe that the health, safety and happiness of your family members is our responsibility — and we serve with love and trust.',
     'hero.trust.nurses': 'Certified Nurses',
     'hero.trust.caregivers': 'Verified Caregivers',
     'hero.trust.support': '24/7 Support',
@@ -92,7 +92,7 @@ export const translations = {
     'hero.headline2': 'हमारी देखभाल और ज़िम्मेदारी',
     'hero.sub': 'घर पर पेशेवर स्वास्थ्य सेवाएं',
     'hero.support':
-      'आपके प्रियजनों के लिए प्रमाणित नर्सें और सत्यापित देखभालकर्ता — चौबीसों घंटे, आपके द्वार पर।',
+      'हमारा विश्वास है कि आपके परिवार के सदस्यों का स्वास्थ्य, सुरक्षा और खुशी हमारी ज़िम्मेदारी है — और हम प्रेम और विश्वास के साथ सेवा करते हैं।',
     'hero.trust.nurses': 'प्रमाणित नर्सें',
     'hero.trust.caregivers': 'सत्यापित देखभालकर्ता',
     'hero.trust.support': '24/7 सहायता',
@@ -144,7 +144,7 @@ export const translations = {
     'hero.headline2': 'మా సంరక్షణ, మా బాధ్యత',
     'hero.sub': 'ఇంటి వద్దే వృత్తిపరమైన ఆరోగ్య సేవలు',
     'hero.support':
-      'మీ ఆత్మీయుల కోసం ప్రమాణీకృత నర్సులు మరియు నమ్మకమైన సంరక్షకులు — రోజంతా, మీ ఇంటి వద్దే.',
+      'మీ కుటుంబ సభ్యుల ఆరోగ్యం, భద్రత మరియు ఆనందం మా బాధ్యత అని మేము నమ్ముతాం — ప్రేమ మరియు నమ్మకంతో సేవ చేస్తాం.',
     'hero.trust.nurses': 'ప్రమాణీకృత నర్సులు',
     'hero.trust.caregivers': 'ధృవీకరించిన సంరక్షకులు',
     'hero.trust.support': '24/7 సహాయం',

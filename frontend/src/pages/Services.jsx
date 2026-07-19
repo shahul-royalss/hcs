@@ -38,7 +38,7 @@ export default function Services() {
           <SectionHeading
             tagline="What we offer"
             title="Care for Every Need"
-            subtitle="From a few hours of daily assistance to round-the-clock clinical care, our six core services cover the full spectrum of home healthcare — each delivered by verified, trained professionals."
+            subtitle="Personal care, home nursing, caregiving, patient care takers, child care with medicine reminders, and day care — with 24/7 care and support, experienced staff, nurses and physiotherapists available at all times, and comprehensive health protection."
           />
           <ServiceCategories />
         </div>

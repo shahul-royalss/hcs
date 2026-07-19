@@ -74,7 +74,7 @@ export const services = [
     color: 'success',
     image: '/images/services/elder-care.svg',
     excerpt:
-      'Companionship and daily living support for seniors, including dementia, Alzheimer’s and stroke-recovery care.',
+      'Compassionate caregiving for seniors — companionship, daily living support, and dementia, Alzheimer’s and stroke-recovery care.',
     description:
       'Growing old at home, surrounded by family, is a blessing — and our elder-care team makes it safe and joyful. We combine companionship with specialised support for age-related conditions, so seniors live with dignity and families live with peace of mind.',
     features: [
@@ -104,9 +104,9 @@ export const services = [
     color: 'warning',
     image: '/images/services/patient-care.svg',
     excerpt:
-      'Round-the-clock care for bedridden patients, chronic illness management, palliative care and rehabilitation.',
+      'Dedicated patient care takers for bedridden patients, chronic illness management, palliative care and rehabilitation.',
     description:
-      'For patients who need continuous attention, our patient-care attendants provide skilled, empathetic support — managing chronic conditions, preventing complications and keeping patients comfortable through recovery or long-term care.',
+      'For patients who need continuous attention, our dedicated patient care takers provide skilled, empathetic support — managing chronic conditions, preventing complications and keeping patients comfortable through recovery or long-term care.',
     features: [
       'Bedridden patient care',
       'Chronic illness management',
@@ -145,11 +145,12 @@ export const services = [
       'Medicine reminders',
     ],
     included: [
-      'Background-verified child-care professional',
+      'Special attention for children',
+      'Nutritious food and hygiene',
+      'Games and development activities',
+      'Safe and secure care',
       'Infant feeding, bathing and sleep routines',
-      'Special-needs and post-surgery support',
-      'Age-appropriate learning activities',
-      'Meal planning and medicine schedules',
+      'Medicine reminder services',
     ],
     pricingStartsFrom: 399,
     pricingUnit: 'per day',

@@ -12,7 +12,7 @@ export const faqs = [
   {
     id: 'f1',
     category: 'general',
-    q: 'What is Dhrishta Healthcare Services?',
+    q: 'What is Dhrishta Health Care Services?',
     a: 'We are a home healthcare provider based in Chittoor, Andhra Pradesh. We bring professional care — nursing, elder care, patient care, child care, personal care and day care — directly to your home, backed by certified nurses and verified caregivers with 24/7 support.',
   },
   {

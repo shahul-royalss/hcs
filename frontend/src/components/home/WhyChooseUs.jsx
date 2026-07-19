@@ -2,6 +2,7 @@ import {
   Activity,
   Award,
   Clock,
+  HeartPulse,
   Home,
   ShieldCheck,
   Siren,
@@ -28,8 +29,13 @@ const FEATURES = [
   },
   {
     icon: Clock,
-    title: '24/7 Support',
-    description: 'A round-the-clock helpline for care questions and urgent needs.',
+    title: '24/7 Care and Support',
+    description: 'Round-the-clock care and a helpline that always answers, day or night.',
+  },
+  {
+    icon: Stethoscope,
+    title: 'Nurses & Physiotherapists at All Times',
+    description: 'Qualified nurses and physiotherapists available whenever your care plan needs them.',
   },
   {
     icon: Home,
@@ -46,9 +52,14 @@ const FEATURES = [
     title: 'Health Monitoring',
     description: 'Regular vitals tracking with transparent daily reports to your family.',
   },
+  {
+    icon: HeartPulse,
+    title: 'Comprehensive Health Protection',
+    description: 'End-to-end care that looks after the whole person — body, comfort and peace of mind.',
+  },
 ]
 
-/** Seven reasons families choose Dhrishta, with a supporting illustration. */
+/** Reasons families choose Dhrishta (from the brochure), with illustration. */
 export default function WhyChooseUs() {
   return (
     <section className="section-padding bg-white">

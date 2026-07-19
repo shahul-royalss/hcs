@@ -1,8 +1,8 @@
-# Dhrishta Healthcare Services — Website Platform
+# Dhrishta Health Care Services — Website Platform
 
 > **Your Family... Our Care and Responsibility**
 
-Full-stack platform for Dhrishta Healthcare Services, a home healthcare provider in
+Full-stack platform for Dhrishta Health Care Services, a home healthcare provider in
 Chittoor, Andhra Pradesh — professional website, multi-step booking system, admin
 portal, AI care assistant and multi-channel notifications.
 
@@ -95,5 +95,5 @@ fallback mode until keys are provided.
 
 ## Contact
 
-Dhrishta Healthcare Services · +91 9959388374 · info@dhrishta.com
+Dhrishta Health Care Services · +91 9959388374 · info@dhrishta.com
 Near Reliance Smart Point, Bypass Road, Murakambattu, Chittoor – 517127 (AP)

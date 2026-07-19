@@ -101,6 +101,7 @@
 .dark .bg-primary-50\/40 { background-color: rgba(79, 116, 179, 0.14); }
 .dark .bg-primary-100 { background-color: #24365a; }
 .dark .bg-secondary-50 { background-color: rgba(45, 139, 139, 0.16); }
+.dark .border-secondary-200 { border-color: rgba(45, 139, 139, 0.45); }
 .dark .bg-success-50 { background-color: rgba(46, 125, 50, 0.18); }
 .dark .bg-warning-50 { background-color: rgba(245, 124, 0, 0.16); }
 .dark .bg-red-50 { background-color: rgba(211, 47, 47, 0.16); }

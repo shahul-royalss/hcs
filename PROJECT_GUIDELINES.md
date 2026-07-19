@@ -1,4 +1,4 @@
-# PROJECT_GUIDELINES.md — Dhrishta Healthcare Services
+# PROJECT_GUIDELINES.md — Dhrishta Health Care Services
 
 > Living document. **Update this file whenever the architecture or structure changes.**
 > Source-of-truth architecture: `docs/architecture/DHRISHTA_WEBSITE_STRUCTURE.pdf`
@@ -6,7 +6,7 @@
 
 ## 1. What This Project Is
 
-A production-grade home-healthcare platform for **Dhrishta Healthcare Services**
+A production-grade home-healthcare platform for **Dhrishta Health Care Services**
 (Chittoor, AP): public marketing/booking website, 7-step consultation booking flow,
 JWT-protected admin portal, AI care assistant, and integration points for
 WhatsApp/SMS/Email/Payments. Target users: families seeking elderly care, patient

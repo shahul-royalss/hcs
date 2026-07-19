@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
     <>
       <Seo
         title="Privacy Policy"
-        description="How Dhrishta Healthcare Services collects, uses and protects your personal and health information."
+        description="How Dhrishta Health Care Services collects, uses and protects your personal and health information."
       />
       <PageHeader
         title="Privacy Policy"
@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
           <p className="text-sm text-ink-light">Last updated: {LAST_UPDATED}</p>
 
           <p className="mt-6 leading-relaxed text-ink md:text-base">
-            Dhrishta Healthcare Services (&ldquo;Dhrishta&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;)
+            Dhrishta Health Care Services (&ldquo;Dhrishta&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;)
             provides home healthcare services in and around Chittoor, Andhra Pradesh. Because our
             work involves the health of your family members, we treat the information you share with
             us with the same seriousness as the care itself. This policy explains what we collect,

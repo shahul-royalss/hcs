@@ -1,7 +1,7 @@
 """Shared constants: company profile, service area, pricing, enumerations."""
 
 # --- Company profile (mirrors frontend/src/data/siteConfig.js) ---
-COMPANY_NAME = "Dhrishta Healthcare Services"
+COMPANY_NAME = "Dhrishta Health Care Services"
 COMPANY_PHONE = "+91 9959388374"
 COMPANY_PHONE_DISPLAY = "+91 99593 88374"
 COMPANY_WHATSAPP = "+919959388374"
