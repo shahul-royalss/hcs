@@ -112,7 +112,11 @@ def rule_based_reply(message: str) -> str:
     words = set(text.replace("?", " ").replace(",", " ").replace(".", " ").split())
     for keywords, reply in _INTENTS:
         for kw in keywords:
-            if (" " in kw and kw in text) or kw in words:
+            if " " in kw:
+                if kw in text:
+                    return reply
+            # Prefix match (>=4 chars) covers plurals/inflections: prices, packages, booking…
+            elif kw in words or (len(kw) >= 4 and any(w.startswith(kw) for w in words)):
                 return reply
     return _FALLBACK_DEFAULT
 

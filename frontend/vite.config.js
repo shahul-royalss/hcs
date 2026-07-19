@@ -2,6 +2,14 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
+// Forward API calls to the FastAPI backend (dev server and local preview)
+const apiProxy = {
+  '/api': {
+    target: process.env.VITE_BACKEND_URL || 'http://localhost:8000',
+    changeOrigin: true,
+  },
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
@@ -12,13 +20,10 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    proxy: {
-      // Forward API calls to the FastAPI backend during development
-      '/api': {
-        target: process.env.VITE_BACKEND_URL || 'http://localhost:8000',
-        changeOrigin: true,
-      },
-    },
+    proxy: apiProxy,
+  },
+  preview: {
+    proxy: apiProxy,
   },
   build: {
     outDir: 'dist',
