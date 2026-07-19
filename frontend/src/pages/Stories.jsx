@@ -12,25 +12,32 @@ import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { successStories, testimonials } from '@/data/testimonials'
 import { services } from '@/data/services'
+import { normalizeTestimonial, useContent } from '@/hooks/useContent'
+import { serviceService } from '@/services/serviceService'
 
 /** slug -> theme color; matches Badge variant names (primary/secondary/success/warning/childcare/daycare). */
 const SLUG_COLOR = Object.fromEntries(services.map((s) => [s.slug, s.color]))
 
-/** Unique services referenced by testimonials, plus "All". */
-const SERVICE_FILTERS = [
-  { id: 'all', label: 'All' },
-  ...[...new Set(testimonials.map((t) => t.service))].map((service) => ({
-    id: service,
-    label: service,
-  })),
-]
-
 export default function Stories() {
   const [serviceFilter, setServiceFilter] = useState('all')
+
+  // Admin-approved reviews when the backend is reachable; bundled reviews otherwise.
+  const { items: reviews } = useContent(
+    () => serviceService.listTestimonials(),
+    testimonials,
+    normalizeTestimonial
+  )
+
+  const serviceFilters = [
+    { id: 'all', label: 'All' },
+    ...[...new Set(reviews.map((t) => t.service).filter(Boolean))].map((service) => ({
+      id: service,
+      label: service,
+    })),
+  ]
+
   const filteredReviews =
-    serviceFilter === 'all'
-      ? testimonials
-      : testimonials.filter((t) => t.service === serviceFilter)
+    serviceFilter === 'all' ? reviews : reviews.filter((t) => t.service === serviceFilter)
 
   return (
     <>
@@ -87,7 +94,7 @@ export default function Stories() {
           />
           <AnimatedSection>
             <CategoryFilter
-              categories={SERVICE_FILTERS}
+              categories={serviceFilters}
               active={serviceFilter}
               onChange={setServiceFilter}
               className="mb-10"

@@ -3,7 +3,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from motor.motor_asyncio import AsyncIOMotorDatabase
 
-from models.testimonial import TestimonialCreate
+from models.testimonial import TestimonialCreate, TestimonialUpdate
 from utils.database import get_db
 from utils.helpers import parse_object_id, serialize_doc, utcnow
 
@@ -47,6 +47,45 @@ async def list_all_testimonials(db: AsyncIOMotorDatabase = Depends(get_db)) -> l
     """All testimonials regardless of status."""
     cursor = db.testimonials.find({}).sort("created_at", -1)
     return serialize_doc(await cursor.to_list(length=500))
+
+
+@admin_router.post("", status_code=status.HTTP_201_CREATED)
+async def create_testimonial_admin(
+    payload: TestimonialCreate,
+    db: AsyncIOMotorDatabase = Depends(get_db),
+    approved: bool = True,
+) -> dict:
+    """Admin-entered review; approved (and verified) immediately by default."""
+    doc = payload.model_dump()
+    doc.update(
+        {
+            "is_verified": approved,
+            "is_featured": False,
+            "status": "approved" if approved else "pending",
+            "created_at": utcnow(),
+        }
+    )
+    result = await db.testimonials.insert_one(doc)
+    return serialize_doc(await db.testimonials.find_one({"_id": result.inserted_id}))
+
+
+@admin_router.put("/{testimonial_id}")
+async def update_testimonial(
+    testimonial_id: str,
+    payload: TestimonialUpdate,
+    db: AsyncIOMotorDatabase = Depends(get_db),
+) -> dict:
+    """Edit any review fields: content, rating, status, featured/verified flags."""
+    oid = parse_object_id(testimonial_id)
+    if oid is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Testimonial not found.")
+    updates = {k: v for k, v in payload.model_dump(exclude_unset=True).items() if v is not None}
+    if not updates:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No fields to update.")
+    result = await db.testimonials.update_one({"_id": oid}, {"$set": updates})
+    if result.matched_count == 0:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Testimonial not found.")
+    return serialize_doc(await db.testimonials.find_one({"_id": oid}))
 
 
 @admin_router.put("/{testimonial_id}/approve")

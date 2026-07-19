@@ -74,9 +74,17 @@ export const adminService = {
     return data
   },
 
-  // Testimonials
+  // Testimonials / reviews
   async listTestimonials(params) {
     const { data } = await api.get('/admin/testimonials', { params })
+    return data
+  },
+  async createTestimonial(payload) {
+    const { data } = await api.post('/admin/testimonials', payload)
+    return data
+  },
+  async updateTestimonial(id, payload) {
+    const { data } = await api.put(`/admin/testimonials/${id}`, payload)
     return data
   },
   async approveTestimonial(id) {

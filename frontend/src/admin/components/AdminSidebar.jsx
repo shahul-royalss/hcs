@@ -5,22 +5,44 @@ import {
   ExternalLink,
   HeartPulse,
   Images,
+  Inbox,
   LayoutDashboard,
   Settings,
+  Star,
   Users,
   X,
 } from 'lucide-react'
 import Logo from '@/components/common/Logo'
 import { cn } from '@/utils/cn'
 
-const NAV_ITEMS = [
-  { to: '/admin', label: 'Dashboard', icon: LayoutDashboard, end: true },
-  { to: '/admin/bookings', label: 'Bookings', icon: CalendarCheck },
-  { to: '/admin/staff', label: 'Staff', icon: Users },
-  { to: '/admin/patients', label: 'Patients', icon: HeartPulse },
-  { to: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
-  { to: '/admin/gallery', label: 'Gallery', icon: Images },
-  { to: '/admin/settings', label: 'Settings', icon: Settings },
+const NAV_GROUPS = [
+  {
+    label: 'Overview',
+    items: [
+      { to: '/admin', label: 'Dashboard', icon: LayoutDashboard, end: true },
+      { to: '/admin/analytics', label: 'Analytics', icon: BarChart3 },
+    ],
+  },
+  {
+    label: 'Operations',
+    items: [
+      { to: '/admin/bookings', label: 'Bookings', icon: CalendarCheck },
+      { to: '/admin/patients', label: 'Patients', icon: HeartPulse },
+      { to: '/admin/staff', label: 'Staff', icon: Users },
+    ],
+  },
+  {
+    label: 'Website',
+    items: [
+      { to: '/admin/reviews', label: 'Reviews', icon: Star },
+      { to: '/admin/gallery', label: 'Gallery', icon: Images },
+      { to: '/admin/inquiries', label: 'Inquiries', icon: Inbox },
+    ],
+  },
+  {
+    label: 'System',
+    items: [{ to: '/admin/settings', label: 'Settings', icon: Settings }],
+  },
 ]
 
 function SidebarContent({ onNavigate }) {
@@ -31,23 +53,34 @@ function SidebarContent({ onNavigate }) {
         <span className="font-heading text-sm font-bold text-primary">Admin Portal</span>
       </div>
 
-      <nav aria-label="Admin navigation" className="flex-1 space-y-1 overflow-y-auto px-3 py-2">
-        {NAV_ITEMS.map(({ to, label, icon: Icon, end }) => (
-          <NavLink
-            key={to}
-            to={to}
-            end={end}
-            onClick={onNavigate}
-            className={({ isActive }) =>
-              cn(
-                'flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors',
-                isActive ? 'bg-primary-50 text-primary' : 'text-ink-light hover:bg-surface hover:text-ink'
-              )
-            }
-          >
-            <Icon className="h-5 w-5 shrink-0" />
-            {label}
-          </NavLink>
+      <nav aria-label="Admin navigation" className="flex-1 space-y-4 overflow-y-auto px-3 py-2">
+        {NAV_GROUPS.map((group) => (
+          <div key={group.label}>
+            <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-ink-light/70">
+              {group.label}
+            </p>
+            <div className="space-y-1">
+              {group.items.map(({ to, label, icon: Icon, end }) => (
+                <NavLink
+                  key={to}
+                  to={to}
+                  end={end}
+                  onClick={onNavigate}
+                  className={({ isActive }) =>
+                    cn(
+                      'flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors',
+                      isActive
+                        ? 'bg-primary-50 text-primary'
+                        : 'text-ink-light hover:bg-surface hover:text-ink'
+                    )
+                  }
+                >
+                  <Icon className="h-5 w-5 shrink-0" />
+                  {label}
+                </NavLink>
+              ))}
+            </div>
+          </div>
         ))}
       </nav>
 

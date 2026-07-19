@@ -9,6 +9,8 @@ import GalleryGrid from '@/components/gallery/GalleryGrid'
 import Lightbox from '@/components/gallery/Lightbox'
 import { Button } from '@/components/ui/button'
 import { galleryCategories, galleryImages } from '@/data/gallery'
+import { normalizeGalleryImage, useContent } from '@/hooks/useContent'
+import { serviceService } from '@/services/serviceService'
 
 const PAGE_SIZE = 9
 
@@ -17,12 +19,17 @@ export default function Gallery() {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
   const [selected, setSelected] = useState(null)
 
+  // Admin-managed gallery when the backend is reachable; bundled images otherwise.
+  const { items: images } = useContent(
+    () => serviceService.listGallery(),
+    galleryImages,
+    normalizeGalleryImage
+  )
+
   const filtered = useMemo(
     () =>
-      category === 'all'
-        ? galleryImages
-        : galleryImages.filter((image) => image.category === category),
-    [category]
+      category === 'all' ? images : images.filter((image) => image.category === category),
+    [category, images]
   )
   const visible = filtered.slice(0, visibleCount)
 

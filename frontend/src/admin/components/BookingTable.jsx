@@ -35,7 +35,8 @@ export default function BookingTable({ bookings = [], onView, onAssign, onUpdate
         {bookings.map((booking, index) => {
           const status = booking?.status || 'pending'
           const statusMeta = BOOKING_STATUS[status]
-          const isUrgent = booking?.urgency === 'urgent'
+          const urgency = booking?.schedule?.urgency || booking?.urgency
+          const isUrgent = urgency === 'urgent'
 
           return (
             <TableRow key={booking?.id || booking?._id || booking?.booking_id || index}>
@@ -50,7 +51,7 @@ export default function BookingTable({ bookings = [], onView, onAssign, onUpdate
               </TableCell>
               <TableCell>
                 <Badge variant={isUrgent ? 'accent' : 'neutral'}>
-                  {isUrgent ? 'Urgent' : titleCase(booking?.urgency || 'normal')}
+                  {isUrgent ? 'Urgent' : titleCase(urgency || 'normal')}
                 </Badge>
               </TableCell>
               <TableCell>

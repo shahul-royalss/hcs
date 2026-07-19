@@ -72,6 +72,8 @@ hcs/
 │       │   └── chatbot/          # ChatWidget, ChatWindow, ChatMessage
 │       ├── pages/                # One default-export component per public route
 │       ├── admin/                # AdminLayout + pages/ + components/ (lazy chunk)
+│       │                         #  Pages: Dashboard, Analytics, Bookings, Patients,
+│       │                         #  Staff, Reviews, Gallery, Inquiries, Settings, Login
 │       ├── context/              # Auth, Booking, Chat, Language providers
 │       ├── hooks/                # useAuth, useBooking, useChat, useToast,
 │       │                         #  useWhatsApp, useLanguage
@@ -122,8 +124,14 @@ hcs/
 - **API:** all HTTP through `services/api.js` (axios instance, JWT header, 401
   auto-logout). Per-domain modules: auth, booking, service, contact, chat, payment,
   admin. Base URL `/api` (Vite dev proxy → `VITE_BACKEND_URL`).
-- **Content pages render from `src/data/`**; the backend serves the same content for
-  the admin portal and future CMS use (seeded by `backend/scripts/seed_data.py`).
+- **Content pages render from `src/data/`**, with one refinement: gallery images and
+  reviews are **API-first with bundled fallback** via `hooks/useContent.js` — the
+  public Gallery page, Stories page and home testimonial carousel show
+  admin-managed content whenever the backend is reachable (normalizers in the same
+  hook map API field names to the bundled shape) and silently fall back to
+  `src/data/` otherwise. Other content (services, packages, team, FAQs, blog)
+  stays code-driven; the backend still mirrors it for future CMS use (seeded by
+  `backend/scripts/seed_data.py`).
 - **Packages staging:** only packages flagged `active: true` in `data/packages.js`
   are offered (currently **Custom Plans only** — the standard hourly/daily/weekly/
   monthly plans are staged for a later launch; flip their flag to re-enable).

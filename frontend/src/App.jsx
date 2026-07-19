@@ -38,6 +38,8 @@ const AdminStaff = lazy(() => import('@/admin/pages/Staff'))
 const AdminPatients = lazy(() => import('@/admin/pages/Patients'))
 const AdminAnalytics = lazy(() => import('@/admin/pages/Analytics'))
 const AdminGallery = lazy(() => import('@/admin/pages/Gallery'))
+const AdminReviews = lazy(() => import('@/admin/pages/Reviews'))
+const AdminInquiries = lazy(() => import('@/admin/pages/Inquiries'))
 const AdminSettings = lazy(() => import('@/admin/pages/Settings'))
 
 export default function App() {
@@ -82,6 +84,8 @@ export default function App() {
               <Route path="patients" element={<AdminPatients />} />
               <Route path="analytics" element={<AdminAnalytics />} />
               <Route path="gallery" element={<AdminGallery />} />
+              <Route path="reviews" element={<AdminReviews />} />
+              <Route path="inquiries" element={<AdminInquiries />} />
               <Route path="settings" element={<AdminSettings />} />
             </Route>
 

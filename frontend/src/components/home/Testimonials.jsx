@@ -6,9 +6,20 @@ import { Badge } from '@/components/ui/badge'
 import { Carousel } from '@/components/ui/carousel'
 import { getServiceBySlug } from '@/data/services'
 import { testimonials } from '@/data/testimonials'
+import { normalizeTestimonial, useContent } from '@/hooks/useContent'
+import { serviceService } from '@/services/serviceService'
 
 /** Testimonial carousel — one centered card per slide. */
 export default function Testimonials() {
+  // Featured admin-approved reviews when the backend is reachable; bundled otherwise.
+  const { items } = useContent(
+    () => serviceService.listTestimonials(),
+    testimonials,
+    normalizeTestimonial
+  )
+  const featured = items.filter((t) => t.featured)
+  const slides = featured.length > 0 ? featured : items.slice(0, 5)
+
   return (
     <section className="section-padding bg-surface">
       <div className="container-site">
@@ -20,7 +31,7 @@ export default function Testimonials() {
 
         <AnimatedSection>
           <Carousel ariaLabel="Family testimonials" className="mx-auto max-w-4xl">
-            {testimonials.map((testimonial) => {
+            {slides.map((testimonial) => {
               const badgeVariant = getServiceBySlug(testimonial.serviceSlug)?.color || 'primary'
               return (
                 <div key={testimonial.id} className="px-2 pb-2 sm:px-14">
