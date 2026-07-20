@@ -9,7 +9,7 @@ import { formatINR, formatDate } from '@/utils/formatters'
 
 function SummarySection({ title, step, onEdit, rows }) {
   return (
-    <section className="rounded-xl border border-slate-100 bg-surface/60 p-4">
+    <section className="rounded-xl border border-ivory-300 bg-surface/60 p-4">
       <div className="mb-2 flex items-center justify-between gap-2">
         <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-primary">{title}</h3>
         <button
@@ -131,7 +131,7 @@ export default function ReviewConfirm() {
             checked={data.termsAccepted}
             onChange={(e) => updateData({ termsAccepted: e.target.checked })}
             aria-invalid={data.termsAccepted ? undefined : 'true'}
-            className="mt-0.5 h-4 w-4 rounded border-slate-300 accent-[#2d8b8b]"
+            className="mt-0.5 h-4 w-4 rounded border-ivory-300 accent-secondary-600"
           />
           <span>
             I agree to the{' '}
@@ -146,7 +146,7 @@ export default function ReviewConfirm() {
         )}
       </div>
 
-      <div className="flex items-center justify-between border-t border-slate-100 pt-5">
+      <div className="flex items-center justify-between border-t border-ivory-300 pt-5">
         <Button type="button" variant="ghost" onClick={prevStep}>
           <ArrowLeft aria-hidden="true" /> Back
         </Button>

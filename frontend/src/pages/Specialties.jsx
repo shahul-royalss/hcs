@@ -35,14 +35,14 @@ export default function Specialties() {
       {/* Sticky sub-navigation chips */}
       <nav
         aria-label="Jump to a specialty"
-        className="sticky top-16 z-30 border-b border-slate-100 bg-white/95 backdrop-blur md:top-[72px]"
+        className="sticky top-16 z-30 border-b border-ivory-300 bg-white/95 backdrop-blur md:top-[72px]"
       >
         <div className="container-site flex gap-2 overflow-x-auto py-3">
           {specialties.map((specialty) => (
             <a
               key={specialty.slug}
               href={`#${specialty.slug}`}
-              className="whitespace-nowrap rounded-full border border-slate-200 px-4 py-1.5 text-sm font-medium text-ink-light transition-colors hover:border-secondary hover:text-secondary"
+              className="whitespace-nowrap rounded-full border border-ivory-300 px-4 py-1.5 text-sm font-medium text-ink-light transition-colors hover:border-secondary hover:text-secondary"
             >
               {specialty.name}
             </a>

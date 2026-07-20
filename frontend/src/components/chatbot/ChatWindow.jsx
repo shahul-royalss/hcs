@@ -95,7 +95,7 @@ export default function ChatWindow() {
         </div>
 
         {/* Quick replies + input */}
-        <div className="border-t border-slate-100">
+        <div className="border-t border-ivory-300">
           {showQuickReplies && (
             <div className="flex flex-wrap gap-2 px-3 pt-3">
               {QUICK_REPLIES.map((label) => (

@@ -48,7 +48,7 @@ export default function MobileMenu({ open, onClose }) {
             transition={{ type: 'tween', duration: 0.25 }}
             aria-label="Mobile navigation"
           >
-            <div className="flex items-center justify-between border-b border-slate-100 p-4">
+            <div className="flex items-center justify-between border-b border-ivory-300 p-4">
               <Logo className="h-9 w-auto" />
               <button
                 type="button"
@@ -82,12 +82,12 @@ export default function MobileMenu({ open, onClose }) {
               </ul>
             </nav>
 
-            <div className="space-y-2.5 border-t border-slate-100 p-4">
+            <div className="space-y-2.5 border-t border-ivory-300 p-4">
               <Link to="/book-consultation" onClick={onClose} className="block">
                 <Button className="w-full">{t('cta.bookConsultation')}</Button>
               </Link>
               <a href={telLink(siteConfig.phone)} className="block">
-                <Button variant="accent" className="w-full">
+                <Button variant="outline" className="w-full">
                   <Phone className="h-4 w-4" /> {siteConfig.phoneDisplay}
                 </Button>
               </a>

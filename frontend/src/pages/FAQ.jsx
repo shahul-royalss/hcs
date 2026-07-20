@@ -58,7 +58,7 @@ export default function FAQ() {
                       'rounded-full border-2 px-4 py-1.5 text-sm font-semibold transition-all',
                       active
                         ? 'border-primary bg-primary text-white shadow-sm'
-                        : 'border-slate-200 bg-white text-ink hover:border-primary-200'
+                        : 'border-ivory-300 bg-white text-ink hover:border-primary-200'
                     )}
                   >
                     {pill.label}

@@ -33,7 +33,7 @@ export default function AdminLayout() {
       <AdminSidebar open={menuOpen} onClose={() => setMenuOpen(false)} />
 
       {/* Mobile top bar */}
-      <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-slate-100 bg-white px-4 py-3 lg:hidden">
+      <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-ivory-300 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
         <button
           type="button"
           onClick={() => setMenuOpen(true)}
@@ -46,8 +46,14 @@ export default function AdminLayout() {
         <span className="font-heading text-sm font-bold text-primary">Admin Portal</span>
       </header>
 
-      <main className="min-h-screen bg-surface p-6 lg:pl-72">
-        <div className="mb-6 flex flex-wrap items-center justify-end gap-3">
+      <main className="relative min-h-screen bg-surface p-6 lg:pl-72">
+        {/* Morning warmth over the working canvas */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-72"
+          style={{ background: 'radial-gradient(80% 100% at 30% 0%, rgba(234,217,176,0.28), transparent 70%)' }}
+          aria-hidden="true"
+        />
+        <div className="relative mb-6 flex flex-wrap items-center justify-end gap-3">
           <ThemeToggle compact />
           <span className="text-sm font-medium text-ink">{user?.name || user?.email || 'Admin'}</span>
           <Badge variant="secondary">{titleCase(user?.role || 'admin')}</Badge>
@@ -57,7 +63,9 @@ export default function AdminLayout() {
           </Button>
         </div>
 
-        <Outlet />
+        <div className="relative">
+          <Outlet />
+        </div>
       </main>
     </div>
   )

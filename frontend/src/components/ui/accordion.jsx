@@ -17,7 +17,7 @@ export function Accordion({ items, className, defaultOpenId = null }) {
         return (
           <div
             key={item.id}
-            className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-card"
+            className="overflow-hidden rounded-card border border-ivory-300 bg-white shadow-card"
           >
             <button
               type="button"

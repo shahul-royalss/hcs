@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 840" role="img" aria-label="Mornings return">
+  <defs>
+    <linearGradient id="field8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDFDFB"/><stop offset="1" stop-color="#F2EEE5"/>
+    </linearGradient>
+    <radialGradient id="glow8" cx="0.24" cy="0.08" r="0.9">
+      <stop offset="0" stop-color="#EAD9B0" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#EAD9B0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shaft8" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#EAD9B0" stop-opacity="0.65"/>
+      <stop offset="0.6" stop-color="#C29A55" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#C29A55" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft8" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="grain8">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1440" height="840" fill="url(#field8)"/>
+  <rect width="1440" height="840" fill="url(#glow8)"/>
+  <!-- light shaft entering from upper left -->
+  <polygon points="172.79999999999998,-84 489.6,-84 892.8,882 403.20000000000005,882"
+    fill="url(#shaft8)" filter="url(#soft8)"/>
+  <!-- arch window with pooling light -->
+  <g>
+    <path d="M1036.8 571.2 v-314.4 a122.4 122.4 0 0 1 244.8 0 v314.4 z"
+      fill="rgba(234,217,176,0.35)" stroke="rgba(10,27,46,0.14)" stroke-width="2"/>
+    <line x1="1159.2" y1="158.88" x2="1159.2" y2="571.2" stroke="rgba(10,27,46,0.14)" stroke-width="1.5"/>
+    <ellipse cx="1159.2" cy="621.6" rx="208.08" ry="37.8"
+      fill="#EAD9B0" opacity="0.4" filter="url(#soft8)"/>
+  </g>
+  <!-- horizon hairline -->
+  <line x1="86.39999999999999" y1="621.6" x2="1353.6" y2="621.6" stroke="rgba(10,27,46,0.14)" stroke-width="1.5"/>
+  <circle cx="115" cy="186" r="3.4" fill="#C29A55" opacity="0.50"/>
+    <circle cx="156" cy="431" r="3.3" fill="#C29A55" opacity="0.40"/>
+    <circle cx="510" cy="516" r="2.6" fill="#C29A55" opacity="0.51"/>
+    <circle cx="206" cy="363" r="3.6" fill="#C29A55" opacity="0.18"/>
+    <circle cx="410" cy="133" r="2.5" fill="#C29A55" opacity="0.23"/>
+    <circle cx="185" cy="407" r="1.2" fill="#C29A55" opacity="0.51"/>
+    <circle cx="392" cy="550" r="2.7" fill="#C29A55" opacity="0.23"/>
+    <circle cx="167" cy="531" r="2.4" fill="#C29A55" opacity="0.56"/>
+    <circle cx="448" cy="474" r="2.5" fill="#C29A55" opacity="0.41"/>
+    <circle cx="659" cy="500" r="3.4" fill="#C29A55" opacity="0.26"/>
+    <circle cx="259" cy="422" r="1.9" fill="#C29A55" opacity="0.50"/>
+    <circle cx="170" cy="186" r="3.1" fill="#C29A55" opacity="0.20"/>
+    <circle cx="573" cy="278" r="1.3" fill="#C29A55" opacity="0.23"/>
+    <circle cx="146" cy="407" r="1.5" fill="#C29A55" opacity="0.51"/>
+  <g transform="translate(1348,36) scale(0.82)" opacity="0.75">
+    <path d="M0 18 C0 6 10-2 19 4 c3 2 5 5 6 8 1-3 3-6 6-8 9-6 19 2 19 14 0 14-18 24-25 28 C18 42 0 32 0 18z" fill="none" stroke="#C29A55" stroke-width="3"/>
+    <path d="M8 22 h10 l4-8 7 18 4-8 h11" stroke="#C29A55" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <rect width="1440" height="840" filter="url(#grain8)" opacity="0.35" fill="none"/>
+</svg>

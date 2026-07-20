@@ -69,7 +69,7 @@ export default function StaffPreference() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-5">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-ivory-300 pt-5">
         <Button type="button" variant="ghost" onClick={prevStep}>
           <ArrowLeft aria-hidden="true" /> Back
         </Button>

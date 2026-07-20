@@ -94,7 +94,7 @@ export default function Dashboard() {
       label: 'New inquiries',
       value: pick(data?.new_inquiries, data?.pending_contacts, data?.totals?.inquiries, 0),
       icon: MessageSquare,
-      color: 'accent',
+      color: 'gold',
     },
     {
       label: 'Pending reviews',
@@ -155,7 +155,7 @@ export default function Dashboard() {
       ) : (
         <div className="space-y-6">
           {urgentBookings.length > 0 && (
-            <Card className="border-accent/30 bg-red-50 p-4">
+            <Card className="border-accent/30 bg-accent-50 p-4">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white">
                   <Siren className="h-5 w-5" />
@@ -181,7 +181,7 @@ export default function Dashboard() {
               <Link
                 key={to}
                 to={to}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-secondary hover:text-secondary"
+                className="inline-flex items-center gap-2 rounded-full border border-ivory-300 bg-white px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-secondary hover:text-secondary-700"
               >
                 <Icon className="h-4 w-4" />
                 {label}

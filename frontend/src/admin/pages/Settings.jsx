@@ -65,11 +65,11 @@ export default function Settings() {
             <CardDescription>Your admin account details.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3 text-sm">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div className="flex items-center justify-between border-b border-ivory-300 pb-3">
               <span className="text-ink-light">Name</span>
               <span className="font-medium text-ink">{user?.name || '—'}</span>
             </div>
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div className="flex items-center justify-between border-b border-ivory-300 pb-3">
               <span className="text-ink-light">Email</span>
               <span className="font-medium text-ink">{user?.email || '—'}</span>
             </div>
@@ -122,9 +122,9 @@ export default function Settings() {
           <CardContent className="grid gap-4 sm:grid-cols-2">
             <Link
               to="/admin/reviews"
-              className="group flex items-center gap-4 rounded-card border border-slate-100 p-5 transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="group flex items-center gap-4 rounded-card border border-ivory-300 p-5 transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-warning-50 text-warning">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-50 text-gold-600">
                 <Star className="h-5 w-5" />
               </span>
               <span className="flex-1">
@@ -135,7 +135,7 @@ export default function Settings() {
             </Link>
             <Link
               to="/admin/inquiries"
-              className="group flex items-center gap-4 rounded-card border border-slate-100 p-5 transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="group flex items-center gap-4 rounded-card border border-ivory-300 p-5 transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary-50 text-primary">
                 <Inbox className="h-5 w-5" />

@@ -8,6 +8,10 @@ portal, AI care assistant and multi-channel notifications.
 
 Built strictly according to the architecture document in
 [`docs/architecture/DHRISHTA_WEBSITE_STRUCTURE.pdf`](docs/architecture/DHRISHTA_WEBSITE_STRUCTURE.pdf).
+The visual language follows the **"morning light"** design blueprint in
+[`docs/design/MORNING_LIGHT_BLUEPRINT.md`](docs/design/MORNING_LIGHT_BLUEPRINT.md)
+(ivory · navy ink · healing teal · soft gold; all imagery is generated placeholder
+art — swap files in `frontend/public/images/` with real photos, same names).
 Project conventions and structure are documented in [`PROJECT_GUIDELINES.md`](PROJECT_GUIDELINES.md).
 
 ## Tech Stack

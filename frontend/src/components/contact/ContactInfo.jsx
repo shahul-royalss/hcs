@@ -38,7 +38,7 @@ export default function ContactInfo() {
         <button
           type="button"
           onClick={() => openChat()}
-          className="font-semibold text-[#1ebe5d] underline-offset-2 hover:underline"
+          className="font-semibold text-secondary-600 underline-offset-2 hover:underline"
         >
           Click to chat with us
         </button>

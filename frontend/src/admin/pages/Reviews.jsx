@@ -120,8 +120,10 @@ export default function Reviews() {
             type="button"
             onClick={() => setFilter(id)}
             className={cn(
-              'rounded-full px-4 py-1.5 text-sm font-semibold transition-colors',
-              filter === id ? 'bg-primary text-white' : 'bg-white text-ink-light hover:text-primary'
+              'rounded-full border px-4 py-1.5 text-sm font-semibold transition-colors',
+              filter === id
+                ? 'border-secondary-600 bg-secondary-600 text-white'
+                : 'border-ivory-300 bg-white text-ink-light hover:text-primary'
             )}
           >
             {label} ({counts[id] ?? 0})
@@ -163,7 +165,7 @@ export default function Reviews() {
 
               <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-light">{r.review}</p>
 
-              <div className="mt-4 flex flex-wrap gap-2 border-t border-slate-100 pt-4">
+              <div className="mt-4 flex flex-wrap gap-2 border-t border-ivory-300 pt-4">
                 {r.status !== 'approved' && (
                   <Button size="sm" variant="secondary" disabled={busyId === r.id} onClick={() => approve(r)}>
                     <Check className="h-4 w-4" /> Approve

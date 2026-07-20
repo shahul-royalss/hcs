@@ -59,7 +59,7 @@ export default function ServiceSelection() {
                   'flex flex-col items-center gap-2 rounded-xl border-2 p-4 text-center transition-all',
                   selected
                     ? 'border-secondary bg-secondary-50 shadow-card'
-                    : 'border-slate-200 bg-white hover:border-secondary-200 hover:shadow-card'
+                    : 'border-ivory-300 bg-white hover:border-secondary-200 hover:shadow-card'
                 )}
               >
                 <span
@@ -98,7 +98,7 @@ export default function ServiceSelection() {
                   'rounded-full border-2 px-4 py-2 text-sm font-semibold transition-all',
                   selected
                     ? 'border-primary bg-primary text-white shadow-sm'
-                    : 'border-slate-200 bg-white text-ink hover:border-primary-200'
+                    : 'border-ivory-300 bg-white text-ink hover:border-primary-200'
                 )}
               >
                 {pkg.name}
@@ -128,12 +128,12 @@ export default function ServiceSelection() {
       </div>
 
       {error && (
-        <p className="rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-accent" role="alert">
+        <p className="rounded-xl bg-accent-50 px-4 py-3 text-sm font-medium text-accent" role="alert">
           {error}
         </p>
       )}
 
-      <div className="flex justify-end border-t border-slate-100 pt-5">
+      <div className="flex justify-end border-t border-ivory-300 pt-5">
         <Button type="button" onClick={handleContinue}>
           Continue <ArrowRight aria-hidden="true" />
         </Button>

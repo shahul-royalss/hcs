@@ -2,7 +2,8 @@
 
 > Living document. **Update this file whenever the architecture or structure changes.**
 > Source-of-truth architecture: `docs/architecture/DHRISHTA_WEBSITE_STRUCTURE.pdf`
-> Last updated: 2026-07-19
+> Source-of-truth design language: `docs/design/MORNING_LIGHT_BLUEPRINT.md` ("morning light")
+> Last updated: 2026-07-20
 
 ## 1. What This Project Is
 
@@ -62,7 +63,11 @@ hcs/
 │       │   ├── common/           # ErrorBoundary, LoadingSpinner, ScrollToTop, Seo,
 │       │   │                     #  FloatingWhatsApp, CallButton, SectionHeading,
 │       │   │                     #  AnimatedSection, ServiceIcon, StarRating
-│       │   ├── home/             # 8 home-page sections
+│       │   ├── home/             # 12 home "scenes" (blueprint order): Hero, Story,
+│       │   │                     #  ServicesOverview, HowItWorks (care journey),
+│       │   │                     #  WhyChooseUs, Stats, PackagesPreview, Testimonials,
+│       │   │                     #  MomentsStrip, FaqPreview, EmergencyBanner,
+│       │   │                     #  SunsetContact
 │       │   ├── services/         # ServiceCard, ServiceCategories, ServiceDetail
 │       │   ├── packages/         # PackageCard, PackageComparison
 │       │   ├── gallery/          # GalleryGrid, ImageCard, CategoryFilter, Lightbox
@@ -100,11 +105,27 @@ hcs/
 - **Routing:** React Router v6; all routes declared in `App.jsx`; pages are
   lazy-loaded (route-based code splitting; admin is a separate chunk).
 - **Imports:** always via the `@/` alias (maps to `src/`).
-- **Design system** (from the architecture doc):
-  - Colors: `primary` #1a3a6b (navy) · `secondary` #2d8b8b (teal) · `accent` #d32f2f
-    · `success` #2e7d32 · `warning` #f57c00 · `childcare` #c2185b · `daycare` #7b1fa2
-    · `surface` #f5f5f5 · `ink` #212121 / `ink-light` #757575. Use theme tokens, never
-    raw hex in components.
+- **Design system — "morning light"** (`docs/design/MORNING_LIGHT_BLUEPRINT.md`;
+  token names kept from the architecture doc, values remapped):
+  - Colors (discipline: ~90% ivory + navy ink, ~7% teal, ~3% gold per viewport):
+    `primary` = navy ink family (#0A1B2E display/body, 700 #16324F subheads,
+    500 #405872 secondary text) · `secondary` = healing teal (#1F6F6B buttons/links)
+    · `gold` = soft gold #C29A55 ("where light falls" — shafts, underlines, focus)
+    · `ivory` 50–300 (#FDFDFB page base → #E4E4DE "mist" hairlines; `white` is
+    remapped to ivory-050 — never pure #FFF/#000) · `accent` = clay #A9503C
+    (**semantic only**: errors/emergency/destructive) · `success` = emerald #2E7D5B
+    · `warning` = amber-gold · `childcare`/`daycare` = muted rose/plum ·
+    `surface` = ivory-100 #FAF7F1 · `ink` #0A1B2E / `ink-light` #405872.
+    Use theme tokens, never raw hex in components.
+  - Signature helpers in `index.css`: `.tagline` (tracked-caps overline — the only
+    tracked-caps element), `.glass` / `.glass-night`, `.light-shaft` (the recurring
+    gold light-shaft motif), `.gold-underline`, `.arch-mask`, fluid display sizes
+    (`.text-hero-fluid`, `.text-d1-fluid`, `.text-d2-fluid`), plus body grain +
+    radial "expensive paper" warmth. Dark mode is the same palette's night
+    exposure (navy surface, ivory ink, gold light).
+  - Motion: framer-motion only — soft `[0.22,1,0.36,1]` ease entrances ≤ 32px
+    travel, `animate-breathe`/`animate-float-slow` idle loops (±1%, motion-safe),
+    scroll-linked gold path/progress via `useScroll`. Restraint over spectacle.
   - Fonts: Manrope (`font-heading`), Inter (`font-body`), Crimson Text
     (`font-accent` / `.tagline`), Noto Sans Devanagari (Hindi fallback in every
     stack). All fonts are **self-hosted** from `public/fonts/` (`fonts.css` +
@@ -213,7 +234,8 @@ hcs/
 | Lucide **+ Font Awesome** | Lucide only | One icon system; avoids duplicate assets (Golden Rule 2). |
 | GPT-5.2 / Claude chatbot | Anthropic API with rule-based offline fallback | Single provider path; works with no key configured. |
 | Admin pages for testimonials/contacts moderation | Consolidated into Admin → Settings | Spec lists the APIs but no dedicated pages; consolidation keeps nav small. |
-| Photography | Branded SVG placeholders in `public/images/` (generator script included) | No licensed photos available; swap files in place (same names) when real photos arrive. |
+| Photography | "Morning light" art-directed SVG placeholders in `public/images/` (generator: `scripts/generate-placeholders.mjs`) | No licensed photos available; swap files in place (same names) when real photos arrive. |
+| Blueprint's Next.js 15 + GSAP/Lenis + Three.js cinematic stack | Blueprint adopted as the design source of truth (palette, typography scale, narrative scenes S1–S10, motion grammar) implemented inside the existing React 18 + Vite + framer-motion stack | A framework rewrite would discard the working booking flow, admin portal and backend integration; the pinned-scroll/WebGL layers are deferred — the blueprint's own LITE/fallback tier is what ships. |
 
 ## 9. Roadmap (from the architecture doc)
 

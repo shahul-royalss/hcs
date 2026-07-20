@@ -45,18 +45,25 @@ const NAV_GROUPS = [
   },
 ]
 
+/**
+ * Sidebar surface is the palette's night exposure: navy-900 field, ivory ink,
+ * gold where the light falls (active item).
+ */
 function SidebarContent({ onNavigate }) {
   return (
-    <div className="flex h-full flex-col">
-      <div className="flex items-center gap-3 px-5 py-5">
-        <Logo className="h-9 w-auto" />
-        <span className="font-heading text-sm font-bold text-primary">Admin Portal</span>
+    <div className="relative flex h-full flex-col">
+      {/* A faint shaft of light across the panel */}
+      <div className="light-shaft absolute -top-16 left-[15%] h-[50%] w-24 opacity-40" aria-hidden="true" />
+
+      <div className="relative flex items-center gap-3 px-5 py-5">
+        <Logo variant="dark" className="h-9 w-auto" />
+        <span className="font-heading text-sm font-bold text-white">Admin Portal</span>
       </div>
 
-      <nav aria-label="Admin navigation" className="flex-1 space-y-4 overflow-y-auto px-3 py-2">
+      <nav aria-label="Admin navigation" className="relative flex-1 space-y-4 overflow-y-auto px-3 py-2">
         {NAV_GROUPS.map((group) => (
           <div key={group.label}>
-            <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-ink-light/70">
+            <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-overline text-white/35">
               {group.label}
             </p>
             <div className="space-y-1">
@@ -68,15 +75,25 @@ function SidebarContent({ onNavigate }) {
                   onClick={onNavigate}
                   className={({ isActive }) =>
                     cn(
-                      'flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors',
+                      'relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors',
                       isActive
-                        ? 'bg-primary-50 text-primary'
-                        : 'text-ink-light hover:bg-surface hover:text-ink'
+                        ? 'bg-white/10 text-gold-200'
+                        : 'text-white/65 hover:bg-white/5 hover:text-white'
                     )
                   }
                 >
-                  <Icon className="h-5 w-5 shrink-0" />
-                  {label}
+                  {({ isActive }) => (
+                    <>
+                      {isActive && (
+                        <span
+                          className="absolute inset-y-2 left-0 w-0.5 rounded-full bg-gold-400"
+                          aria-hidden="true"
+                        />
+                      )}
+                      <Icon className="h-5 w-5 shrink-0" />
+                      {label}
+                    </>
+                  )}
                 </NavLink>
               ))}
             </div>
@@ -84,11 +101,11 @@ function SidebarContent({ onNavigate }) {
         ))}
       </nav>
 
-      <div className="border-t border-slate-100 p-3">
+      <div className="relative border-t border-white/10 p-3">
         <Link
           to="/"
           onClick={onNavigate}
-          className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-ink-light transition-colors hover:bg-surface hover:text-ink"
+          className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-white/65 transition-colors hover:bg-white/5 hover:text-white"
         >
           <ExternalLink className="h-5 w-5 shrink-0" />
           View website
@@ -106,7 +123,7 @@ export default function AdminSidebar({ open = false, onClose }) {
   return (
     <>
       {/* Desktop */}
-      <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 border-r border-slate-100 bg-white lg:block">
+      <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 overflow-hidden bg-primary-900 lg:block">
         <SidebarContent />
       </aside>
 
@@ -117,14 +134,14 @@ export default function AdminSidebar({ open = false, onClose }) {
             type="button"
             aria-label="Close menu"
             onClick={onClose}
-            className="absolute inset-0 h-full w-full cursor-default bg-primary-900/60 backdrop-blur-sm"
+            className="absolute inset-0 h-full w-full cursor-default bg-primary-900/70 backdrop-blur-sm"
           />
-          <aside className="absolute inset-y-0 left-0 w-64 bg-white shadow-card-hover">
+          <aside className="absolute inset-y-0 left-0 w-64 overflow-hidden bg-primary-900 shadow-card-hover">
             <button
               type="button"
               onClick={onClose}
               aria-label="Close menu"
-              className="absolute right-3 top-5 rounded-full p-1.5 text-ink-light transition-colors hover:bg-surface hover:text-ink"
+              className="absolute right-3 top-5 z-10 rounded-full p-1.5 text-white/60 transition-colors hover:bg-white/10 hover:text-white"
             >
               <X className="h-5 w-5" />
             </button>

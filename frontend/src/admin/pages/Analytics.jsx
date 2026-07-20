@@ -196,7 +196,7 @@ export default function Analytics() {
                       </div>
                       <div className="h-2.5 w-full overflow-hidden rounded-full bg-surface">
                         <div
-                          className="h-full rounded-full bg-primary"
+                          className="h-full rounded-full bg-gold-500"
                           style={{ width: `${(point.value / serviceMax) * 100}%` }}
                         />
                       </div>

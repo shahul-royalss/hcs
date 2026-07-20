@@ -23,7 +23,12 @@ export default function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="bg-primary-900 text-white">
+    <footer className="relative bg-primary-900 text-white">
+      {/* The last of the light — a gold hairline where day meets night */}
+      <div
+        className="h-0.5 w-full bg-gradient-to-r from-gold-500/0 via-gold-500/70 to-gold-500/0"
+        aria-hidden="true"
+      />
       <div className="container-site grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         {/* Company info */}
         <div>
@@ -75,7 +80,7 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <Link to="/emergency" className="font-semibold text-red-300 transition-colors hover:text-red-200">
+              <Link to="/emergency" className="font-semibold text-accent-300 transition-colors hover:text-accent-50">
                 {t('footer.emergencyCare')}
               </Link>
             </li>
@@ -123,7 +128,10 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-5 text-sm text-white/60 md:flex-row">
-          <p>© {year} {siteConfig.name}. {t('footer.rights')}</p>
+          <p>
+            © {year} {siteConfig.name}. {t('footer.rights')}{' '}
+            <span className="whitespace-nowrap text-gold-300/80">Made with care in Andhra Pradesh.</span>
+          </p>
           <div className="flex gap-5">
             <Link to="/privacy-policy" className="transition-colors hover:text-white">{t('footer.privacy')}</Link>
             <Link to="/terms-conditions" className="transition-colors hover:text-white">{t('footer.terms')}</Link>

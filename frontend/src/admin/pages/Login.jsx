@@ -45,8 +45,15 @@ export default function Login() {
   return (
     <>
       <Seo title="Admin — Login" description="Dhrishta Health Care Services admin portal sign-in." />
-      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary to-secondary-700 p-4">
-        <Card className="w-full max-w-md p-8">
+      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-primary-900 p-4">
+        {/* Night exposure: navy field, one shaft of gold light */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(90% 70% at 25% 0%, rgba(194,154,85,0.16), transparent 60%)' }}
+          aria-hidden="true"
+        />
+        <div className="light-shaft absolute -top-40 left-[18%] h-[120%] w-80" aria-hidden="true" />
+        <Card className="relative w-full max-w-md p-8 shadow-card-hover ring-1 ring-white/20">
           <div className="mb-6 text-center">
             <Logo className="mx-auto h-12 w-auto" />
             <h1 className="mt-4 font-heading text-2xl font-bold text-primary">Admin Portal</h1>
@@ -84,7 +91,7 @@ export default function Login() {
               </div>
 
               {formError && (
-                <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-accent">
+                <p role="alert" className="rounded-xl bg-accent-50 px-4 py-3 text-sm text-accent">
                   {formError}
                 </p>
               )}

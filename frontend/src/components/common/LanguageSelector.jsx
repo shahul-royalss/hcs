@@ -34,7 +34,7 @@ export default function LanguageSelector({ compact = false }) {
         aria-expanded={open}
         aria-label="Change language"
         className={cn(
-          'inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-slate-200 font-semibold text-ink transition-colors hover:border-secondary hover:text-secondary',
+          'inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-ivory-300 font-semibold text-ink transition-colors hover:border-secondary hover:text-secondary',
           compact ? 'h-9 px-2.5 text-xs' : 'h-10 px-3 text-sm'
         )}
       >
@@ -47,7 +47,7 @@ export default function LanguageSelector({ compact = false }) {
         <ul
           role="listbox"
           aria-label="Language"
-          className="absolute right-0 top-full z-50 mt-2 w-36 overflow-hidden rounded-xl border border-slate-100 bg-white py-1 shadow-card-hover"
+          className="absolute right-0 top-full z-50 mt-2 w-36 overflow-hidden rounded-xl border border-ivory-300 bg-white py-1 shadow-card-hover"
         >
           {languages.map(({ code, label }) => (
             <li key={code}>

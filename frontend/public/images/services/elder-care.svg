@@ -1,17 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Elder Care">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2e7d32"/>
-      <stop offset="1" stop-color="#43a047"/>
+    <linearGradient id="field11" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDFDFB"/><stop offset="1" stop-color="#F2EEE5"/>
     </linearGradient>
+    <radialGradient id="glow11" cx="0.24" cy="0.08" r="0.9">
+      <stop offset="0" stop-color="#CFE4D8" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#CFE4D8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shaft11" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#EAD9B0" stop-opacity="0.65"/>
+      <stop offset="0.6" stop-color="#C29A55" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#C29A55" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft11" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="grain11">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
   </defs>
-  <rect width="1200" height="800" fill="url(#g)"/>
-  <circle cx="1020" cy="160" r="280" fill="#ffffff" opacity="0.06"/>
-  <circle cx="120" cy="680" r="240" fill="#ffffff" opacity="0.06"/>
-  <g transform="translate(575, 352) scale(1)">
-    <path d="M0 18 C0 6 10-2 19 4 c3 2 5 5 6 8 1-3 3-6 6-8 9-6 19 2 19 14 0 14-18 24-25 28 C18 42 0 32 0 18z" fill="#ffffff" opacity="0.9"/>
-    <path d="M8 20 h10 l4-8 7 18 4-8 h11" stroke="#2e7d32" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="1200" height="800" fill="url(#field11)"/>
+  <rect width="1200" height="800" fill="url(#glow11)"/>
+  <!-- light shaft entering from upper left -->
+  <polygon points="144,-80 408.00000000000006,-80 744,840 336.00000000000006,840"
+    fill="url(#shaft11)" filter="url(#soft11)"/>
+  <!-- arch window with pooling light -->
+  <g>
+    <path d="M864 544 v-314 a102.00000000000001 102.00000000000001 0 0 1 204.00000000000003 0 v314 z"
+      fill="rgba(234,217,176,0.35)" stroke="rgba(10,27,46,0.14)" stroke-width="2"/>
+    <line x1="966" y1="148.4" x2="966" y2="544" stroke="rgba(10,27,46,0.14)" stroke-width="1.5"/>
+    <ellipse cx="966" cy="592" rx="173.4" ry="36"
+      fill="#EAD9B0" opacity="0.4" filter="url(#soft11)"/>
   </g>
-  <text x="600" y="434" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="31.57894736842105" font-weight="700" fill="#ffffff">Elder Care</text>
-  <text x="600" y="462" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17.142857142857142" fill="#ffffff" opacity="0.85">Dhrishta Healthcare</text>
+  <!-- horizon hairline -->
+  <line x1="72" y1="592" x2="1128" y2="592" stroke="rgba(10,27,46,0.14)" stroke-width="1.5"/>
+  <circle cx="96" cy="367" r="1.5" fill="#C29A55" opacity="0.25"/>
+    <circle cx="489" cy="246" r="3.6" fill="#C29A55" opacity="0.41"/>
+    <circle cx="448" cy="397" r="2.9" fill="#C29A55" opacity="0.34"/>
+    <circle cx="468" cy="396" r="1.4" fill="#C29A55" opacity="0.42"/>
+    <circle cx="350" cy="138" r="2.9" fill="#C29A55" opacity="0.31"/>
+    <circle cx="306" cy="417" r="3.2" fill="#C29A55" opacity="0.42"/>
+    <circle cx="650" cy="323" r="3.4" fill="#C29A55" opacity="0.21"/>
+    <circle cx="288" cy="75" r="1.7" fill="#C29A55" opacity="0.28"/>
+    <circle cx="245" cy="520" r="3.1" fill="#C29A55" opacity="0.41"/>
+    <circle cx="488" cy="126" r="3.3" fill="#C29A55" opacity="0.30"/>
+    <circle cx="660" cy="376" r="2.4" fill="#C29A55" opacity="0.21"/>
+    <circle cx="114" cy="282" r="2.8" fill="#C29A55" opacity="0.46"/>
+    <circle cx="369" cy="414" r="2.1" fill="#C29A55" opacity="0.40"/>
+    <circle cx="549" cy="303" r="1.7" fill="#C29A55" opacity="0.31"/>
+  <g transform="translate(1108,36) scale(0.82)" opacity="0.75">
+    <path d="M0 18 C0 6 10-2 19 4 c3 2 5 5 6 8 1-3 3-6 6-8 9-6 19 2 19 14 0 14-18 24-25 28 C18 42 0 32 0 18z" fill="none" stroke="#2E7D5B" stroke-width="3"/>
+    <path d="M8 22 h10 l4-8 7 18 4-8 h11" stroke="#2E7D5B" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Manrope, Arial, sans-serif">
+    <text x="72" y="626" font-size="13.333333333333334" font-weight="600" letter-spacing="4.5" fill="#2E7D5B">OBJECTS OF CARE</text>
+    <text x="72" y="672" font-size="46.15384615384615" font-weight="700" letter-spacing="-0.5" fill="#0A1B2E">Elder Care</text>
+    <text x="72" y="712" font-family="Inter, Arial, sans-serif" font-size="17.647058823529413" fill="#405872">Dhrishta Health Care Services</text>
+  </g>
+  <rect width="1200" height="800" filter="url(#grain11)" opacity="0.35" fill="none"/>
 </svg>

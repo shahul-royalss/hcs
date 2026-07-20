@@ -118,7 +118,7 @@ export default function Schedule() {
                   'rounded-full border-2 px-5 py-2 text-sm font-semibold transition-all',
                   selected && level.value === 'urgent' && 'border-accent bg-accent text-white',
                   selected && level.value !== 'urgent' && 'border-primary bg-primary text-white',
-                  !selected && 'border-slate-200 bg-white text-ink hover:border-primary-200'
+                  !selected && 'border-ivory-300 bg-white text-ink hover:border-primary-200'
                 )}
               >
                 {level.label}
@@ -127,14 +127,14 @@ export default function Schedule() {
           })}
         </div>
         {urgency === 'urgent' && (
-          <p className="mt-3 flex items-start gap-2 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-accent">
+          <p className="mt-3 flex items-start gap-2 rounded-xl bg-accent-50 px-4 py-3 text-sm font-medium text-accent">
             <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
             Urgent requests are prioritised — we&rsquo;ll call you within 30 minutes.
           </p>
         )}
       </fieldset>
 
-      <div className="flex items-center justify-between border-t border-slate-100 pt-5">
+      <div className="flex items-center justify-between border-t border-ivory-300 pt-5">
         <Button type="button" variant="ghost" onClick={prevStep}>
           <ArrowLeft aria-hidden="true" /> Back
         </Button>

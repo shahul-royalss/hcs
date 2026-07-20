@@ -65,8 +65,8 @@ export function Carousel({ children, className, autoPlayMs = 6000, ariaLabel = '
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => go(i)}
                 className={cn(
-                  'h-2.5 rounded-full transition-all duration-300',
-                  i === index ? 'w-7 bg-secondary' : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+                  'h-2 rounded-full transition-all duration-300',
+                  i === index ? 'w-6 bg-gold-500' : 'w-2 bg-slate-300 hover:bg-gold-300'
                 )}
               />
             ))}

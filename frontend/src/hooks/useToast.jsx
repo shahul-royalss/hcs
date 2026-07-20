@@ -12,7 +12,7 @@ const ICONS = {
 
 const STYLES = {
   success: 'border-success/30 bg-success-50 text-success',
-  error: 'border-accent/30 bg-red-50 text-accent',
+  error: 'border-accent/30 bg-accent-50 text-accent',
   info: 'border-primary/30 bg-primary-50 text-primary',
 }
 

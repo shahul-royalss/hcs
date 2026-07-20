@@ -46,7 +46,7 @@ export default function ServiceCard({ service, className }) {
       </ul>
 
       <div className="mt-auto pt-5">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-ivory-300 pt-4">
           <p className="text-sm text-ink-light">
             Starting from{' '}
             <span className="font-heading text-base font-bold text-primary">

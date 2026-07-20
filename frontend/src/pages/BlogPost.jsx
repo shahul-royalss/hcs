@@ -87,7 +87,7 @@ export default function BlogPost() {
                 ))}
               </div>
 
-              <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-6">
+              <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-ivory-300 pt-6">
                 <p className="text-sm text-ink-light">Found this helpful? Share it with your family.</p>
                 <button
                   type="button"
@@ -150,11 +150,11 @@ export default function BlogPost() {
               <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <Link
                   to="/book-consultation"
-                  className={cn(buttonVariants({ variant: 'secondary', size: 'md' }))}
+                  className={cn(buttonVariants({ variant: 'gold', size: 'md' }))}
                 >
                   Book a Free Consultation
                 </Link>
-                <CallButton />
+                <CallButton className="bg-white text-primary hover:bg-slate-100" />
               </div>
             </div>
           </AnimatedSection>

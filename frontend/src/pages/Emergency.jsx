@@ -107,7 +107,11 @@ export default function Emergency() {
         <div className="container-site">
           <AnimatedSection>
             <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
-              <CallButton size="lg" label={`Call our 24/7 line — ${siteConfig.phoneDisplay}`} />
+              <CallButton
+                size="lg"
+                label={`Call our 24/7 line — ${siteConfig.phoneDisplay}`}
+                className="bg-accent text-white hover:bg-accent-600"
+              />
               <Button
                 variant="whatsapp"
                 size="lg"
@@ -135,7 +139,7 @@ export default function Emergency() {
                       situation worsens, call 108 without waiting for us.
                     </p>
                     <div className="mt-2 flex flex-wrap justify-center gap-3">
-                      <CallButton />
+                      <CallButton className="bg-accent text-white hover:bg-accent-600" />
                       <Button
                         variant="outline"
                         onClick={() => {
@@ -250,9 +254,9 @@ export default function Emergency() {
                 {RESPONSE_STEPS.map(({ icon: Icon, title, text }) => (
                   <div
                     key={title}
-                    className="rounded-card border border-slate-100 bg-white p-6 text-center shadow-card"
+                    className="rounded-card border border-ivory-300 bg-white p-6 text-center shadow-card"
                   >
-                    <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-red-50 text-accent">
+                    <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent-50 text-accent">
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
                     <h3 className="mt-3 font-heading font-bold text-primary">{title}</h3>

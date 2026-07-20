@@ -31,14 +31,15 @@ export const translations = {
     // CTAs
     'cta.callNow': 'Call Now',
     'cta.whatsapp': 'WhatsApp',
-    'cta.bookConsultation': 'Book Consultation',
+    'cta.bookConsultation': 'Talk to a care advisor',
     'cta.whatsappUs': 'WhatsApp Us',
     'cta.learnMore': 'Learn More',
+    'cta.exploreCare': 'Explore our care',
     // Hero
-    'hero.badge': 'Trusted Home Healthcare in Chittoor',
-    'hero.headline1': 'Your Family...',
-    'hero.headline2': 'Our Care and Responsibility',
-    'hero.sub': 'Professional healthcare services at home',
+    'hero.badge': 'Your family… our care and responsibility',
+    'hero.headline1': 'Care that',
+    'hero.headline2': 'comes home.',
+    'hero.sub': 'Nursing, elder care and daily support — delivered with dignity, in the place your family loves most',
     'hero.support':
       'We believe that the health, safety and happiness of your family members is our responsibility — and we serve with love and trust.',
     'hero.trust.nurses': 'Certified Nurses',
@@ -83,14 +84,15 @@ export const translations = {
     // CTAs
     'cta.callNow': 'अभी कॉल करें',
     'cta.whatsapp': 'व्हाट्सएप',
-    'cta.bookConsultation': 'परामर्श बुक करें',
+    'cta.bookConsultation': 'केयर सलाहकार से बात करें',
     'cta.whatsappUs': 'व्हाट्सएप करें',
     'cta.learnMore': 'और जानें',
+    'cta.exploreCare': 'हमारी सेवाएं देखें',
     // Hero
-    'hero.badge': 'चित्तूर में विश्वसनीय होम हेल्थकेयर',
-    'hero.headline1': 'आपका परिवार...',
-    'hero.headline2': 'हमारी देखभाल और ज़िम्मेदारी',
-    'hero.sub': 'घर पर पेशेवर स्वास्थ्य सेवाएं',
+    'hero.badge': 'आपका परिवार… हमारी देखभाल और ज़िम्मेदारी',
+    'hero.headline1': 'देखभाल जो',
+    'hero.headline2': 'घर चली आती है।',
+    'hero.sub': 'नर्सिंग, बुज़ुर्गों की देखभाल और रोज़ाना का सहारा — पूरी गरिमा के साथ, आपके अपने घर में',
     'hero.support':
       'हमारा विश्वास है कि आपके परिवार के सदस्यों का स्वास्थ्य, सुरक्षा और खुशी हमारी ज़िम्मेदारी है — और हम प्रेम और विश्वास के साथ सेवा करते हैं।',
     'hero.trust.nurses': 'प्रमाणित नर्सें',
@@ -135,14 +137,15 @@ export const translations = {
     // CTAs
     'cta.callNow': 'ఇప్పుడే కాల్ చేయండి',
     'cta.whatsapp': 'వాట్సాప్',
-    'cta.bookConsultation': 'సంప్రదింపు బుక్ చేయండి',
+    'cta.bookConsultation': 'కేర్ సలహాదారుతో మాట్లాడండి',
     'cta.whatsappUs': 'వాట్సాప్ చేయండి',
     'cta.learnMore': 'మరింత తెలుసుకోండి',
+    'cta.exploreCare': 'మా సేవలను చూడండి',
     // Hero
-    'hero.badge': 'చిత్తూరులో విశ్వసనీయ హోమ్ హెల్త్‌కేర్',
-    'hero.headline1': 'మీ కుటుంబం...',
-    'hero.headline2': 'మా సంరక్షణ, మా బాధ్యత',
-    'hero.sub': 'ఇంటి వద్దే వృత్తిపరమైన ఆరోగ్య సేవలు',
+    'hero.badge': 'మీ కుటుంబం… మా సంరక్షణ, మా బాధ్యత',
+    'hero.headline1': 'ఇంటికే వచ్చే',
+    'hero.headline2': 'సంరక్షణ.',
+    'hero.sub': 'నర్సింగ్, వృద్ధుల సంరక్షణ, రోజువారీ సహాయం — గౌరవంతో, మీ కుటుంబం ప్రేమించే ఇంటిలోనే',
     'hero.support':
       'మీ కుటుంబ సభ్యుల ఆరోగ్యం, భద్రత మరియు ఆనందం మా బాధ్యత అని మేము నమ్ముతాం — ప్రేమ మరియు నమ్మకంతో సేవ చేస్తాం.',
     'hero.trust.nurses': 'ప్రమాణీకృత నర్సులు',

@@ -54,7 +54,7 @@ export default function BookingSuccess() {
       </p>
 
       {bookingId && (
-        <div className="mt-5 flex items-center gap-2 rounded-xl border border-slate-200 bg-surface px-4 py-3">
+        <div className="mt-5 flex items-center gap-2 rounded-xl border border-ivory-300 bg-surface px-4 py-3">
           <span className="text-sm text-ink-light">Booking ID</span>
           <code className="font-mono text-base font-bold text-primary">{bookingId}</code>
           <button

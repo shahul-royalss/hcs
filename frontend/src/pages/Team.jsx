@@ -80,7 +80,7 @@ export default function Team() {
               you&rsquo;re seeking care for a loved one, our team is ready to help.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link to="/careers" className={buttonVariants({ variant: 'accent', size: 'lg' })}>
+              <Link to="/careers" className={buttonVariants({ variant: 'gold', size: 'lg' })}>
                 <Briefcase aria-hidden="true" /> View Open Roles
               </Link>
               <Link

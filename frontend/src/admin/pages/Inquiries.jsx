@@ -101,8 +101,10 @@ export default function Inquiries() {
               type="button"
               onClick={() => setFilter(s)}
               className={cn(
-                'rounded-full px-4 py-1.5 text-sm font-semibold capitalize transition-colors',
-                filter === s ? 'bg-primary text-white' : 'bg-white text-ink-light hover:text-primary'
+                'rounded-full border px-4 py-1.5 text-sm font-semibold capitalize transition-colors',
+                filter === s
+                  ? 'border-secondary-600 bg-secondary-600 text-white'
+                  : 'border-ivory-300 bg-white text-ink-light hover:text-primary'
               )}
             >
               {s} ({counts[s] ?? 0})

@@ -116,7 +116,7 @@ export default function Stories() {
                   <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink">
                     &ldquo;{review.text}&rdquo;
                   </blockquote>
-                  <div className="mt-5 flex items-center gap-3 border-t border-slate-100 pt-4">
+                  <div className="mt-5 flex items-center gap-3 border-t border-ivory-300 pt-4">
                     <img
                       src={review.avatar}
                       alt={review.name}
@@ -155,7 +155,7 @@ export default function Stories() {
               with confidence — we&rsquo;d be honoured to hear it.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link to="/contact" className={buttonVariants({ variant: 'accent', size: 'lg' })}>
+              <Link to="/contact" className={buttonVariants({ variant: 'gold', size: 'lg' })}>
                 <MessageSquareHeart aria-hidden="true" /> Share Your Story
               </Link>
             </div>

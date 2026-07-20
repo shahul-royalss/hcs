@@ -36,7 +36,7 @@ export default function ServiceDetail({ service }) {
                 src={service.image}
                 alt={service.name}
                 loading="lazy"
-                className="w-full rounded-card border border-slate-100 shadow-card"
+                className="w-full rounded-card border border-ivory-300 shadow-card"
               />
             </AnimatedSection>
 

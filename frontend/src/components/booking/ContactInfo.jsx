@@ -149,7 +149,7 @@ export default function ContactInfo() {
         )}
       </div>
 
-      <div className="flex items-center justify-between border-t border-slate-100 pt-5">
+      <div className="flex items-center justify-between border-t border-ivory-300 pt-5">
         <Button type="button" variant="ghost" onClick={prevStep}>
           <ArrowLeft aria-hidden="true" /> Back
         </Button>

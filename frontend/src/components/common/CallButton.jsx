@@ -9,7 +9,7 @@ export default function CallButton({ className, size = 'md', label }) {
     <a
       href={telLink(siteConfig.phone)}
       className={cn(
-        'inline-flex items-center justify-center gap-2 rounded-full bg-accent font-heading font-semibold text-white shadow-sm transition-all hover:bg-accent-600 hover:shadow-md',
+        'inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 font-heading font-semibold text-primary-900 shadow-sm transition-all hover:bg-gold-400 hover:shadow-md',
         size === 'lg' ? 'h-12 px-8 text-base' : 'h-11 px-6 text-sm',
         className
       )}

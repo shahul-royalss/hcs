@@ -193,7 +193,7 @@ export default function About() {
 
           <div className="grid gap-6 md:grid-cols-2">
             <AnimatedSection className="h-full">
-              <div className="h-full rounded-card border border-slate-100 bg-white p-8 shadow-card">
+              <div className="h-full rounded-card border border-ivory-300 bg-white p-8 shadow-card">
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-50 text-primary">
                   <Target className="h-6 w-6" aria-hidden="true" />
                 </span>
@@ -205,7 +205,7 @@ export default function About() {
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.1} className="h-full">
-              <div className="h-full rounded-card border border-slate-100 bg-white p-8 shadow-card">
+              <div className="h-full rounded-card border border-ivory-300 bg-white p-8 shadow-card">
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-50 text-secondary">
                   <Eye className="h-6 w-6" aria-hidden="true" />
                 </span>
@@ -223,7 +223,7 @@ export default function About() {
               const Icon = value.icon
               return (
                 <AnimatedSection key={value.title} delay={i * 0.08} className="h-full">
-                  <div className="h-full rounded-card border border-slate-100 bg-white p-6 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                  <div className="h-full rounded-card border border-ivory-300 bg-white p-6 text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
                     <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary-50 text-secondary">
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
@@ -250,7 +250,7 @@ export default function About() {
               const Icon = reason.icon
               return (
                 <AnimatedSection key={reason.title} delay={i * 0.08} className="h-full">
-                  <div className="flex h-full items-start gap-5 rounded-card border border-slate-100 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                  <div className="flex h-full items-start gap-5 rounded-card border border-ivory-300 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary">
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
@@ -278,7 +278,7 @@ export default function About() {
           <div className="grid gap-6 md:grid-cols-2">
             {leadership.map((member, i) => (
               <AnimatedSection key={member.id} delay={i * 0.08} className="h-full">
-                <div className="flex h-full items-start gap-5 rounded-card border border-slate-100 bg-white p-6 shadow-card">
+                <div className="flex h-full items-start gap-5 rounded-card border border-ivory-300 bg-white p-6 shadow-card">
                   <img
                     src={member.photo}
                     alt={`Portrait of ${member.name}, ${member.designation}`}
@@ -299,7 +299,7 @@ export default function About() {
           </div>
 
           <AnimatedSection delay={0.15}>
-            <div className="mt-6 flex flex-col items-center gap-4 rounded-card border border-slate-100 bg-white p-6 text-center shadow-card sm:flex-row sm:justify-between sm:text-left">
+            <div className="mt-6 flex flex-col items-center gap-4 rounded-card border border-ivory-300 bg-white p-6 text-center shadow-card sm:flex-row sm:justify-between sm:text-left">
               <div className="flex items-center gap-4">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary-50 text-secondary">
                   <Users className="h-6 w-6" aria-hidden="true" />
@@ -336,7 +336,7 @@ export default function About() {
               const Icon = credential.icon
               return (
                 <AnimatedSection key={credential.title} delay={i * 0.06} className="h-full">
-                  <div className="h-full rounded-card border border-slate-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                  <div className="h-full rounded-card border border-ivory-300 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
                     <span className="flex h-11 w-11 items-center justify-center rounded-full bg-success-50 text-success">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>

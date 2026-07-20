@@ -11,7 +11,7 @@ const Select = forwardRef(({ className, children, ...props }, ref) => (
     <select
       ref={ref}
       className={cn(
-        'flex h-11 w-full appearance-none rounded-xl border border-slate-200 bg-white px-4 pr-10 text-sm text-ink transition-colors focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 disabled:cursor-not-allowed disabled:bg-surface',
+        'flex h-11 w-full appearance-none rounded-xl border border-ivory-300 bg-white px-4 pr-10 text-sm text-ink transition-colors focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20 disabled:cursor-not-allowed disabled:bg-surface',
         className
       )}
       {...props}

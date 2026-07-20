@@ -30,7 +30,7 @@ export default function BookConsultation() {
               {REASSURANCES.map(({ icon: Icon, title, text }) => (
                 <div
                   key={title}
-                  className="flex items-start gap-3 rounded-xl border border-slate-100 bg-white p-4 shadow-card"
+                  className="flex items-start gap-3 rounded-xl border border-ivory-300 bg-white p-4 shadow-card"
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary-50 text-secondary">
                     <Icon className="h-5 w-5" aria-hidden="true" />

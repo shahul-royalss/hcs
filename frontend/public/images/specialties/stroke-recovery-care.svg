@@ -1,17 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Stroke Recovery">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f57c00"/>
-      <stop offset="1" stop-color="#fb8c00"/>
+    <linearGradient id="field18" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDFDFB"/><stop offset="1" stop-color="#F2EEE5"/>
     </linearGradient>
+    <radialGradient id="glow18" cx="0.24" cy="0.08" r="0.9">
+      <stop offset="0" stop-color="#F0DCD4" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#F0DCD4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shaft18" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#EAD9B0" stop-opacity="0.65"/>
+      <stop offset="0.6" stop-color="#C29A55" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#C29A55" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft18" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="grain18">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
   </defs>
-  <rect width="1200" height="800" fill="url(#g)"/>
-  <circle cx="1020" cy="160" r="280" fill="#ffffff" opacity="0.06"/>
-  <circle cx="120" cy="680" r="240" fill="#ffffff" opacity="0.06"/>
-  <g transform="translate(575, 352) scale(1)">
-    <path d="M0 18 C0 6 10-2 19 4 c3 2 5 5 6 8 1-3 3-6 6-8 9-6 19 2 19 14 0 14-18 24-25 28 C18 42 0 32 0 18z" fill="#ffffff" opacity="0.9"/>
-    <path d="M8 20 h10 l4-8 7 18 4-8 h11" stroke="#f57c00" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="1200" height="800" fill="url(#field18)"/>
+  <rect width="1200" height="800" fill="url(#glow18)"/>
+  <!-- light shaft entering from upper left -->
+  <polygon points="144,-80 408.00000000000006,-80 744,840 336.00000000000006,840"
+    fill="url(#shaft18)" filter="url(#soft18)"/>
+  <!-- arch window with pooling light -->
+  <g>
+    <path d="M864 544 v-314 a102.00000000000001 102.00000000000001 0 0 1 204.00000000000003 0 v314 z"
+      fill="rgba(234,217,176,0.35)" stroke="rgba(10,27,46,0.14)" stroke-width="2"/>
+    <line x1="966" y1="148.4" x2="966" y2="544" stroke="rgba(10,27,46,0.14)" stroke-width="1.5"/>
+    <ellipse cx="966" cy="592" rx="173.4" ry="36"
+      fill="#EAD9B0" opacity="0.4" filter="url(#soft18)"/>
   </g>
-  <text x="600" y="434" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="31.57894736842105" font-weight="700" fill="#ffffff">Stroke Recovery</text>
-  <text x="600" y="462" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17.142857142857142" fill="#ffffff" opacity="0.85">Specialized Care</text>
+  <!-- horizon hairline -->
+  <line x1="72" y1="592" x2="1128" y2="592" stroke="rgba(10,27,46,0.14)" stroke-width="1.5"/>
+  <circle cx="96" cy="329" r="2.2" fill="#C29A55" opacity="0.33"/>
+    <circle cx="327" cy="502" r="1.9" fill="#C29A55" opacity="0.31"/>
+    <circle cx="301" cy="178" r="2.1" fill="#C29A55" opacity="0.19"/>
+    <circle cx="358" cy="512" r="2.4" fill="#C29A55" opacity="0.30"/>
+    <circle cx="169" cy="164" r="2.1" fill="#C29A55" opacity="0.50"/>
+    <circle cx="259" cy="325" r="3.5" fill="#C29A55" opacity="0.23"/>
+    <circle cx="604" cy="173" r="2.5" fill="#C29A55" opacity="0.44"/>
+    <circle cx="235" cy="511" r="2.7" fill="#C29A55" opacity="0.41"/>
+    <circle cx="148" cy="199" r="3.5" fill="#C29A55" opacity="0.52"/>
+    <circle cx="145" cy="267" r="3.2" fill="#C29A55" opacity="0.53"/>
+    <circle cx="498" cy="318" r="2.5" fill="#C29A55" opacity="0.32"/>
+    <circle cx="451" cy="526" r="1.3" fill="#C29A55" opacity="0.53"/>
+    <circle cx="314" cy="440" r="3.0" fill="#C29A55" opacity="0.54"/>
+    <circle cx="348" cy="267" r="3.0" fill="#C29A55" opacity="0.38"/>
+  <g transform="translate(1108,36) scale(0.82)" opacity="0.75">
+    <path d="M0 18 C0 6 10-2 19 4 c3 2 5 5 6 8 1-3 3-6 6-8 9-6 19 2 19 14 0 14-18 24-25 28 C18 42 0 32 0 18z" fill="none" stroke="#A9503C" stroke-width="3"/>
+    <path d="M8 22 h10 l4-8 7 18 4-8 h11" stroke="#A9503C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Manrope, Arial, sans-serif">
+    <text x="72" y="626" font-size="13.333333333333334" font-weight="600" letter-spacing="4.5" fill="#A9503C">SPECIALIZED CARE</text>
+    <text x="72" y="672" font-size="46.15384615384615" font-weight="700" letter-spacing="-0.5" fill="#0A1B2E">Stroke Recovery</text>
+    <text x="72" y="712" font-family="Inter, Arial, sans-serif" font-size="17.647058823529413" fill="#405872">Doctor-supervised care plans</text>
+  </g>
+  <rect width="1200" height="800" filter="url(#grain18)" opacity="0.35" fill="none"/>
 </svg>

@@ -14,7 +14,7 @@ export default function ThemeToggle({ compact = false }) {
       aria-pressed={isDark}
       title={isDark ? 'Light mode' : 'Dark mode'}
       className={cn(
-        'inline-flex shrink-0 items-center justify-center rounded-full border border-slate-200 text-ink transition-colors hover:border-secondary hover:text-secondary',
+        'inline-flex shrink-0 items-center justify-center rounded-full border border-ivory-300 text-ink transition-colors hover:border-secondary hover:text-secondary',
         compact ? 'h-9 w-9' : 'h-10 w-10'
       )}
     >

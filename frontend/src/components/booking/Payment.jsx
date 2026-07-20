@@ -137,7 +137,7 @@ export default function Payment() {
                 'flex w-full items-start gap-4 rounded-xl border-2 p-4 text-left transition-all',
                 selected
                   ? 'border-secondary bg-secondary-50 shadow-card'
-                  : 'border-slate-200 bg-white hover:border-secondary-200'
+                  : 'border-ivory-300 bg-white hover:border-secondary-200'
               )}
             >
               <span
@@ -174,7 +174,7 @@ export default function Payment() {
         </div>
       )}
 
-      <div className="flex items-center justify-between border-t border-slate-100 pt-5">
+      <div className="flex items-center justify-between border-t border-ivory-300 pt-5">
         <Button type="button" variant="ghost" onClick={prevStep} disabled={submitting}>
           <ArrowLeft aria-hidden="true" /> Back
         </Button>

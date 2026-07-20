@@ -42,7 +42,7 @@ export default function ChatWidget() {
         {hasUnread && (
           <span
             aria-hidden="true"
-            className="absolute -right-0.5 -top-0.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-accent"
+            className="absolute -right-0.5 -top-0.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-gold-500"
           />
         )}
       </button>

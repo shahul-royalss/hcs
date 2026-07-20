@@ -105,7 +105,7 @@ export default function Services() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 to="/book-consultation"
-                className={buttonVariants({ variant: 'accent', size: 'lg' })}
+                className={buttonVariants({ variant: 'gold', size: 'lg' })}
               >
                 <CalendarCheck aria-hidden="true" /> Book Free Consultation
               </Link>

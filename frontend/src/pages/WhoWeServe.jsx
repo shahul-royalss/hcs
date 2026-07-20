@@ -48,7 +48,7 @@ export default function WhoWeServe() {
               const service = getServiceBySlug(audience.relatedService)
               return (
                 <AnimatedSection key={audience.id} delay={i * 0.07} className="h-full">
-                  <article className="group flex h-full flex-col rounded-card border border-slate-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                  <article className="group flex h-full flex-col rounded-card border border-ivory-300 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
                     <span
                       className={`flex h-14 w-14 items-center justify-center rounded-full ${COLOR_STYLES[audience.color] || COLOR_STYLES.primary}`}
                     >

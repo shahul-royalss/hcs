@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { motion, useScroll, useSpring } from 'framer-motion'
 import { Menu, Phone, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import LanguageSelector from '@/components/common/LanguageSelector'
@@ -28,6 +29,8 @@ export default function Navbar() {
   const { openChat } = useWhatsApp()
   const { t } = useLanguage()
   const location = useLocation()
+  const { scrollYProgress } = useScroll()
+  const readProgress = useSpring(scrollYProgress, { stiffness: 120, damping: 26, mass: 0.4 })
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -45,10 +48,16 @@ export default function Navbar() {
       className={cn(
         'sticky top-0 z-40 w-full border-b transition-all duration-300',
         scrolled
-          ? 'border-slate-100 bg-white/95 shadow-card backdrop-blur'
+          ? 'border-ivory-300 bg-white/95 shadow-card backdrop-blur'
           : 'border-transparent bg-white'
       )}
     >
+      {/* Reading progress — a 2px gold hairline */}
+      <motion.div
+        className="absolute inset-x-0 top-0 h-0.5 origin-left bg-gradient-to-r from-gold-500 to-gold-300"
+        style={{ scaleX: readProgress }}
+        aria-hidden="true"
+      />
       <div className="container-site flex h-16 items-center justify-between gap-4 md:h-[72px]">
         {/* Logo */}
         <Link to="/" aria-label={`${siteConfig.name} — Home`} className="flex shrink-0 items-center">
@@ -82,7 +91,7 @@ export default function Navbar() {
             href={telLink(siteConfig.phone)}
             aria-label={t('cta.callNow')}
             title={t('cta.callNow')}
-            className="hidden h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-3 text-sm font-semibold text-accent transition-colors hover:bg-red-50 xl:inline-flex"
+            className="hidden h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-3 text-sm font-semibold text-secondary-700 transition-colors hover:bg-secondary-50 xl:inline-flex"
           >
             <Phone className="h-4 w-4" />
             <span className="hidden 2xl:inline">{t('cta.callNow')}</span>

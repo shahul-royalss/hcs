@@ -25,7 +25,7 @@ export function Dialog({ open, onClose, title, children, className, hideClose = 
       {open && (
         <div className="fixed inset-0 z-[90] flex items-center justify-center p-4">
           <motion.div
-            className="absolute inset-0 bg-primary-900/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-primary-900/70 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -36,7 +36,7 @@ export function Dialog({ open, onClose, title, children, className, hideClose = 
             aria-modal="true"
             aria-label={typeof title === 'string' ? title : undefined}
             className={cn(
-              'relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-card-hover',
+              'relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-card bg-white p-6 shadow-card-hover',
               className
             )}
             initial={{ opacity: 0, y: 24, scale: 0.97 }}
