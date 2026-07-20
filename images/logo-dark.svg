@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-label="Dhrishta Health Care Services">
+  <rect x="2" y="8" width="48" height="48" rx="12" fill="#2f5490"/>
+  <path d="M26 46s-11.5-7.2-11.5-15.3A6.6 6.6 0 0 1 26 26.2a6.6 6.6 0 0 1 11.5 4.5C37.5 38.8 26 46 26 46z" fill="#ffffff"/>
+  <path d="M19.5 31h3.6l1.6-3.2 2.4 6.4 1.6-3.2h3.8" stroke="#2d8b8b" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="34" font-family="Manrope, sans-serif" font-size="21" font-weight="800" fill="#e7f0ff">DHRISHTA</text>
+  <text x="60" y="50" font-family="Inter, sans-serif" font-size="10.5" letter-spacing="1.6" fill="#66c0c0">HEALTH CARE SERVICES</text>
+</svg>

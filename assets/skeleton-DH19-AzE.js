@@ -1,0 +1,1 @@
+import{j as e}from"./motion-CelFImgf.js";import{a as s}from"./index-CpxSCtJd.js";function n({className:o,...r}){return e.jsx("div",{className:s("animate-pulse rounded-xl bg-ivory-200",o),...r})}export{n as S};
