@@ -41,7 +41,8 @@ class Settings(BaseSettings):
     # CORS (comma-separated origins)
     cors_origins: str = "http://localhost:3000"
 
-    # Seeding
+    # First admin account (auto-created at startup when no users exist)
+    admin_email: str = "admin@dhrishta.com"
     seed_admin_password: str = "ChangeMe@123"
 
     model_config = SettingsConfigDict(

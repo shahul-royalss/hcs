@@ -87,6 +87,24 @@ docker compose up --build     # site on :8080, API on :8000, Mongo internal
 | `/admin` | Admin portal (JWT-protected) |
 | `/api/health` | Backend health check |
 
+## Admin Portal Access
+
+Open `<site-url>/admin/login` (e.g. `http://localhost:3000/admin/login` in dev,
+`http://localhost:8080/admin/login` with Docker).
+
+Default credentials (auto-created on backend startup when the database has no
+users yet — requires MongoDB to be running):
+
+| Field | Value |
+|-------|-------|
+| Email | `admin@dhrishta.com` |
+| Password | `ChangeMe@123` |
+
+⚠️ **Change the password before going live**: set `SEED_ADMIN_PASSWORD` (and
+optionally `ADMIN_EMAIL`) in `backend/.env` *before the first startup*, or
+update the user in MongoDB afterwards. The backend logs a warning while the
+default password is in use.
+
 ## Environment Variables
 
 See `backend/.env.example` and `frontend/.env.example`. The app runs fully without

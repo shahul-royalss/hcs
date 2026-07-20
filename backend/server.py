@@ -36,11 +36,51 @@ logger = logging.getLogger(__name__)
 API_VERSION = "1.0.0"
 
 
+async def _bootstrap_admin_user() -> None:
+    """Create the first admin account when the users collection is empty.
+
+    Guarantees the portal is usable straight after `docker compose up` without
+    running the seed script. Credentials come from ADMIN_EMAIL /
+    SEED_ADMIN_PASSWORD env vars (see .env.example); the default password is
+    logged with a change-it warning.
+    """
+    from utils.auth_utils import hash_password
+    from utils.config import settings
+    from utils.helpers import utcnow
+
+    db = database.get_db()
+    if await db.users.count_documents({}) > 0:
+        return
+    email = settings.admin_email.lower()
+    await db.users.insert_one(
+        {
+            "email": email,
+            "password": hash_password(settings.seed_admin_password),
+            "role": "admin",
+            "name": "Dhrishta Admin",
+            "phone": "",
+            "created_at": utcnow(),
+            "last_login": None,
+            "is_active": True,
+        }
+    )
+    logger.info("Bootstrapped first admin user: %s", email)
+    if settings.seed_admin_password == "ChangeMe@123":
+        logger.warning(
+            "Admin uses the DEFAULT password 'ChangeMe@123'. "
+            "Set SEED_ADMIN_PASSWORD and change it immediately."
+        )
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Log DB reachability on startup (lazy client — server starts regardless)."""
     if await database.ping():
         logger.info("MongoDB reachable.")
+        try:
+            await _bootstrap_admin_user()
+        except Exception as exc:  # noqa: BLE001 - never block startup on bootstrap
+            logger.warning("Admin bootstrap skipped: %s", exc)
     else:
         logger.warning("MongoDB not reachable at startup; requests will retry lazily.")
     yield
