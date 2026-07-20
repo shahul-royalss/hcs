@@ -123,9 +123,18 @@ hcs/
     (`.text-hero-fluid`, `.text-d1-fluid`, `.text-d2-fluid`), plus body grain +
     radial "expensive paper" warmth. Dark mode is the same palette's night
     exposure (navy surface, ivory ink, gold light).
-  - Motion: framer-motion only — soft `[0.22,1,0.36,1]` ease entrances ≤ 32px
-    travel, `animate-breathe`/`animate-float-slow` idle loops (±1%, motion-safe),
-    scroll-linked gold path/progress via `useScroll`. Restraint over spectacle.
+  - Motion — two owners, one law (`src/lib/cinema.js` + `src/hooks/useCinema.js`):
+    anything driven by SCROLL POSITION belongs to **GSAP + ScrollTrigger**
+    (hero pin/scrub film, story clip-reveals + parallax, SplitText masks);
+    anything driven by state/pointer belongs to **framer-motion** (entrances,
+    hover/tap, tilt, unfolds). **Lenis** provides the smooth-scroll glide
+    (lerp 0.09), driven by GSAP's ticker — one clock. Site chrome adds a
+    contextual cursor (`common/Cursor.jsx`), magnetic CTAs (`useMagnetic`),
+    icon self-draw (`.icon-draw`), and a 2D-canvas dust field
+    (`home/HeroDust.jsx`). Every piece gates on `prefers-reduced-motion`
+    (scenes resolve to final frames) and on pointer coarseness. Scene
+    timelines always live inside `useScene` (gsap.context — leak-proof,
+    StrictMode-safe). Restraint over spectacle.
   - Fonts: Manrope (`font-heading`), Inter (`font-body`), Crimson Text
     (`font-accent` / `.tagline`), Noto Sans Devanagari (Hindi fallback in every
     stack). All fonts are **self-hosted** from `public/fonts/` (`fonts.css` +
@@ -234,7 +243,7 @@ hcs/
 | Lucide **+ Font Awesome** | Lucide only | One icon system; avoids duplicate assets (Golden Rule 2). |
 | GPT-5.2 / Claude chatbot | Anthropic API with rule-based offline fallback | Single provider path; works with no key configured. |
 | Admin pages for testimonials/contacts moderation | Consolidated into Admin → Settings | Spec lists the APIs but no dedicated pages; consolidation keeps nav small. |
-| Photography | "Morning light" art-directed SVG placeholders in `public/images/` (generator: `scripts/generate-placeholders.mjs`) | No licensed photos available; swap files in place (same names) when real photos arrive. |
+| Photography | "Morning light" art-directed SVG placeholders in `public/images/` (generator: `scripts/generate-placeholders.mjs`) | No licensed photos bundled; `scripts/fetch-photos.mjs` installs commercial-safe open-license photos from Openverse over the same filenames (run locally — image CDNs are blocked in the build sandbox) and writes `docs/PHOTO_CREDITS.md`. Swapping any file in place (same name) always works. |
 | Blueprint's Next.js 15 + GSAP/Lenis + Three.js cinematic stack | Blueprint adopted as the design source of truth (palette, typography scale, narrative scenes S1–S10, motion grammar) implemented inside the existing React 18 + Vite + framer-motion stack | A framework rewrite would discard the working booking flow, admin portal and backend integration; the pinned-scroll/WebGL layers are deferred — the blueprint's own LITE/fallback tier is what ships. |
 
 ## 9. Roadmap (from the architecture doc)

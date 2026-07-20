@@ -11,14 +11,16 @@ Built strictly according to the architecture document in
 The visual language follows the **"morning light"** design blueprint in
 [`docs/design/MORNING_LIGHT_BLUEPRINT.md`](docs/design/MORNING_LIGHT_BLUEPRINT.md)
 (ivory · navy ink · healing teal · soft gold; all imagery is generated placeholder
-art — swap files in `frontend/public/images/` with real photos, same names).
+art — run `node scripts/fetch-photos.mjs` in `frontend/` on a machine with open
+internet to install curated open-license photography over the same filenames,
+or swap files in `frontend/public/images/` manually).
 Project conventions and structure are documented in [`PROJECT_GUIDELINES.md`](PROJECT_GUIDELINES.md).
 
 ## Tech Stack
 
 | Layer      | Technology |
 |------------|------------|
-| Frontend   | React 18, Vite, Tailwind CSS, shadcn-style UI kit, React Router v6, React Hook Form, Framer Motion, Lucide icons, Axios |
+| Frontend   | React 18, Vite, Tailwind CSS, shadcn-style UI kit, React Router v6, React Hook Form, Framer Motion, GSAP + ScrollTrigger + SplitText, Lenis smooth scroll, Lucide icons, Axios |
 | Backend    | FastAPI (Python 3.11), MongoDB (Motor async), JWT auth |
 | Integrations | Stripe (payments), Twilio (SMS + WhatsApp), Resend (email), Anthropic Claude (AI chatbot) — all optional, gracefully disabled without API keys |
 | Deployment | Docker + docker-compose (nginx serving the frontend), Supervisor config for bare-metal |

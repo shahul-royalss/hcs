@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import AnimatedSection from '@/components/common/AnimatedSection'
 import { buttonVariants } from '@/components/ui/button'
+import { useMagnetic } from '@/hooks/useCinema'
 import { siteConfig } from '@/data/siteConfig'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useWhatsApp } from '@/hooks/useWhatsApp'
@@ -25,6 +26,7 @@ const STARS = [
 export default function SunsetContact() {
   const { t } = useLanguage()
   const { openChat } = useWhatsApp()
+  const magnetRef = useMagnetic()
 
   return (
     <section
@@ -64,10 +66,12 @@ export default function SunsetContact() {
             </p>
 
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-              <Link to="/book-consultation" className={cn(buttonVariants({ variant: 'gold', size: 'lg' }))}>
-                {t('cta.bookConsultation')}
-                <ArrowRight aria-hidden="true" />
-              </Link>
+              <span ref={magnetRef} className="inline-block">
+                <Link to="/book-consultation" className={cn(buttonVariants({ variant: 'gold', size: 'lg' }))}>
+                  {t('cta.bookConsultation')}
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+              </span>
               <a
                 href={telLink(siteConfig.phone)}
                 className={cn(buttonVariants({ variant: 'outline-white', size: 'lg' }))}

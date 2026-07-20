@@ -5,6 +5,8 @@ import Footer from '@/components/layout/Footer'
 import ScrollToTop from '@/components/common/ScrollToTop'
 import LoadingSpinner from '@/components/common/LoadingSpinner'
 import FloatingWhatsApp from '@/components/common/FloatingWhatsApp'
+import SmoothScroll from '@/components/common/SmoothScroll'
+import Cursor from '@/components/common/Cursor'
 import ChatWidget from '@/components/chatbot/ChatWidget'
 
 // Public pages (route-based code splitting)
@@ -49,7 +51,13 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
-      {!isAdmin && <Navbar />}
+      {!isAdmin && (
+        <>
+          <SmoothScroll />
+          <Cursor />
+          <Navbar />
+        </>
+      )}
 
       <main className="flex-1">
         <Suspense fallback={<LoadingSpinner fullPage />}>

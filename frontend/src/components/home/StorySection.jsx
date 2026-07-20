@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import SectionHeading from '@/components/common/SectionHeading'
+import { useScene } from '@/hooks/useCinema'
+import { gsap } from '@/lib/cinema'
 import { cn } from '@/utils/cn'
 
 /**
@@ -73,20 +75,19 @@ function Chapter({ chapter, index }) {
       )}
     >
       <div
+        data-story-media
         className={cn(
           'relative h-full min-h-56 overflow-hidden md:col-span-3 md:min-h-72',
           flipped && 'md:order-2'
         )}
       >
-        <motion.img
+        {/* GSAP owns this image: curtain-down clip reveal + scrubbed parallax */}
+        <img
+          data-story-img
           src={chapter.image}
           alt={chapter.alt}
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover"
-          initial={{ scale: 1.08 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true, margin: '-15%' }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0 h-full w-full object-cover will-change-transform"
         />
       </div>
 
@@ -119,8 +120,37 @@ function Chapter({ chapter, index }) {
 
 /** The story film, rendered as five stacked figures with a gold progress rail. */
 export default function StorySection() {
+  const scope = useScene(({ reduced }) => {
+    if (reduced) return
+    gsap.utils.toArray('[data-story-media]').forEach((media) => {
+      const img = media.querySelector('[data-story-img]')
+      // Curtain-down reveal — no hard cuts, ever (blueprint §S2)
+      gsap.fromTo(
+        media,
+        { clipPath: 'inset(0 0 100% 0)' },
+        {
+          clipPath: 'inset(0 0 0% 0)',
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: media, start: 'top 80%', once: true },
+        }
+      )
+      // Interior parallax: the image travels within its mask as you scroll
+      gsap.fromTo(
+        img,
+        { yPercent: -7, scale: 1.12 },
+        {
+          yPercent: 7,
+          scale: 1.12,
+          ease: 'none',
+          scrollTrigger: { trigger: media, start: 'top bottom', end: 'bottom top', scrub: 0.6 },
+        }
+      )
+    })
+  })
+
   return (
-    <section className="section-padding relative overflow-hidden bg-surface" aria-label="One family, five chapters">
+    <section ref={scope} className="section-padding relative overflow-hidden bg-surface" aria-label="One family, five chapters">
       <div
         className="absolute inset-0"
         style={{ background: 'radial-gradient(90% 50% at 80% 0%, rgba(234,217,176,0.28), transparent 60%)' }}

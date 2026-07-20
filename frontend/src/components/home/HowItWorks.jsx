@@ -1,5 +1,6 @@
 import { useRef } from 'react'
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion, useInView, useScroll, useSpring } from 'framer-motion'
+import { cn } from '@/utils/cn'
 import {
   ClipboardList,
   HeartHandshake,
@@ -56,6 +57,8 @@ const reveal = {
 function Milestone({ milestone, index }) {
   const Icon = milestone.icon
   const left = index % 2 === 0
+  const iconRef = useRef(null)
+  const iconInView = useInView(iconRef, { once: true, margin: '-15%' })
   return (
     <li className="relative grid gap-4 pl-12 md:grid-cols-2 md:gap-0 md:pl-0">
       {/* Node on the path */}
@@ -84,7 +87,14 @@ function Milestone({ milestone, index }) {
       >
         <div className="inline-block max-w-md rounded-card border border-ivory-300 bg-white p-6 text-left shadow-card transition-shadow duration-300 hover:shadow-card-hover">
           <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary-50 text-secondary-600">
+            {/* The icon strokes draw themselves as the milestone lights up */}
+            <span
+              ref={iconRef}
+              className={cn(
+                'icon-draw flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary-50 text-secondary-600',
+                iconInView && 'icon-drawn'
+              )}
+            >
               <Icon className="h-5 w-5" aria-hidden="true" />
             </span>
             <p className="font-heading text-xs font-semibold uppercase tracking-overline text-gold-600 tabular-nums">
