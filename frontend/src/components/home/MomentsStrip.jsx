@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import AnimatedSection from '@/components/common/AnimatedSection'
 import SectionHeading from '@/components/common/SectionHeading'
+import { useScene } from '@/hooks/useCinema'
+import { gsap } from '@/lib/cinema'
 import { galleryImages } from '@/data/gallery'
 import { cn } from '@/utils/cn'
 
@@ -9,24 +11,52 @@ import { cn } from '@/utils/cn'
 const MOMENT_IDS = ['g4', 'g10', 'g1', 'g7', 'g13', 'g16', 'g5', 'g11']
 
 /**
- * S8 · "A wall of moments" — a drifting strip of photographs: hands, shared
- * meals, walks, festivals. Swipe/scroll sideways; tap through to the gallery.
+ * S8 · "A wall of moments" — a wall of photographs the camera travels along.
+ * Desktop: the section pins and scrolling drives the wall horizontally
+ * (scroll-world grammar — vertical intent, lateral motion). Touch devices
+ * keep their native momentum swipe. Reduced motion: a plain swipe strip.
  */
 export default function MomentsStrip() {
   const moments = MOMENT_IDS.map((id) => galleryImages.find((img) => img.id === id)).filter(Boolean)
 
-  return (
-    <section className="section-padding overflow-hidden bg-white" aria-label="A wall of moments">
-      <div className="container-site">
-        <SectionHeading
-          tagline="A wall of moments"
-          title="Care, in the plural"
-          subtitle="Everyday scenes from the homes and families we walk beside."
-        />
-      </div>
+  const scope = useScene(({ reduced }) => {
+    if (reduced) return
+    const mm = gsap.matchMedia()
+    mm.add('(min-width: 1024px)', () => {
+      const track = document.querySelector('[data-moments-track]')
+      const travel = () => Math.max(0, track.scrollWidth - window.innerWidth + 96)
+      gsap.to(track, {
+        x: () => -travel(),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '[data-moments-pin]',
+          start: 'top top',
+          end: () => '+=' + (travel() + 200),
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      })
+    })
+  })
 
-      <AnimatedSection>
-        <ul className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto px-[max(1rem,calc((100vw-80rem)/2+1rem))] pb-6 pt-2">
+  return (
+    <section ref={scope} className="section-padding overflow-hidden bg-white" aria-label="A wall of moments">
+      <div data-moments-pin className="lg:flex lg:min-h-screen lg:flex-col lg:justify-center">
+        <div className="container-site">
+          <SectionHeading
+            tagline="A wall of moments"
+            title="Care, in the plural"
+            subtitle="Everyday scenes from the homes and families we walk beside."
+          />
+        </div>
+
+        <AnimatedSection>
+          <ul
+            data-moments-track
+            className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto px-[max(1rem,calc((100vw-80rem)/2+1rem))] pb-6 pt-2 will-change-transform lg:snap-none lg:overflow-x-visible"
+          >
           {moments.map((moment, i) => (
             <li
               key={moment.id}
@@ -69,6 +99,7 @@ export default function MomentsStrip() {
           </li>
         </ul>
       </AnimatedSection>
+      </div>
     </section>
   )
 }
