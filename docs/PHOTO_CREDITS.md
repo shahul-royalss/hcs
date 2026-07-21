@@ -15,7 +15,7 @@ open licenses (CC0 / Public Domain Mark / CC-BY). CC-BY images require this attr
 | `story/chapter-5.svg` | Untitled | Half Chinese | BY 2.0 | [source](https://www.flickr.com/photos/42302744@N00/235051813) |
 | `services/personal-care.svg` | Ethel with Eenie | Pictures by Ann | BY 2.0 | [source](https://www.flickr.com/photos/12560758@N07/16373641007) |
 | `services/home-nursing.svg` | Nurse checks child's temperature with digital thermometer in a clinical setting | nenad53 | BY 2.0 | [source](https://www.flickr.com/photos/202780880@N02/54592704735) |
-| `services/elder-care.svg` | 20210902-RD-LSC-0280 | USDAgov | PDM 1.0 | [source](https://www.flickr.com/photos/41284017@N08/51432149496) |
+| `services/elder-care.svg` | Asian grandfather | Nithi clicks | BY 2.0 | [source](https://www.flickr.com/photos/47850033@N08/36119610724) |
 | `services/patient-care.svg` | Doctor smiling while enjoying a cup of coffee on work break. | nenadstojkovicart | BY 2.0 | [source](https://www.flickr.com/photos/202846129@N03/54586595675) |
 | `services/child-care.svg` | Girl at the playground | freestocks.org | CC0 1.0 | [source](https://www.flickr.com/photos/135396164@N05/29183441953) |
 | `services/day-care.svg` | Deaf Social Senior Citizen | daveynin | BY 2.0 | [source](https://www.flickr.com/photos/44124370018@N01/3274365296) |
@@ -35,7 +35,7 @@ open licenses (CC0 / Public Domain Mark / CC-BY). CC-BY images require this attr
 | `gallery/care-programs-2.svg` | LOL - Demeure du Chaos / Abode of Chaos | Abode of Chaos | BY 2.0 | [source](https://www.flickr.com/photos/40936370@N00/11949703613) |
 | `gallery/care-programs-3.svg` | Naval Hospital Jacksonville Family Medicine Clinic 211012-N-QA097-001 | NavyMedicine | PDM 1.0 | [source](https://www.flickr.com/photos/61270229@N05/51629060628) |
 | `gallery/events-1.svg` | Grace and the Cake | RBerteig | BY 2.0 | [source](https://www.flickr.com/photos/51035786238@N01/75122585) |
-| `gallery/events-2.svg` | Pacific Partnership 2023: Malaysia Community Health Fair | NavyMedicine | PDM 1.0 | [source](https://www.flickr.com/photos/61270229@N05/53197208003) |
+| `gallery/events-2.svg` | New India Assurance Co conducts a camp for Health Insurance for PWDs in Rourkela | Bhakua | BY 2.0 | [source](https://www.flickr.com/photos/37313707@N00/32945066586) |
 | `gallery/events-3.svg` | Tracie, Mom, and Chrissy | kellogg | BY 2.0 | [source](https://www.flickr.com/photos/41894166078@N01/493074175) |
 | `gallery/team-1.svg` | Navy Medical Team Wraps Up Ozark Hospital Support | NavyMedicine | PDM 1.0 | [source](https://www.flickr.com/photos/61270229@N05/51976381045) |
 | `gallery/team-2.svg` | Medical Site - Haiti - CP22 221212-N-TR141-1082 | NavyMedicine | PDM 1.0 | [source](https://www.flickr.com/photos/61270229@N05/52564764487) |

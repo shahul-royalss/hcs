@@ -11,8 +11,14 @@ export function useScene(build, deps = []) {
   useLayoutEffect(() => {
     if (!scope.current) return undefined
     const reduced = prefersReducedMotion()
-    const ctx = gsap.context(() => build({ scope: scope.current, reduced }), scope)
-    return () => ctx.revert()
+    let cleanup
+    const ctx = gsap.context(() => {
+      cleanup = build({ scope: scope.current, reduced })
+    }, scope)
+    return () => {
+      if (typeof cleanup === 'function') cleanup()
+      ctx.revert()
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps)
   return scope

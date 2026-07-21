@@ -32,14 +32,24 @@ export default function HeroSection() {
   const magnetRef = useMagnetic()
 
   const scope = useScene(
-    ({ reduced }) => {
-      if (reduced) return
+    ({ scope: el, reduced }) => {
+      if (reduced) {
+        gsap.set('[data-hero-curtain]', { display: 'none' })
+        return undefined
+      }
+
+      // ── Curtain open — the film begins ──────────────────────────
+      gsap
+        .timeline({ defaults: { ease: 'power3.inOut' } })
+        .to('[data-hero-curtain="top"]', { yPercent: -101, duration: 1.05 }, 0.1)
+        .to('[data-hero-curtain="bottom"]', { yPercent: 101, duration: 1.05 }, 0.16)
+        .set('[data-hero-curtain]', { display: 'none' })
 
       // ── Entrance ────────────────────────────────────────────────
       const split = SplitText.create('[data-hero-headline]', { type: 'words', mask: 'words' })
       gsap
-        .timeline({ defaults: { ease: 'power3.out' } })
-        .fromTo('[data-hero-canvas]', { scale: 1.06 }, { scale: 1, duration: 2.2, ease: 'power2.out' }, 0)
+        .timeline({ defaults: { ease: 'power3.out' }, delay: 0.35 })
+        .fromTo('[data-hero-canvas]', { scale: 1.08 }, { scale: 1, duration: 2.4, ease: 'power2.out' }, 0)
         .from('[data-hero-overline]', { opacity: 0, y: 14, duration: 0.7 }, 0.15)
         .from(split.words, { yPercent: 118, duration: 1.05, stagger: 0.07 }, 0.25)
         .from('[data-hero-sub]', { y: 24, opacity: 0, duration: 0.8 }, 0.8)
@@ -47,6 +57,42 @@ export default function HeroSection() {
         .from('[data-hero-trust] li', { y: 14, opacity: 0, stagger: 0.06, duration: 0.5 }, 1.15)
         .from('[data-hero-card]', { y: 20, opacity: 0, duration: 0.7 }, 1.2)
         .from('[data-hero-cue]', { opacity: 0, duration: 0.6 }, 1.6)
+
+      // ── Idle life: the shot keeps breathing after it settles ────
+      gsap.to('[data-hero-frame]', {
+        scale: 1.014,
+        duration: 7,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+        delay: 2.6,
+      })
+      gsap.to('[data-hero-shaft]', {
+        x: 22,
+        opacity: 0.85,
+        duration: 9,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+      })
+
+      // ── Pointer parallax — the room leans with your hand ────────
+      let removeParallax
+      if (window.matchMedia('(pointer: fine)').matches) {
+        const frameX = gsap.quickTo('[data-hero-frame]', 'x', { duration: 0.9, ease: 'power3.out' })
+        const frameY = gsap.quickTo('[data-hero-frame]', 'y', { duration: 0.9, ease: 'power3.out' })
+        const copyX = gsap.quickTo('[data-hero-copy]', 'x', { duration: 1.1, ease: 'power3.out' })
+        const onMove = (e) => {
+          const r = el.getBoundingClientRect()
+          const nx = (e.clientX - r.left) / r.width - 0.5
+          const ny = (e.clientY - r.top) / r.height - 0.5
+          frameX(nx * -14)
+          frameY(ny * -10)
+          copyX(nx * 6)
+        }
+        el.addEventListener('pointermove', onMove, { passive: true })
+        removeParallax = () => el.removeEventListener('pointermove', onMove)
+      }
 
       // ── The scroll film ─────────────────────────────────────────
       const mm = gsap.matchMedia()
@@ -78,7 +124,10 @@ export default function HeroSection() {
         })
       })
 
-      return () => split.revert()
+      return () => {
+        removeParallax?.()
+        split.revert()
+      }
     },
     [language]
   )
@@ -86,6 +135,9 @@ export default function HeroSection() {
   return (
     <section ref={scope}>
       <div data-hero className="relative overflow-hidden bg-white">
+        {/* Ivory curtains — split open on load like the first shot of a film */}
+        <div data-hero-curtain="top" className="absolute inset-x-0 top-0 z-20 h-[46%] bg-ivory-100" aria-hidden="true" />
+        <div data-hero-curtain="bottom" className="absolute inset-x-0 bottom-0 z-20 h-[54%] bg-ivory-100" aria-hidden="true" />
         {/* Morning atmosphere: radial warmth + the signature light shaft + dust */}
         <div
           className="absolute inset-0"
@@ -114,7 +166,7 @@ export default function HeroSection() {
 
             <div data-hero-cta className="mt-9 flex flex-wrap items-center gap-4">
               <span ref={magnetRef} className="inline-block">
-                <Link to="/book-consultation" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}>
+                <Link to="/book-consultation" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'btn-sheen')}>
                   {t('cta.bookConsultation')}
                   <ArrowRight aria-hidden="true" />
                 </Link>
@@ -145,7 +197,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right: the morning-room shot + floating glass card */}
-          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+          <div data-hero-frame className="relative mx-auto w-full max-w-lg will-change-transform lg:max-w-none">
             <div className="relative overflow-hidden rounded-[2rem] shadow-card-hover ring-1 ring-ivory-300">
               <img
                 data-hero-canvas

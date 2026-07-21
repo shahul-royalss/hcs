@@ -4,7 +4,6 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ScrollToTop from '@/components/common/ScrollToTop'
 import LoadingSpinner from '@/components/common/LoadingSpinner'
-import FloatingWhatsApp from '@/components/common/FloatingWhatsApp'
 import SmoothScroll from '@/components/common/SmoothScroll'
 import Cursor from '@/components/common/Cursor'
 import ChatWidget from '@/components/chatbot/ChatWidget'
@@ -105,7 +104,8 @@ export default function App() {
       {!isAdmin && (
         <>
           <Footer />
-          <FloatingWhatsApp />
+          {/* Floating WhatsApp bubble removed by owner request — WhatsApp stays
+              reachable via the navbar, footer and contact sections. */}
           <ChatWidget />
         </>
       )}
