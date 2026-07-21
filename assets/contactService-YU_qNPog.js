@@ -1,0 +1,1 @@
+import{G as c}from"./index-Ca02L5CM.js";const e={async submit(t){const{data:a}=await c.post("/contact",t);return a},async requestCallback(t){const{data:a}=await c.post("/contact/callback",t);return a},async emergency(t){const{data:a}=await c.post("/emergency",t);return a}};export{e as c};
