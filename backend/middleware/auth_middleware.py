@@ -42,6 +42,18 @@ async def get_current_user(
     return user
 
 
+_PORTAL_ROLES = {"admin", "staff"}
+
+
 async def require_admin(user: dict = Depends(get_current_user)) -> dict:
-    """Dependency used by all /api/admin/* routes: any active portal user."""
+    """Dependency used by all /api/admin/* routes.
+
+    Explicit role allowlist — a future non-portal role (e.g. a patient or
+    family account) must never inherit portal access by merely existing.
+    """
+    if user.get("role") not in _PORTAL_ROLES:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="This account does not have portal access.",
+        )
     return user

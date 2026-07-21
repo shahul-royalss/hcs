@@ -8,7 +8,12 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from middleware import RateLimitMiddleware, register_error_handlers, setup_cors
+from middleware import (
+    RateLimitMiddleware,
+    SecurityHeadersMiddleware,
+    register_error_handlers,
+    setup_cors,
+)
 from routes import (
     admin,
     auth,
@@ -98,6 +103,7 @@ def create_app() -> FastAPI:
 
     setup_cors(app)
     app.add_middleware(RateLimitMiddleware)
+    app.add_middleware(SecurityHeadersMiddleware)
     register_error_handlers(app)
 
     # Public routers under /api

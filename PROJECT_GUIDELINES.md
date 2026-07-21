@@ -94,7 +94,8 @@ hcs/
     ├── models/                   # Pydantic v2 schemas per collection
     ├── routes/                   # Public routers under /api, admin under /api/admin
     ├── services/                 # ai, payment, notification, booking, storage logic
-    ├── middleware/               # auth (JWT), CORS, error handler, rate limit
+    ├── middleware/               # auth (JWT + role allowlist), CORS, error handler,
+    │                             #  rate limit (tighter on /auth/login), security headers
     ├── utils/                    # config (pydantic-settings), database (lazy Motor),
     │                             #  auth_utils, validators, helpers, constants
     └── scripts/seed_data.py      # Idempotent demo-content + admin-user seeding

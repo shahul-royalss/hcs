@@ -1,0 +1,41 @@
+# Dhrishta Health Care Services — Apache/LiteSpeed (Hostinger) configuration.
+# Lives in frontend/public/ so every `npm run build` ships it inside dist/.
+
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# React Router: serve real files as-is, everything else through the app shell
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# ── Security headers ─────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  # Force HTTPS for a year once SSL is active (Hostinger provides free SSL)
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # Content-Security-Policy: everything is self-hosted by design.
+  # If you later enable Google Analytics, MS Clarity or Stripe, extend
+  # script-src / connect-src with their domains before flipping those on.
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https:; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests"
+</IfModule>
+
+# ── Caching: hashed assets forever, HTML never ───────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Never serve dotfiles (belt & braces; .htaccess itself is blocked by Apache)
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>

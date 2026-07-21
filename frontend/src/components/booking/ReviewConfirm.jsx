@@ -135,7 +135,7 @@ export default function ReviewConfirm() {
           />
           <span>
             I agree to the{' '}
-            <Link to="/terms-conditions" target="_blank" className="font-semibold text-secondary underline">
+            <Link to="/terms-conditions" target="_blank" rel="noopener noreferrer" className="font-semibold text-secondary underline">
               Terms &amp; Conditions
             </Link>{' '}
             including the cancellation and refund policy.
