@@ -1,12 +1,103 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Inbox, Star } from 'lucide-react'
+import { ArrowRight, Inbox, KeyRound, Star } from 'lucide-react'
 import Seo from '@/components/common/Seo'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import { useAuth } from '@/hooks/useAuth'
+import { useToast } from '@/hooks/useToast'
+import api, { apiErrorMessage } from '@/services/api'
 import { cn } from '@/utils/cn'
 import { titleCase } from '@/utils/formatters'
+
+/** Change the signed-in portal user's password (works on both backends). */
+function ChangePasswordCard() {
+  const { toast } = useToast()
+  const [current, setCurrent] = useState('')
+  const [next, setNext] = useState('')
+  const [confirm, setConfirm] = useState('')
+  const [busy, setBusy] = useState(false)
+
+  const submit = async (e) => {
+    e.preventDefault()
+    if (next.length < 8) return toast.error('New password must be at least 8 characters.')
+    if (next !== confirm) return toast.error('New passwords do not match.')
+    setBusy(true)
+    try {
+      await api.post('/auth/change-password', { current_password: current, new_password: next })
+      toast.success('Password updated. Use the new password next time you sign in.')
+      setCurrent('')
+      setNext('')
+      setConfirm('')
+    } catch (error) {
+      toast.error(apiErrorMessage(error, 'Could not change the password.'))
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <KeyRound className="h-5 w-5 text-gold-600" aria-hidden="true" />
+          Change password
+        </CardTitle>
+        <CardDescription>
+          If you are still using the default password, change it now — it protects every booking
+          and patient record in this portal.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={submit} className="space-y-4">
+          <div>
+            <Label htmlFor="pw-current" required>Current password</Label>
+            <Input
+              id="pw-current"
+              type="password"
+              autoComplete="current-password"
+              value={current}
+              onChange={(e) => setCurrent(e.target.value)}
+              required
+            />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <Label htmlFor="pw-new" required>New password</Label>
+              <Input
+                id="pw-new"
+                type="password"
+                autoComplete="new-password"
+                minLength={8}
+                value={next}
+                onChange={(e) => setNext(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <Label htmlFor="pw-confirm" required>Confirm new password</Label>
+              <Input
+                id="pw-confirm"
+                type="password"
+                autoComplete="new-password"
+                minLength={8}
+                value={confirm}
+                onChange={(e) => setConfirm(e.target.value)}
+                required
+              />
+            </div>
+          </div>
+          <Button type="submit" disabled={busy}>
+            {busy ? 'Updating…' : 'Update password'}
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
+  )
+}
 
 function ToggleSwitch({ checked, onChange, label, description }) {
   return (
@@ -148,6 +239,10 @@ export default function Settings() {
             </Link>
           </CardContent>
         </Card>
+
+        <div className="lg:col-span-2">
+          <ChangePasswordCard />
+        </div>
       </div>
     </>
   )

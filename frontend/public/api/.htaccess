@@ -1,0 +1,13 @@
+# Route every /api request through the front controller
+RewriteEngine On
+RewriteBase /api/
+
+# Pass the Authorization header through to PHP (needed for Bearer tokens)
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L,QSA]
+
+# Never expose the data directory
+RewriteRule ^data/ - [F,L]

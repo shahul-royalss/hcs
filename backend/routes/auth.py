@@ -1,14 +1,15 @@
-"""Authentication routes: login, logout, current user."""
+"""Authentication routes: login, logout, current user, password change."""
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from motor.motor_asyncio import AsyncIOMotorDatabase
+from pydantic import BaseModel, Field
 
 from middleware.auth_middleware import get_current_user
 from models.user import LoginRequest, TokenResponse, UserResponse
-from utils.auth_utils import create_access_token, verify_password
+from utils.auth_utils import create_access_token, hash_password, verify_password
 from utils.config import settings
 from utils.database import get_db
-from utils.helpers import serialize_doc, utcnow
+from utils.helpers import parse_object_id, serialize_doc, utcnow
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -50,3 +51,28 @@ async def logout() -> dict:
 async def me(user: dict = Depends(get_current_user)) -> UserResponse:
     """Return the authenticated user's profile."""
     return UserResponse(**user)
+
+
+class ChangePasswordRequest(BaseModel):
+    current_password: str
+    new_password: str = Field(min_length=8)
+
+
+@router.post("/change-password")
+async def change_password(
+    payload: ChangePasswordRequest,
+    user: dict = Depends(get_current_user),
+    db: AsyncIOMotorDatabase = Depends(get_db),
+) -> dict:
+    """Change the signed-in user's password (verifies the current one first)."""
+    oid = parse_object_id(str(user["id"]))
+    stored = await db.users.find_one({"_id": oid})
+    if stored is None or not verify_password(payload.current_password, stored.get("password", "")):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Current password is incorrect.",
+        )
+    await db.users.update_one(
+        {"_id": oid}, {"$set": {"password": hash_password(payload.new_password)}}
+    )
+    return {"message": "Password updated. Use the new password next time you sign in."}
