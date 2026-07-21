@@ -5,6 +5,10 @@ Options -MultiViews
 RewriteEngine On
 RewriteBase /
 
+# API calls must fail honestly when no backend is attached to this host —
+# never fall through to the HTML shell (a 200-HTML reply breaks API clients).
+RewriteRule ^api(/.*)?$ - [R=503,L]
+
 # React Router: serve real files as-is, everything else through the app shell
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
